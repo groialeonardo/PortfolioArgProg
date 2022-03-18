@@ -1,4 +1,10 @@
 .social-logos{
-  margin-top: 30%;
-  margin-bottom: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 80%;
+  max-height: 80%;
+}
+.row {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
