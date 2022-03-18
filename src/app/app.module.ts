@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header/header.component';
 import { LogoArgProgComponent } from './components/header/logo-arg-prog/logo-arg-prog.component';
 import { SociallinkComponent } from './components/header/sociallink/sociallink.component';
+import { LoginBarComponent } from './components/header/login-bar/login-bar.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SociallinkComponent } from './components/header/sociallink/sociallink.c
     AppComponent,
     HeaderComponent,
     LogoArgProgComponent,
-    SociallinkComponent
+    SociallinkComponent,
+    LoginBarComponent
   ],
   imports: [
     BrowserModule
