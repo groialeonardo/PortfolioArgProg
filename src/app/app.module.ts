@@ -6,6 +6,8 @@ import { HeaderComponent } from './components/header/header/header.component';
 import { LogoArgProgComponent } from './components/header/logo-arg-prog/logo-arg-prog.component';
 import { SociallinkComponent } from './components/header/sociallink/sociallink.component';
 import { LoginBarComponent } from './components/header/login-bar/login-bar.component';
+import { BannerComponent } from './components/header/banner/banner.component';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { LoginBarComponent } from './components/header/login-bar/login-bar.compo
     HeaderComponent,
     LogoArgProgComponent,
     SociallinkComponent,
-    LoginBarComponent
+    LoginBarComponent,
+    BannerComponent,
+    AcercaDeComponent
   ],
   imports: [
     BrowserModule
