@@ -1,0 +1,29 @@
+.row{
+  padding-top: 0.5%;
+}
+
+p{
+  font-size: 25;
+}
+div {
+  background-color:#19657ea4;
+  color: #ffffff;
+}
+
+#myPhoto{
+
+  border-radius: 100%;
+
+}
+
+@media (min-width:576px) {
+
+  #myPhoto{
+    margin-top: -39.3%;
+    border-radius: 100%;
+    margin-left: 0%;
+    max-height: 70%;
+  }
+
+}
+
