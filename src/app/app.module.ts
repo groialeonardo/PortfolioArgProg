@@ -8,6 +8,7 @@ import { SociallinkComponent } from './components/header/sociallink/sociallink.c
 import { LoginBarComponent } from './components/header/login-bar/login-bar.component';
 import { BannerComponent } from './components/header/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
     SociallinkComponent,
     LoginBarComponent,
     BannerComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ExperienciaComponent
   ],
   imports: [
     BrowserModule
