@@ -7,4 +7,5 @@
 .row {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
+  --bs-gutter-x: 0;
 }

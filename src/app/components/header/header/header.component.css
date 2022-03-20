@@ -11,10 +11,15 @@
 
 .row{
   padding-top: 0.5%;
+  --bs-gutter-x: 0;
 
 }
 
 div {
   background-color: #19657ea4;
 
+}
+
+.container-fluid {
+  padding-left: 0%;
 }

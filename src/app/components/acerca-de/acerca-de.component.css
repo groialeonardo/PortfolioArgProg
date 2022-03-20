@@ -3,11 +3,16 @@
 }
 
 p{
-  font-size: 25;
+  font-size: 18px;
+  margin: 15px;
 }
 div {
   background-color:#19657ea4;
   color: #ffffff;
+}
+
+#acercademi {
+  margin: 25px;
 }
 
 #myPhoto{

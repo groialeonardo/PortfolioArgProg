@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Exp } from 'src/app/Exp';
+import { EXPS } from 'src/app/mock-exps';
 
 @Component({
   selector: 'app-experiencia',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
+
+  exps:Exp[] = EXPS;
 
   constructor() { }
 

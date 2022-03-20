@@ -9,6 +9,7 @@ import { LoginBarComponent } from './components/header/login-bar/login-bar.compo
 import { BannerComponent } from './components/header/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
     LoginBarComponent,
     BannerComponent,
     AcercaDeComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    ExperienciaItemComponent
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,10 @@
+h1 {
+  margin: 25px;
+
+}
+
+.row{
+
+  --bs-gutter-x: 0;
+
+}
