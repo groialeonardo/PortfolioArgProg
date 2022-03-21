@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header/header.component';
@@ -25,7 +26,9 @@ import { ExperienciaItemComponent } from './components/experiencia/experiencia-i
     ExperienciaItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,6 +38,16 @@
       "inicio": "03-2004",
       "fin":"03-2005",
       "descripcion":"Técnico en Informática y Redes"
+    },
+
+    {
+      "id":5,
+      "pathlogo":"../../../../assets/img/Logos/Experiencias/MuniRosario.png",
+      "empresa":"SARASA",
+      "puesto":"Técnico en Informática y Redes",
+      "inicio": "03-2004",
+      "fin":"03-2005",
+      "descripcion":"Técnico en Informática y Redes"
     }
 
   ]
