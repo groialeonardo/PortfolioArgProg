@@ -1,1 +1,71 @@
-<p>addexp works!</p>
+<div class="row addexp">
+
+  <form class="inline" (ngSubmit)="onSubmit()" *ngIf ="showAddExp">
+
+    <div class="form-control">
+      <label for="text">Nombre de la empresa</label>
+      <input
+        type="text"
+        name="nombreEmpresa"
+        id="nombreEmpresa"
+        placeholder="Agregar nombre de la empresa"
+        [(ngModel)]="nombreEmpresa"
+      />
+    </div>
+
+    <div class="form-control">
+      <label for="fechaInicio">Inicio</label>
+      <input
+        type="date"
+        name="fechaInicio"
+        id="fechaInicio"
+        placeholder="Fecha de Inicio (MM-AAAA)"
+        [(ngModel)]="fechaInicio"
+      />
+    </div>
+
+    <div class="form-control">
+      <label for="fechaFin">Fin</label>
+      <input
+        type="date"
+        name="fechaFin"
+        id="fechaFin"
+        placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
+        [(ngModel)]="fechaFin"
+      />
+    </div>
+
+    <div class="form-control">
+      <label for="nombrePuesto">Nombre del Puesto</label>
+      <input
+        type="text"
+        name="nombrePuesto"
+        id="nombrePuesto"
+        placeholder="Agregar nombre del puesto"
+        [(ngModel)]="nombrePuesto"
+      />
+    </div>
+
+    <div class="form-control">
+      <label for="descripcion">Descripcion</label>
+      <textarea
+      name="descripcion"
+      id="descripcion"
+      cols="30"
+      rows="10"
+      placeholder="Agregar descripcion del puesto"
+      [(ngModel)]="descripcion">
+      </textarea>
+    </div>
+
+    <input type="submit" value="Guardar Experiencia" class="btn btn-block btn-primary" />
+
+
+  </form>
+
+
+</div>
+
+
+
+
