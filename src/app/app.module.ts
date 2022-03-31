@@ -11,6 +11,7 @@ import { BannerComponent } from './components/header/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
+import { AddexpComponent } from './components/experiencia/addexp/addexp.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ExperienciaItemComponent } from './components/experiencia/experiencia-i
     BannerComponent,
     AcercaDeComponent,
     ExperienciaComponent,
-    ExperienciaItemComponent
+    ExperienciaItemComponent,
+    AddexpComponent
   ],
   imports: [
     BrowserModule,
