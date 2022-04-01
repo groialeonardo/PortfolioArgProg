@@ -22,6 +22,7 @@
 
       *ngFor="let exp of exps"
       [exp] = exp
+      (onDeleteEvent)="deleteExp(exp)"
 
     >
     </app-experiencia-item>

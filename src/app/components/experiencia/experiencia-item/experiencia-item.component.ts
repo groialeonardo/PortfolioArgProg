@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
 import { Exp } from '../../../Interfaces/Exp';
 import { EXPS } from '../../../mock-exps';
@@ -11,10 +11,16 @@ import { EXPS } from '../../../mock-exps';
 export class ExperienciaItemComponent implements OnInit {
 
   @Input() exp:Exp = EXPS[0];
+  @Output() onDeleteEvent:EventEmitter<Exp> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(exp:Exp) {
+    this.onDeleteEvent.emit(exp);
+
   }
 
 }

@@ -1,22 +1,67 @@
 <div class="d-flex experiencia-item">
 
+
   <div class="flex-shrink-0">
       <img src="{{exp.pathlogo}}" alt="Logo"  class="img-fluid img-logos">
   </div>
 
   <div class="flex-grow-1 ms-3">
 
-    <div id="empresa">
-      <h2 class=" d-inline">{{exp.empresa}}</h2> <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
+    <div id="empresa" class="row">
+      <div class="col-11">
+        <h2 class=" d-inline">{{exp.empresa}}</h2>
+        <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
+      </div>
+      <div class="col-1">
+        <button
+          class="btn btn-danger"
+          (click)= "onDelete(exp)"
+        >
+        X
+        </button>
+      </div>
     </div>
 
     <h4>{{exp.puesto}}</h4>
     <p> {{exp.descripcion}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?</p>
 
 
-    </div>
+  </div>
 
 </div>
+
+<!--
+
+<div class="card experiencia-item d-flex">
+  <div class="row g-0 d-flex">
+    <div class="col-1">
+      <img src="{{exp.pathlogo}}" class="img-fluid img-logos" alt="card-horizontal-image ">
+    </div>
+    <div class="col-11">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-11">
+            <h2 class="card-title">{{exp.empresa}}  <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5> </h2>
+          </div>
+          <div class="col-1">
+            <button class="d-inline btn btn-primary" >Eliminar</button>
+          </div>
+      </div>
+
+        <h4 class="card-title">{{exp.puesto}}</h4>
+
+
+
+
+
+
+        <p class="card-text">{{exp.descripcion}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque enim commodi minus doloribus nobis rem fugiat quibusdam qui distinctio hic saepe ipsa, debitis est, atque mollitia vero natus molestias quis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque enim commodi minus doloribus nobis rem fugiat quibusdam qui distinctio hic saepe ipsa, debitis est, atque mollitia vero natus molestias quis.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+-->
 
 <!--
 <div class="row">

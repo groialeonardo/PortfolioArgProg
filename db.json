@@ -37,13 +37,13 @@
       "descripcion": "Técnico en Informática y Redes"
     },
     {
-      "pathlogo": "sdfsdfsdfsdfsdf",
-      "empresa": "fsdfsdfsdfsdf",
-      "inicio": "2022-04-14",
-      "fin": "2022-04-12",
-      "puesto": "dfsdf",
-      "descripcion": "sdffffffffffffffffffffffff",
-      "id": 5
+      "pathlogo": "http://localhost:4200/assets/img/Logos/Experiencias/Paladini.jpg",
+      "empresa": "Paladini",
+      "inicio": "2015-12-31",
+      "fin": "2022-04-01",
+      "puesto": "Supervisor de Automatizacion",
+      "descripcion": "Supervisor de Automatizacion Industrial, Calibracion de Instrumentos de Medicion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?",
+      "id": 6
     }
   ]
 }

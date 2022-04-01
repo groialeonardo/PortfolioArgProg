@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-control">
-      <label for="text">Nombre de la empresa</label>
+      <label for="text">Logo de la empresa</label>
       <input
         type="text"
         name="pathlogo"
@@ -59,14 +59,20 @@
 
     <div class="form-control">
       <label for="descripcion">Descripcion</label>
-      <textarea
-      name="descripcion"
-      id="descripcion"
-      cols="30"
-      rows="10"
-      placeholder="Agregar descripcion del puesto"
-      [(ngModel)]="descripcion">
-      </textarea>
+      <div class="row">
+
+          <textarea
+          name="descripcion"
+          id="descripcion"
+          cols="100"
+          rows="10"
+          placeholder="Agregar descripcion del puesto"
+          [(ngModel)]="descripcion">
+          </textarea>
+
+
+      </div>
+
     </div>
 
     <input type="submit" value="Guardar Experiencia" class="btn btn-block btn-primary" />

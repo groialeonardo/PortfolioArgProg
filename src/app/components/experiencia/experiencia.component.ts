@@ -25,11 +25,17 @@ export class ExperienciaComponent implements OnInit {
 
   }
 
-  addExp(Exp:Exp) {
+  addExp(exp:Exp) {
 
-    this.experienciaService.addExp(Exp).subscribe((t)=>(
+    this.experienciaService.addExp(exp).subscribe((t)=>(
       this.exps.push(t)
     ))
+  }
+
+  deleteExp(exp:Exp) {
+    this.experienciaService.deleteExps(exp).subscribe(()=>(
+      this.exps = this.exps.filter(t => t.id !==exp.id ))
+    );
   }
 
 
