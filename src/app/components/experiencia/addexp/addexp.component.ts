@@ -1,5 +1,7 @@
 import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 
+import { Exp } from '../../../Interfaces/Exp';
+
 @Component({
   selector: 'app-addexp',
   templateUrl: './addexp.component.html',
@@ -7,12 +9,13 @@ import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 })
 export class AddexpComponent implements OnInit {
 
-  @Output() addTaskEvent:EventEmitter<Task> = new EventEmitter()
+  @Output() addExpEvent:EventEmitter<Exp> = new EventEmitter()
 
-  nombreEmpresa:string ="";
-  fechaInicio:string = "";
-  fechaFin:string = "";
-  nombrePuesto:string="";
+  pathlogo:string ="";
+  empresa:string ="";
+  inicio:string = "";
+  fin:string = "";
+  puesto:string="";
   descripcion:string="";
 
   showAddExp:boolean = true;
@@ -26,18 +29,23 @@ export class AddexpComponent implements OnInit {
 
   onSubmit(){
 
-    if(this.nombreEmpresa.length === 0){
-      alert("Please add a Task!");
+    if(this.empresa.length === 0){
+      alert("Por Favor complete el nombre de la empresa");
       return
     }
 
-    const {nombreEmpresa,fechaInicio,fechaFin,nombrePuesto,descripcion} = this;
+    if(this.puesto.length === 0){
+      alert("Por Favor complete el nombre del puesto");
+      return
+    }
 
-    const newTask = {nombreEmpresa,fechaInicio,fechaFin,nombrePuesto,descripcion};
+    const {pathlogo,empresa,inicio,fin,puesto,descripcion} = this;
 
-    console.log(newTask)
+    const newExp = {pathlogo,empresa,inicio,fin, puesto,descripcion};
 
-    //this.addTaskEvent.emit(newTask)
+    console.log(newExp)
+
+    this.addExpEvent.emit(newExp)
 
 
   }

@@ -1,4 +1,4 @@
-import {Exp} from "./Exp"
+import {Exp} from "./Interfaces/Exp"
 
 export const EXPS: Exp[] = [
   {

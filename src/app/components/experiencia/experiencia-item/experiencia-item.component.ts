@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Exp } from '../../../Exp';
+import { Exp } from '../../../Interfaces/Exp';
 import { EXPS } from '../../../mock-exps';
 
 @Component({

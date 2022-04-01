@@ -8,7 +8,9 @@
 
 <div class="row">
 
- <app-addexp></app-addexp>
+ <app-addexp
+  (addExpEvent) = "addExp($event)"
+ ></app-addexp>
 
 </div>
 

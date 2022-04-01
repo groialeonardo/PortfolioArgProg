@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
-import { Exp } from 'src/app/Exp';
+import { Exp } from 'src/app/Interfaces/Exp';
 import { EXPS } from 'src/app/mock-exps';
 
 @Component({
@@ -24,5 +24,13 @@ export class ExperienciaComponent implements OnInit {
       ));
 
   }
+
+  addExp(Exp:Exp) {
+
+    this.experienciaService.addExp(Exp).subscribe((t)=>(
+      this.exps.push(t)
+    ))
+  }
+
 
 }

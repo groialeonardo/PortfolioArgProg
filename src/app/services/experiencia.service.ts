@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Exp } from '../Exp';
+import { Exp } from '../Interfaces/Exp';
 
 const httpOptions = {
   headers : new HttpHeaders ({
