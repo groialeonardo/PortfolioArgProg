@@ -9,7 +9,7 @@
 
 <div class="row">
   <app-btnshowexp
-  color="{{showAddExp ? 'red' : 'green'}}"
+  color="{{showAddExp ? 'red' : 'blue'}}"
   text="{{showAddExp ? 'Cerrar' : 'Agregar Experiencia'}}"
   (onBbtnClick)="toggleAddExp()"
   *ngIf="hasRoute('/')"
@@ -32,6 +32,7 @@
       *ngFor="let exp of exps"
       [exp] = exp
       (onDeleteEvent)="deleteExp(exp)"
+      (EditEvent)= "editExp($event)"
 
     >
     </app-experiencia-item>

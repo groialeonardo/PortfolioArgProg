@@ -40,6 +40,11 @@ export class ExperienciaComponent implements OnInit {
     ))
   }
 
+  editExp(exp:Exp) {
+
+    this.experienciaService.updateExp(exp).subscribe()
+  }
+
   deleteExp(exp:Exp) {
     this.experienciaService.deleteExps(exp).subscribe(()=>(
       this.exps = this.exps.filter(t => t.id !==exp.id ))

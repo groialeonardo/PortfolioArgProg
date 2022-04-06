@@ -1,34 +1,261 @@
-<div class="d-flex experiencia-item">
+<div class="row experiencia-item ">
+  <div class="d-flex ">
 
 
-  <div class="flex-shrink-0">
-      <img src="{{exp.pathlogo}}" alt="Logo"  class="img-fluid img-logos">
-  </div>
-
-  <div class="flex-grow-1 ms-3">
-
-    <div id="empresa" class="row">
-      <div class="col-11">
-        <h2 class=" d-inline">{{exp.empresa}}</h2>
-        <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
-      </div>
-      <div class="col-1">
-        <button
-          class="btn btn-danger"
-          (click)= "onDelete(exp)"
-        >
-        X
-        </button>
-      </div>
+    <div class="flex-shrink-0">
+        <img src="{{exp.pathlogo}}" alt="Logo"  class="img-fluid img-logos">
     </div>
 
-    <h4>{{exp.puesto}}</h4>
-    <p> {{exp.descripcion}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?</p>
+    <div class="flex-grow-1 ms-3">
+
+      <div id="empresa" class="row">
+        <div class="col-11">
+          <h2 class=" d-inline">{{exp.empresa}}</h2>
+          <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
+        </div>
+        <div class="col-1">
+          <button
+            class="btn btn-danger"
+            (click)= "onDelete(exp)"
+          >
+          X
+          </button>
+        </div>
+      </div>
+
+      <h4>{{exp.puesto}}</h4>
+      <p> {{exp.descripcion}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?</p>
+
+
+    </div>
+ </div>
+
+<!-- TO DO : pasar esto a un componente  -->
+
+  <div class="row addexp" *ngIf ="showEditExp">
+
+    <form class="inline" (ngSubmit)="onSubmit()" >
+
+      <div class="form-control">
+        <label for="text">Nombre de la empresa</label>
+        <input
+          type="text"
+          name="empresa"
+          id="empresa"
+          placeholder="Agregar nombre de la empresa"
+          [(ngModel)]="exp.empresa"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="text">Logo de la empresa</label>
+        <input
+          type="text"
+          name="pathlogo"
+          id="pathlogo"
+          placeholder="Ingrese el path correspondiente al logo de la empresa"
+          [(ngModel)]="exp.pathlogo"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="fechaInicio">Inicio</label>
+        <input
+          type="date"
+          name="inicio"
+          id="inicio"
+          placeholder="Fecha de Inicio (MM-AAAA)"
+          [(ngModel)]="exp.inicio"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="fechaFin">Fin</label>
+        <input
+          type="date"
+          name="fin"
+          id="fin"
+          placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
+          [(ngModel)]="exp.fin"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="nombrePuesto">Nombre del Puesto</label>
+        <input
+          type="text"
+          name="puesto"
+          id="puesto"
+          placeholder="Agregar nombre del puesto"
+          [(ngModel)]="exp.puesto"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="descripcion">Descripcion</label>
+        <div class="row">
+
+            <textarea
+            name="descripcion"
+            id="descripcion"
+            cols="100"
+            rows="10"
+            placeholder="Agregar descripcion del puesto"
+            [(ngModel)]="exp.descripcion">
+            </textarea>
+
+
+        </div>
+
+      </div>
+
+      <input type="submit" value="Guardar Cambios" class="btn btn-block btn-primary" />
+
+
+    </form>
 
 
   </div>
 
+
 </div>
+
+
+
+
+<!-- TO DO : pasar esto a un componente
+  <div class="d-flex" *ngIf ="showEditExp">
+
+    <div class="flex-shrink-0">
+      <img src="{{exp.pathlogo}}" alt="Logo"  class="img-fluid img-logos">
+    </div>
+
+    <div class="flex-grow-1 ms-3">
+
+      <div id="empresa" class="row">
+        <div class="col-11">
+            <div class="contener-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <label for="text">Path de logo</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+
+                  <input
+                    style="WIDTH: 500px"
+                    type="text"
+                    placeholder="Agregar nombre de la empresa"
+                    [(ngModel)]="exp.pathlogo"
+                  />
+
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-3">
+                  <label for="text">Nombre de la empresa</label>
+                </div>
+                <div class="col-2">
+                  <label for="text">Fecha de inicio</label>
+                </div>
+                <div class="col-2">
+                  <label for="text">Fecha de fin</label>
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-3">
+
+                  <input
+                  type="text"
+                  placeholder="Agregar nombre de la empresa"
+                  [(ngModel)]="exp.empresa"
+                  />
+
+                </div>
+
+                <div class="col-2">
+
+                  <input
+                  type="date"
+                  placeholder="Fecha de Inicio (MM-AAAA)"
+                  [(ngModel)]="exp.inicio"
+                  />
+
+                </div>
+
+                <div class="col-2">
+
+                  <input
+                  type="date"
+                  placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
+                  [(ngModel)]="exp.fin"
+                  />
+
+                </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="contener-fluid">
+
+        <div class="row">
+          <div class="col-12">
+            <label for="text">Puesto</label>
+          <div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <input
+            type="text"
+            placeholder="Agregar nombre el puesto"
+            [(ngModel)]="exp.puesto"
+            />
+          <div>
+        </div>
+      </div>
+
+      <div class="contener-fluid">
+
+        <div class="row">
+          <div class="col-12">
+            <label for="text">Descripcion</label>
+          <div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <textarea
+            cols="100"
+            rows="10"
+            placeholder="Agregar descripcion del puesto"
+            [(ngModel)]="exp.descripcion">
+            </textarea>
+          <div>
+        </div>
+      </div>
+
+    </div>
+
+    <input type="submit" value="Guardar Experiencia" class="btn btn-block btn-primary" />
+
+  </div>
+
+  -->
+
+
+
+
+
+
+
 
 <!--
 

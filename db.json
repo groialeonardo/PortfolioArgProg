@@ -3,7 +3,7 @@
     {
       "id": 1,
       "pathlogo": "../../../../assets/img/Logos/Experiencias/Paladini.jpg",
-      "empresa": "Paladini",
+      "empresa": "Paladini2",
       "puesto": "Supervisor de Automatización",
       "inicio": "12-2015",
       "fin": "Actual",
@@ -44,6 +44,15 @@
       "puesto": "Supervisor de Automatizacion",
       "descripcion": "Supervisor de Automatizacion Industrial, Calibracion de Instrumentos de Medicion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?",
       "id": 6
+    },
+    {
+      "pathlogo": "http://localhost:4200/assets/img/Logos/Experiencias/UNR.jpg",
+      "empresa": "leooooooooooooooooooo",
+      "inicio": "2022-04-21",
+      "fin": "2022-04-14",
+      "puesto": "asdasdasd",
+      "descripcion": "asdasdasdasd",
+      "id": 8
     }
   ]
 }

@@ -22,7 +22,6 @@ export class UIexperienciaService {
   toggleAddExpSubject= new Subject<any>();
 
 
-
   constructor() { }
 
   //este metodo es el que se llama desde el header para cambiar el valor
