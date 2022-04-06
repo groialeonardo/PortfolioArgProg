@@ -6,13 +6,22 @@
 
 </div>
 
+
 <div class="row">
+  <app-btnshowexp
+  color="{{showAddExp ? 'red' : 'green'}}"
+  text="{{showAddExp ? 'Cerrar' : 'Agregar Experiencia'}}"
+  (onBbtnClick)="toggleAddExp()"
+  *ngIf="hasRoute('/')"
+  >
+  </app-btnshowexp>
+</div>
 
  <app-addexp
   (addExpEvent) = "addExp($event)"
  ></app-addexp>
 
-</div>
+
 
 <div class="row ">
 

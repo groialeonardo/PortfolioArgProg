@@ -13,6 +13,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { AddexpComponent } from './components/experiencia/addexp/addexp.component';
+import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshowexp.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AddexpComponent } from './components/experiencia/addexp/addexp.componen
     AcercaDeComponent,
     ExperienciaComponent,
     ExperienciaItemComponent,
-    AddexpComponent
+    AddexpComponent,
+    BtnshowexpComponent
   ],
   imports: [
     BrowserModule,

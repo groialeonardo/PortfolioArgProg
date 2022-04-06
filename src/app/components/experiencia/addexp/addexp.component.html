@@ -1,6 +1,6 @@
-<div class="row addexp">
+<div class="row addexp" *ngIf ="showAddExp">
 
-  <form class="inline" (ngSubmit)="onSubmit()" *ngIf ="showAddExp">
+  <form class="inline" (ngSubmit)="onSubmit()" >
 
     <div class="form-control">
       <label for="text">Nombre de la empresa</label>

@@ -2,6 +2,10 @@ import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 
 import { Exp } from '../../../Interfaces/Exp';
 
+import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
+
+import { subscribeOn, Subscription} from 'rxjs';
+
 @Component({
   selector: 'app-addexp',
   templateUrl: './addexp.component.html',
@@ -18,13 +22,21 @@ export class AddexpComponent implements OnInit {
   puesto:string="";
   descripcion:string="";
 
-  showAddExp:boolean = true;
+  showAddExp:boolean = false;
 
-  constructor() {
+  //Subcripcion para recibir el observable generado en el UIexperienciaService
+  Sub?:Subscription
+
+  constructor( private uiExperienciaService:UIexperienciaService) {
 
   }
 
   ngOnInit(): void {
+
+    // Se consume el observable de UIexperienciaService que indica si se hizo clic en AddExp.
+    //Copia el valor en showAddExp para hacer el toggle. En el html se muestra o no el formulario dependiendo del valor de esta ultima
+    this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showAddExp=t))
+
   }
 
   onSubmit(){
