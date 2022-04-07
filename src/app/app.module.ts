@@ -16,6 +16,7 @@ import { ExperienciaItemComponent } from './components/experiencia/experiencia-i
 import { AddexpComponent } from './components/experiencia/addexp/addexp.component';
 import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshowexp.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SkillsComponent } from './components/skills/skills.component';
     ExperienciaItemComponent,
     AddexpComponent,
     BtnshowexpComponent,
-    SkillsComponent
+    SkillsComponent,
+    SkillItemComponent
   ],
   imports: [
     BrowserModule,
