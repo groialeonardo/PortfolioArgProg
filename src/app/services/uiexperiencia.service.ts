@@ -1,17 +1,6 @@
-/* import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class UIexperienciaService {
-
-  constructor() { }
-}
-*/
-
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Exp } from '../Interfaces/Exp';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +11,7 @@ export class UIexperienciaService {
   toggleAddExpSubject= new Subject<any>();
 
 
-  constructor() { }
+  constructor( ) { }
 
   //este metodo es el que se llama desde el header para cambiar el valor
   toggleAddExp() {
@@ -38,6 +27,11 @@ export class UIexperienciaService {
 
     return this.toggleAddExpSubject.asObservable();
   }
+
+
+
+
+
 
 
 }

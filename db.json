@@ -3,7 +3,7 @@
     {
       "id": 1,
       "pathlogo": "../../../../assets/img/Logos/Experiencias/Paladini.jpg",
-      "empresa": "Paladini2",
+      "empresa": "Paladini",
       "puesto": "Supervisor de Automatización",
       "inicio": "12-2015",
       "fin": "Actual",
@@ -44,21 +44,8 @@
       "puesto": "Supervisor de Automatizacion",
       "descripcion": "Supervisor de Automatizacion Industrial, Calibracion de Instrumentos de Medicion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?",
       "id": 6
-    },
-    {
-      "pathlogo": "http://localhost:4200/assets/img/Logos/Experiencias/UNR.jpg",
-      "empresa": "asdasdasd159159195",
-      "inicio": "2022-04-15",
-      "fin": "2022-04-13",
-      "puesto": "asdddasdasdaddasdasdas",
-      "descripcion": "asdasdasdasdasdasdasdasdasd",
-      "id": 7
     }
   ],
-
-
-
-
   "skills": [
     {
       "id": 1,
@@ -96,11 +83,5 @@
       "fin": "03-2005",
       "descripcion": "Técnico en Informática y Redes"
     }
-
   ]
-
-
-
-
-
 }
