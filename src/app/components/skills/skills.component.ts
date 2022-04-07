@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SkillsService } from 'src/app/services/skills.service';
+
 import { Skill } from '../../Interfaces/Skill';
 import { SKILL } from 'src/app/mock-skills';
 
@@ -10,13 +12,19 @@ import { SKILL } from 'src/app/mock-skills';
 })
 export class SkillsComponent implements OnInit {
 
-  skills:Skill[] = SKILL;
+  //skills:Skill[] = SKILL;
   // TO DO - IMPLEMENTAR SERVICIO DE LECTURA DE DB
-  //skills:Skill[] = [];
+  skills:Skill[] = [];
 
-  constructor() { }
+  constructor( private skillsSevice:SkillsService ) { }
 
   ngOnInit(): void {
+
+    this.skillsSevice.getSkills().subscribe((skillscallback)=>(
+      this.skills=skillscallback
+      ));
+    console.log(this.skills)
+
   }
 
 }

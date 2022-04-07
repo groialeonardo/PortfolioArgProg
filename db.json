@@ -46,42 +46,86 @@
       "id": 6
     }
   ],
+
   "skills": [
     {
-      "id": 1,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/Paladini.jpg",
-      "empresa": "Paladini2",
-      "puesto": "Supervisor de Automatización",
-      "inicio": "12-2015",
-      "fin": "Actual",
-      "descripcion": "Supervisor de Automatizacion Industrial, Calibracion de Instrumentos de Medicion"
+      "id":1,
+      "percent":90,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/html5w.png",
+      "imageHeight":75,
+      "imageWidth":50
+
     },
+
     {
-      "id": 2,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "empresa": "Axion Energy",
-      "puesto": "Plant Information Engineer",
-      "inicio": "03-2012",
-      "fin": "11-2015",
-      "descripcion": "Forme parte del Procces Control Team como Plant Information Engineer"
+      "id":2,
+      "percent":60,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/cssw.png",
+      "imageHeight":75,
+      "imageWidth":50
+
     },
+
     {
-      "id": 3,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/UNR.jpg",
-      "empresa": "Universidad Nacional de Rosario",
-      "puesto": "Técnico de Metrología Eléctrica",
-      "inicio": "03-2010",
-      "fin": "09-2011",
-      "descripcion": "Realicé trabajos como Técnico de Metrología Eléctrica"
+      "id":3,
+      "percent":90,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/JSw.png",
+      "imageHeight":75,
+      "imageWidth":50
+
     },
+
     {
-      "id": 4,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/MuniRosario.png",
-      "empresa": "Municipalidad de Rosario",
-      "puesto": "Técnico en Informática y Redes",
-      "inicio": "03-2004",
-      "fin": "03-2005",
-      "descripcion": "Técnico en Informática y Redes"
+      "id":4,
+      "percent":30,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/angularw.png",
+      "imageHeight":70,
+      "imageWidth":65
+
+    },
+
+    {
+      "id":5,
+      "percent":30,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/white_git.png",
+      "imageHeight":75,
+      "imageWidth":75
+
+    },
+
+    {
+      "id":6,
+      "percent":30,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/logo-java.png",
+      "imageHeight":80,
+      "imageWidth":45
+
+    },
+
+    {
+      "id":7,
+      "percent":70,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/Jquery.png",
+      "imageHeight":23,
+      "imageWidth":100
+
+    },
+
+    {
+      "id":7,
+      "percent":70,
+      "radius":80,
+      "imageSrc":"../assets/img/Logos/Skills/MySQL.png",
+      "imageHeight":40,
+      "imageWidth":80
+
     }
   ]
 }
