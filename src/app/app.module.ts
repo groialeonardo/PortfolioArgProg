@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header/header.component';
@@ -14,6 +15,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { AddexpComponent } from './components/experiencia/addexp/addexp.component';
 import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshowexp.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 
 @NgModule({
@@ -28,12 +30,32 @@ import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshow
     ExperienciaComponent,
     ExperienciaItemComponent,
     AddexpComponent,
-    BtnshowexpComponent
+    BtnshowexpComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgCircleProgressModule.forRoot({
+      "radius": 120,
+      "space": -10,
+      "outerStrokeGradient": true,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#dce6f9",
+      "outerStrokeGradientStopColor": "#67acc1",
+      "innerStrokeColor": "#e0ebff",
+      "innerStrokeWidth": 10,
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": true,
+      "showBackground": false,
+      "showInnerStroke":false,
+      "showImage": true,
+      "clockwise": true,
+      "startFromZero": true,
+      "responsive":false,
+      "lazy": false})
 
   ],
   providers: [],
