@@ -11,6 +11,7 @@ import { SKILL } from 'src/app/mock-skills';
 })
 export class SkillItemComponent implements OnInit {
   @Input() skill:Skill = SKILL[0];
+  showEditSkill:boolean = false;
 
   constructor() { }
 
