@@ -18,7 +18,11 @@ export class CRUDHttpService {
 
   get(apiUrl:string) :  Observable<any[]> {
 
-    return this.httpClient.get<any[]>(apiUrl);
+    var resp = this.httpClient.get<any[]>(apiUrl);
+
+    console.log(resp)
+
+    return resp
 
   }
 
