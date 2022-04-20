@@ -31,7 +31,7 @@ const httpOptions = {
 
 export class SkillsService {
 
-  apiUrl = "http://localhost:5000/skills";
+  apiUrl = "http://localhost:8080/skills";
 
   constructor( private crudHttpService:CRUDHttpService  ) { }
 

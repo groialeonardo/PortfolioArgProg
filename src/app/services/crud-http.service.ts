@@ -31,7 +31,8 @@ export class CRUDHttpService {
 
   post(toAdd:any, apiUrl:string) : Observable<any> {
 
-    const url = `${apiUrl}/${toAdd.id}`;
+    const url = `${apiUrl}`;
+    //const url = `${apiUrl}/${toAdd.id}`;
     return this.httpClient.post<any>(apiUrl,toAdd,httpOptions)
 
   }

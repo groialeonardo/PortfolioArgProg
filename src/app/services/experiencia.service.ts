@@ -21,7 +21,7 @@ const httpOptions = {
 
 export class ExperienciaService {
 
-  apiUrl = "http://localhost:5000/exps";
+  apiUrl = "http://localhost:8080/exps";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 
