@@ -1,3 +1,48 @@
 .skill-item{
   text-align : center;
 }
+
+
+.changeskill {
+  width: 95%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.slider {
+  -webkit-appearance:none;
+  height: 10px;
+  border-radius: 5px;  
+  background: #ffffff;
+ /* outline: none;*/
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #284953e3;
+  background: #8bbdca;
+  cursor:pointer;
+
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+ .btn {
+   margin: 3%;
+ }

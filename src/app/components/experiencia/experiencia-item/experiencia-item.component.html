@@ -9,18 +9,29 @@
     <div class="flex-grow-1 ms-3">
 
       <div id="empresa" class="row">
-        <div class="col-11">
+        <div class="col-9">
           <h2 class=" d-inline">{{exp.empresa}}</h2>
           <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
         </div>
-        <div class="col-1">
+        <div class="col-2">
+          
           <button
-            class="btn btn-danger"
-            (click)= "onDelete(exp)"
+          class="button"
+          (click)= "onToggleEditExp()"          
+          >
+          <span>Editar</span>
+          </button>
+        </div>
+        <div class="col-1">
+
+          <button
+              class="button-x"
+              (click)= "onDelete(exp)"
           >
           X
           </button>
         </div>
+        
       </div>
 
       <h4>{{exp.puesto}}</h4>
@@ -109,7 +120,7 @@
 
       </div>
 
-      <input type="submit" value="Guardar Cambios" class="btn btn-block btn-primary" />
+      <input type="submit" value="Guardar Cambios" class="button-submit" />
 
 
     </form>

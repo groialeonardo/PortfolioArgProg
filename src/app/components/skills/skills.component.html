@@ -8,12 +8,13 @@
         class="skill-item col-2"
         *ngFor="let skill of skills"
         [skill] = skill
+        (EditEvent)= "editSkill($event)"
 
       ></app-skill-item>
 
 
 
-<!--TO DO / Borrar estos ultimos-->
+<!--TO DO / Borrar estos ultimos
 
     <div class="col-2">
 
@@ -42,7 +43,7 @@
 
     </div>
 
-
+-->
 
 
 

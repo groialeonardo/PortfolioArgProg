@@ -29,7 +29,7 @@ export class ExperienciaItemComponent implements OnInit {
   ngOnInit(): void {
 
     // TO DO , revisar esta implementacion
-    this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showEditExp=t))
+   // this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showEditExp=t)) //se cambio por toogle local
   }
 
   onDelete(exp:Exp) {
@@ -60,5 +60,12 @@ export class ExperienciaItemComponent implements OnInit {
 
 
   }
+
+  onToggleEditExp() {
+
+    this.showEditExp = !this.showEditExp
+    
+  }
+
 
 }

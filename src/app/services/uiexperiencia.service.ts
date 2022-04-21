@@ -8,7 +8,7 @@ import { Observable, Subject } from 'rxjs';
 export class UIexperienciaService {
 
   private addExpflag:boolean = false;
-  toggleAddExpSubject= new Subject<any>();
+  toggleAddExpSubject= new Subject<any>(); 
 
 
   constructor( ) { }
@@ -27,11 +27,6 @@ export class UIexperienciaService {
 
     return this.toggleAddExpSubject.asObservable();
   }
-
-
-
-
-
 
 
 }

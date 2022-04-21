@@ -8,8 +8,53 @@
 
   ></circle-progress>
 
-<div *ngIf="showEditSkill">
-  <input type="text">
+
+
+  <form class="form-horizontal" *ngIf="showEditSkill" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="skill" class ="control-label">Habilidad</label>
+      <input type="text" class="form-control changeskill" id="skill" name="skill"  [(ngModel)]="skill.imageSrc">
+    </div>
+
+    <div class="form-group">
+        <label for="porcentaje" >Porcentaje</label>
+        <div>
+          <input type="range" class="slider" id="percent" name="percent"  [(ngModel)]="skill.percent">
+        </div>    
+    </div>
+
+    <div class="form-group">
+      <label for="radius">Radius</label>
+      <div>
+        <input type="range"  class="slider" id="radius" name="radius"  [(ngModel)]="skill.radius">
+      </div>      
+    </div>
+
+    <div class="form-group">
+      <label for="imageHeight">Altura</label>
+      <div>
+        <input type="range"  class="slider" id="imageHeight" name="imageHeight"  [(ngModel)]="skill.imageHeight">
+      </div>      
+    </div>
+
+    <div class="form-group">
+      <label for="imageWidth">Ancho</label>
+      <div>
+        <input type="range"  class="slider" id="imageWidth" name="imageWidth"  [(ngModel)]="skill.imageWidth">
+      </div>      
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-outline-light" color="white">Guardar Cambios</button>
+    </div>
+    
+  </form>
+
+
+
+<div *ngIf="!showEditSkill">
+  <input type="text" [(ngModel)]="skill.imageSrc">
   <input type="text">
   <input type="text">
   <input type="text">

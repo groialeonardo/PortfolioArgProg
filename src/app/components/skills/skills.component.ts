@@ -27,4 +27,9 @@ export class SkillsComponent implements OnInit {
 
   }
 
+  editSkill(skill:Skill) {
+
+    this.skillsSevice.updateSkill(skill).subscribe()
+  }
+
 }
