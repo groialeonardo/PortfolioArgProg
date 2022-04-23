@@ -1,52 +1,58 @@
 <div class="container-fluid">
+  <div class="row inner centeritems" >
+
+    <app-btnshowexp
+      bgcolor="{{showAddSkill ? '#7e1921' : '#19657e'}}"
+      border="1px solid #FFFFFF"
+      color="{{showAddSkill ? 'white'  : 'white' }}"
+      text="{{showAddSkill ? 'Cerrar' : 'Agregar Habilidad'}}"
+      (onBbtnClick)="onToggleAddskill()"
+      *ngIf="!canEdit"
+      class="col-10 d-flex"
+    >
+    </app-btnshowexp>
+
+    <app-editbtn
+      border="1px solid #FFFFFF"
+      style="padding: 5px;"
+      class="col-2 centeritems"
+      (onBbtnClick)="onToggleEditskill()"
 
 
-  <div class="row inner">
+    ></app-editbtn>
 
 
+
+  </div>
+
+  <div class="row inner" >
+
+    <div class="add col-2" *ngIf ="showAddSkill">
       <app-skill-item
-        class="skill-item col-2"
-        *ngFor="let skill of skills"
-        [skill] = skill
-        (EditEvent)= "editSkill($event)"
-
+        class="col-12 skill-item "
+        (editEvent)= "saveSkill($event)"
+        buttonText="Agregar Habilidad"
+        [showEditSkill]=true
+        [showDelete]=false
       ></app-skill-item>
-
-
-
-<!--TO DO / Borrar estos ultimos
-
-    <div class="col-2">
-
-      <circle-progress
-      [percent]="20"
-      [radius]="80"
-      [imageSrc]="'../assets/img/Logos/Skills/html5w2.png'"
-      [imageHeight]="80"
-      [imageWidth]="80"
-
-      ></circle-progress>
-
     </div>
 
-    <div class="col-2">
+    <app-skill-item
 
-      <circle-progress
-      [percent]="70"
-      [radius]="80"
-      [imageSrc]="'../assets/img/Logos/Skills/html5wOriginal.png'"
-      [imageHeight]="80"
-      [imageWidth]="55"
+      *ngFor="let skill of skills"
 
-      ></circle-progress>
+      buttonText="Guardar Cambios"
+      [skill] = skill
+      [showEditSkill]=showEditSkill
+      (editEvent)= "editSkill($event)"
 
+      [showDelete]=true
+      (deleteEvent)="deleteSkill($event)"
 
-    </div>
-
--->
+      class="skill-item col-2"
 
 
-
+    ></app-skill-item>
 
   </div>
 

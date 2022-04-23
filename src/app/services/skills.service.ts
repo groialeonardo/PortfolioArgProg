@@ -16,7 +16,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
-import { Skill } from '../Interfaces/Skill';
+import { ISkill } from '../Interfaces/ISkill';
 
 
 const httpOptions = {
@@ -35,7 +35,7 @@ export class SkillsService {
 
   constructor( private crudHttpService:CRUDHttpService  ) { }
 
-  getSkills() :  Observable<Skill[]> {
+  getSkills() :  Observable<ISkill[]> {
 
      const a = this.crudHttpService.get(this.apiUrl);
 
@@ -45,19 +45,19 @@ export class SkillsService {
 
   }
 
-  deleteSkill(skill:Skill) : Observable<Skill> {
+  deleteSkill(skill:ISkill) : Observable<ISkill> {
 
     return this.crudHttpService.delete(skill,this.apiUrl)
 
    }
 
-  addSkill(skill:Skill) : Observable<Skill> {
+  addSkill(skill:ISkill) : Observable<ISkill> {
 
     return this.crudHttpService.post(skill,this.apiUrl)
 
   }
 
-  updateSkill(skill:Skill) : Observable<Skill> {
+  updateSkill(skill:ISkill) : Observable<ISkill> {
 
     return this.crudHttpService.put(skill,this.apiUrl)
 

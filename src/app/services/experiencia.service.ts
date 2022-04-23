@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Exp } from '../Interfaces/Exp';
+import { IExp } from '../Interfaces/IExp';
 
 
 const httpOptions = {
@@ -25,7 +25,7 @@ export class ExperienciaService {
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 
-  getExps() :  Observable<Exp[]> {
+  getExps() :  Observable<IExp[]> {
 
     /*const exp = of (EXPS) //Para traer desde archivo monk-task
     return  exp;*/
@@ -37,7 +37,7 @@ export class ExperienciaService {
   }
 
 
-  deleteExps(exp:Exp) : Observable<Exp> {
+  deleteExps(exp:IExp) : Observable<IExp> {
 
    /* const url = `${this.apiUrl}/${exp.id}`;
     return this.httpClient.delete<Exp>(url)*/
@@ -47,7 +47,7 @@ export class ExperienciaService {
 
    }
 
-  addExp(exp:Exp) : Observable<Exp> {
+  addExp(exp:IExp) : Observable<IExp> {
 
     /*const url = `${this.apiUrl}/${exp.id}`;
     return this.httpClient.post<Exp>(this.apiUrl,exp,httpOptions)*/
@@ -56,7 +56,7 @@ export class ExperienciaService {
 
   }
 
-  updateExp(exp:Exp) : Observable<Exp> {
+  updateExp(exp:IExp) : Observable<IExp> {
 
     /*const url = `${this.apiUrl}/${exp.id}`;
     return this.httpClient.put<Exp>(url,exp,httpOptions)*/

@@ -1,10 +1,12 @@
 import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 
-import { Exp } from '../../../Interfaces/Exp';
+import { IExp } from '../../../Interfaces/IExp';
+import { Exp } from 'src/app/Model/Exp';
 
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { subscribeOn, Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-addexp',
@@ -13,14 +15,15 @@ import { subscribeOn, Subscription} from 'rxjs';
 })
 export class AddexpComponent implements OnInit {
 
-  @Output() addExpEvent:EventEmitter<Exp> = new EventEmitter()
+  @Output() addExpEvent:EventEmitter<IExp> = new EventEmitter()
 
-  pathlogo:string ="";
+  /*pathlogo:string ="";
   empresa:string ="";
   inicio:string = "";
   fin:string = "";
   puesto:string="";
-  descripcion:string="";
+  descripcion:string="";*/
+  exp:IExp = new Exp();
 
   showAddExp:boolean = false;
 
@@ -41,23 +44,23 @@ export class AddexpComponent implements OnInit {
 
   onSubmit(){
 
-    if(this.empresa.length === 0){
+    if(this.exp.empresa.length === 0){
       alert("Por Favor complete el nombre de la empresa");
       return
     }
 
-    if(this.puesto.length === 0){
+    if(this.exp.puesto.length === 0){
       alert("Por Favor complete el nombre del puesto");
       return
     }
 
-    const {pathlogo,empresa,inicio,fin,puesto,descripcion} = this;
+    /*const {pathlogo,empresa,inicio,fin,puesto,descripcion} = this;
 
     const newExp = {pathlogo,empresa,inicio,fin, puesto,descripcion};
 
-    console.log(newExp)
+    console.log(newExp)*/
 
-    this.addExpEvent.emit(newExp)
+    this.addExpEvent.emit(this.exp);
 
 
   }

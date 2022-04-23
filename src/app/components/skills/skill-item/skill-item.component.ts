@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
-import { Skill } from '../../../Interfaces/Skill';
-import { SKILL } from 'src/app/mock-skills';
+import { ISkill } from '../../../Interfaces/ISkill';
+import { Skill } from '../../../Model/Skill';
+//import { SKILL } from 'src/app/mock-skills';
 
 @Component({
   selector: 'app-skill-item',
@@ -10,12 +11,16 @@ import { SKILL } from 'src/app/mock-skills';
   styleUrls: ['./skill-item.component.css']
 })
 export class SkillItemComponent implements OnInit {
-  
-  @Input() skill:Skill = SKILL[0];
+
+  //@Input() skill:Skill = SKILL[0];
+  @Input() skill:ISkill = new Skill();
+  @Input() buttonText:string="";
 
   // TO DO , revisar esta implementacion
-  @Output() EditEvent:EventEmitter<Skill> = new EventEmitter();
-  showEditSkill:boolean = true;
+  @Output() editEvent:EventEmitter<Skill> = new EventEmitter();
+  @Output() deleteEvent:EventEmitter<Skill> = new EventEmitter();
+  @Input () showEditSkill:boolean = false;
+  @Input () showDelete:boolean = true;
 
   constructor() { }
 
@@ -28,13 +33,17 @@ export class SkillItemComponent implements OnInit {
         alert("Por Favor elija una habilidad");
         return
       }
- 
-      
+
+
       console.log(this.skill) //TO DO borrar este log
-  
-      this.EditEvent.emit(this.skill)
-  
-  
+
+      this.editEvent.emit(this.skill)
+
+
+    }
+
+    onDelete(){
+      this.deleteEvent.emit(this.skill)
     }
 
 }

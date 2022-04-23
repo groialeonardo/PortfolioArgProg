@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
-import { Exp } from 'src/app/Interfaces/Exp';
+import { IExp } from 'src/app/Interfaces/IExp';
 import { EXPS } from 'src/app/mock-exps';
 
 @Component({
@@ -15,7 +15,7 @@ import { EXPS } from 'src/app/mock-exps';
 export class ExperienciaComponent implements OnInit {
 
   //exps:Exp[] = EXPS;
-  exps:Exp[] = [];
+  exps:IExp[] = [];
   subcription?:Subscription;
   showAddExp:boolean = false;
 
@@ -33,19 +33,19 @@ export class ExperienciaComponent implements OnInit {
 
   }
 
-  addExp(exp:Exp) {
+  addExp(exp:IExp) {
 
     this.experienciaService.addExp(exp).subscribe((t)=>(
       this.exps.push(t)
     ))
   }
 
-  editExp(exp:Exp) {
+  editExp(exp:IExp) {
 
     this.experienciaService.updateExp(exp).subscribe()
   }
 
-  deleteExp(exp:Exp) {
+  deleteExp(exp:IExp) {
     this.experienciaService.deleteExps(exp).subscribe(()=>(
       this.exps = this.exps.filter(t => t.id !==exp.id ))
     );

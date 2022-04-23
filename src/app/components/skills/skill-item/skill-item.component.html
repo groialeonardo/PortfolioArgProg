@@ -1,17 +1,32 @@
 
-<circle-progress
-  [percent]="skill.percent"
-  [radius]="skill.radius"
-  [imageSrc]="skill.imageSrc"
-  [imageHeight]="skill.imageHeight"
-  [imageWidth]="skill.imageWidth"
+<div class="col-12">
+  <div class="row">
+    <div class="col-1 "></div>
+    <div class="col-10 ">
 
-  ></circle-progress>
+      <circle-progress
+      [percent]="skill.percent"
+      [radius]="skill.radius"
+      [imageSrc]="skill.imageSrc"
+      [imageHeight]="skill.imageHeight"
+      [imageWidth]="skill.imageWidth"
+      class="col-12"
+      ></circle-progress>
+
+    </div>
+    <div class="col-1 margneg">
+      <app-deletebtn
+       *ngIf="showDelete&&showEditSkill"
+       (onBbtnClick)="onDelete()"
+      >
+      </app-deletebtn>
+    </div>
+  </div>
 
 
 
-  <form class="form-horizontal" *ngIf="showEditSkill" (ngSubmit)="onSubmit()">
-    
+  <form class="form-horizontal edit col-12" *ngIf="showEditSkill" (ngSubmit)="onSubmit()">
+
     <div class="form-group">
       <label for="skill" class ="control-label">Habilidad</label>
       <input type="text" class="form-control changeskill" id="skill" name="skill"  [(ngModel)]="skill.imageSrc">
@@ -21,43 +36,37 @@
         <label for="porcentaje" >Porcentaje</label>
         <div>
           <input type="range" class="slider" id="percent" name="percent"  [(ngModel)]="skill.percent">
-        </div>    
+        </div>
     </div>
-
+<!-- TO DO : pensar si este parametro lo pongo editable
     <div class="form-group">
       <label for="radius">Radius</label>
       <div>
         <input type="range"  class="slider" id="radius" name="radius"  [(ngModel)]="skill.radius">
-      </div>      
-    </div>
+      </div>
+    </div>-->
 
     <div class="form-group">
       <label for="imageHeight">Altura</label>
       <div>
         <input type="range"  class="slider" id="imageHeight" name="imageHeight"  [(ngModel)]="skill.imageHeight">
-      </div>      
+      </div>
     </div>
 
     <div class="form-group">
       <label for="imageWidth">Ancho</label>
       <div>
         <input type="range"  class="slider" id="imageWidth" name="imageWidth"  [(ngModel)]="skill.imageWidth">
-      </div>      
+      </div>
     </div>
 
     <div>
-      <button type="submit" class="btn btn-outline-light" color="white">Guardar Cambios</button>
+      <button type="submit" class="btn btn-outline-light" color="white">{{buttonText}}</button>
     </div>
-    
+
   </form>
 
 
+</div>
 
-<div *ngIf="!showEditSkill">
-  <input type="text" [(ngModel)]="skill.imageSrc">
-  <input type="text">
-  <input type="text">
-  <input type="text">
-  <input type="text">
-  <input type="text">
- </div>
+

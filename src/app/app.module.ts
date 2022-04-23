@@ -17,6 +17,8 @@ import { AddexpComponent } from './components/experiencia/addexp/addexp.componen
 import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshowexp.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
+import { DeletebtnComponent } from './components/general/deletebtn/deletebtn.component';
+import { EditbtnComponent } from './components/general/editbtn/editbtn.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { SkillItemComponent } from './components/skills/skill-item/skill-item.co
     AddexpComponent,
     BtnshowexpComponent,
     SkillsComponent,
-    SkillItemComponent
+    SkillItemComponent,
+    DeletebtnComponent,
+    EditbtnComponent
   ],
   imports: [
     BrowserModule,

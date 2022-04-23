@@ -1,6 +1,6 @@
-import {Exp} from "./Interfaces/Exp"
+import {IExp} from "./Interfaces/IExp"
 
-export const EXPS: Exp[] = [
+export const EXPS: IExp[] = [
   {
     id:1,
     pathlogo:"../../../../assets/img/Logos/Experiencias/Paladini.jpg",

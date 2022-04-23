@@ -9,14 +9,18 @@
 
 <div class="row">
   <app-btnshowexp
-  color="{{showAddExp ? '#7e1921' : '#19657e'}}"
+  bgcolor="{{showAddExp ? '#7e1921' : '#19657e'}}"
+  border="none"
   text="{{showAddExp ? 'Cerrar' : 'Agregar Experiencia'}}"
+  color="white"
+
   (onBbtnClick)="toggleAddExp()"
   *ngIf="hasRoute('/')"
   >
   </app-btnshowexp>
 </div>
 
+<!-- TODO : Reemplazar esto por un experiencia item-->
  <app-addexp
   (addExpEvent) = "addExp($event)"
  ></app-addexp>

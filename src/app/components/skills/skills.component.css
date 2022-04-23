@@ -2,6 +2,11 @@
   --bs-gutter-x: 0;
 }
 
+.centeritems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .inner {
   background-color: #19657e;
@@ -18,4 +23,11 @@
 
 .skill-item{
   text-align : center;
+
+}
+
+.add {
+  border: 1px dashed #ffffffa4;
+  border-radius: 10px;
+
 }

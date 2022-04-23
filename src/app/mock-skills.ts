@@ -1,6 +1,6 @@
-import {Skill} from "./Interfaces/Skill"
+import {ISkill} from "./Interfaces/ISkill"
 
-export const SKILL: Skill[] = [
+export const SKILL: ISkill[] = [
   {
     id:1,
     percent:70,

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
-import { Exp } from '../../../Interfaces/Exp';
+import { IExp } from '../../../Interfaces/IExp';
 import { EXPS } from '../../../mock-exps';
 
 // TO DO , revisar esta implementacion
@@ -14,11 +14,12 @@ import { subscribeOn, Subscription} from 'rxjs';
 })
 export class ExperienciaItemComponent implements OnInit {
 
-  @Input() exp:Exp = EXPS[0];
-  @Output() onDeleteEvent:EventEmitter<Exp> = new EventEmitter();
+  @Input() exp:IExp = EXPS[0];
+
+  @Output() onDeleteEvent:EventEmitter<IExp> = new EventEmitter();
 
   // TO DO , revisar esta implementacion
-  @Output() EditEvent:EventEmitter<Exp> = new EventEmitter();
+  @Output() EditEvent:EventEmitter<IExp> = new EventEmitter();
 
 
   showEditExp:boolean=false;
@@ -32,7 +33,7 @@ export class ExperienciaItemComponent implements OnInit {
    // this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showEditExp=t)) //se cambio por toogle local
   }
 
-  onDelete(exp:Exp) {
+  onDelete(exp:IExp) {
     this.onDeleteEvent.emit(exp);
 
   }
@@ -54,7 +55,7 @@ export class ExperienciaItemComponent implements OnInit {
 
  //   const newExp = {pathlogo,empresa,inicio,fin, puesto,descripcion};
 
-    console.log(this.exp)
+ //   console.log(this.exp)
 
     this.EditEvent.emit(this.exp)
 
@@ -64,7 +65,7 @@ export class ExperienciaItemComponent implements OnInit {
   onToggleEditExp() {
 
     this.showEditExp = !this.showEditExp
-    
+
   }
 
 

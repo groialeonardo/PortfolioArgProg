@@ -1,4 +1,4 @@
-export interface Exp {
+export interface IExp {
   id?:number;
   pathlogo:string;
   empresa:string;
