@@ -13,6 +13,14 @@
 
 }
 
+#title{
+  /*border-top:4px solid #49879c; */
+  border-top:4px solid #8eb5c5; 
+  border-top-right-radius: 20px;
+  border-bottom: 2px solid #7898a5; 
+  /*border-bottom: 4px solid #3e7b8f;*/
+}
+
 .container-fluid {
   padding-left: 0%;
   padding-top: 0.5%;

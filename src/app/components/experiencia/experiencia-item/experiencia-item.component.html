@@ -3,7 +3,7 @@
 
 
     <div class="flex-shrink-0">
-        <img src="{{exp.pathlogo}}" alt="Logo"  class="img-fluid img-logos">
+        <img src="{{exp.pathlogo}}" alt="- Logo"  class="img-fluid img-logos">
     </div>
 
     <div class="flex-grow-1 ms-3">
@@ -17,12 +17,15 @@
         <div class="col-2">
           <app-editbtn
             (click)= "onToggleEditExp()"
+            *ngIf="showDelete"
+            
           ></app-editbtn>
 
         </div>
 
         <div class="col-1">
           <app-deletebtn
+            *ngIf="showDelete"
             (click)= "onDelete(exp)"
           ></app-deletebtn>
         </div>

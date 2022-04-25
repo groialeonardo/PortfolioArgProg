@@ -1,11 +1,13 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 
 import { IExp } from '../../../Interfaces/IExp';
-import { EXPS } from '../../../mock-exps';
+import { Exp } from 'src/app/Model/Exp';
+//import { EXPS } from '../../../mock-exps';
 
 // TO DO , revisar esta implementacion
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
-import { subscribeOn, Subscription} from 'rxjs';
+//import { subscribeOn, Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-experiencia-item',
@@ -14,16 +16,19 @@ import { subscribeOn, Subscription} from 'rxjs';
 })
 export class ExperienciaItemComponent implements OnInit {
 
-  @Input() exp:IExp = EXPS[0];
+  @Input() exp:IExp = new  Exp();
+  @Input() buttonText:string="";
 
-  @Output() onDeleteEvent:EventEmitter<IExp> = new EventEmitter();
+  @Output() editEvent:EventEmitter<IExp> = new EventEmitter();
+// @Output() onDeleteEvent:EventEmitter<IExp> = new EventEmitter();
+  @Output() deleteEvent:EventEmitter<IExp> = new EventEmitter();
+  
+  @Input () showEditExp:boolean = false;
+  @Input () showDelete:boolean = true;
 
-  // TO DO , revisar esta implementacion
-  @Output() EditEvent:EventEmitter<IExp> = new EventEmitter();
 
-
-  showEditExp:boolean=false;
-  Sub?:Subscription
+  //showEditExp:boolean=false;
+  //Sub?:Subscription
 
   constructor( private uiExperienciaService:UIexperienciaService ) { }
 
@@ -34,7 +39,7 @@ export class ExperienciaItemComponent implements OnInit {
   }
 
   onDelete(exp:IExp) {
-    this.onDeleteEvent.emit(exp);
+    this.deleteEvent.emit(exp);
 
   }
 
@@ -57,7 +62,7 @@ export class ExperienciaItemComponent implements OnInit {
 
  //   console.log(this.exp)
 
-    this.EditEvent.emit(this.exp)
+    this.editEvent.emit(this.exp)
 
 
   }
