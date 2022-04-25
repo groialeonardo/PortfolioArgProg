@@ -1,0 +1,136 @@
+<div class="row education-item ">
+    <div class="d-flex ">
+  
+  
+      <div class="flex-shrink-0">
+          <img src="{{education.pathlogo}}" alt="- Logo"  class="img-fluid img-logos">
+      </div>
+  
+      <div class="flex-grow-1 ms-3">
+  
+        <div id="institucion" class="row">
+          <div class="col-9">
+            <h2 class=" d-inline">{{education.institucion}}</h2>
+            <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{education.inicio}} hasta {{education.fin}}</i></small></h5>
+          </div>
+  
+          <div class="col-2">
+            <app-editbtn
+              (click)= "onToggleEditEducation()"
+              *ngIf="showDelete"
+              
+            ></app-editbtn>
+  
+          </div>
+  
+          <div class="col-1">
+            <app-deletebtn
+              *ngIf="showDelete"
+              (click)= "onDelete(education)"
+            ></app-deletebtn>
+          </div>
+  
+        </div>
+  
+        <h4>{{education.titulo}}</h4>
+        <p> {{education.descripcion}} PRUEBA</p>
+  
+  
+      </div>
+   </div>
+  
+  <!-- TO DO : pasar esto a un componente ///mmm capaz queda aca -->
+  
+    <div class="addeduc" *ngIf ="showEditEducation">
+  
+      <form class="inline" (ngSubmit)="onSubmit()" >
+  
+        <div class="form-control">
+          <label for="text">Nombre de la Institución</label>
+          <input
+            type="text"
+            name="institucion"
+            id="institucion"
+            placeholder="Agregar nombre de la Institución"
+            [(ngModel)]="education.institucion"
+          />
+        </div>
+  
+        <div class="form-control">
+          <label for="text">Logo de la Institución</label>
+          <input
+            type="text"
+            name="pathlogo"
+            id="pathlogo"
+            placeholder="Ingrese el path correspondiente al logo de la Institución"
+            [(ngModel)]="education.pathlogo"
+            
+          />
+        </div>
+        <div id="fechas">
+          <div class="form-control">
+            <label for="fechaInicio">Inicio</label>
+            <input
+              type="date"
+              name="inicio"
+              id="inicio"
+              placeholder="Fecha de Inicio (MM-AAAA)"
+              [(ngModel)]="education.inicio"
+            />
+          </div>
+  
+          <div class="form-control">
+            <label for="fechaFin">Fin</label>
+            <input
+              type="date"
+              name="fin"
+              id="fin"
+              placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
+              [(ngModel)]="education.fin"
+  
+            />
+          </div>
+  
+        </div>
+  
+  
+        <div class="form-control">
+          <label for="nombreTitulo">Nombre del título</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Agregar nombre del título"
+            [(ngModel)]="education.titulo"
+          />
+        </div>
+  
+        <div class="form-control">
+          <label for="descripcion">Descripcion</label>
+          <div class="row">
+  
+              <textarea
+              name="descripcion"
+              id="descripcion"
+              cols="100"
+              rows="10"
+              placeholder="Agregar descripcion"
+              [(ngModel)]="education.descripcion">
+  
+              </textarea>
+  
+  
+          </div>
+  
+        </div>
+  
+        <input type="submit" value="Guardar Cambios" class="button-submit" />
+  
+  
+      </form>
+  
+  
+    </div>
+  
+  
+  </div>

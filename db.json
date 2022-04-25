@@ -46,86 +46,135 @@
       "id": 6
     }
   ],
-
   "skills": [
     {
-      "id":1,
-      "percent":90,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/html5w.png",
-      "imageHeight":75,
-      "imageWidth":50
-
+      "id": 1,
+      "percent": 90,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/html5w.png",
+      "imageHeight": 75,
+      "imageWidth": 50
     },
-
     {
-      "id":2,
-      "percent":60,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/cssw.png",
-      "imageHeight":75,
-      "imageWidth":50
-
+      "id": 2,
+      "percent": 60,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/cssw.png",
+      "imageHeight": 75,
+      "imageWidth": 50
     },
-
     {
-      "id":3,
-      "percent":90,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/JSw.png",
-      "imageHeight":75,
-      "imageWidth":50
-
+      "id": 3,
+      "percent": 90,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/JSw.png",
+      "imageHeight": 75,
+      "imageWidth": 50
     },
-
     {
-      "id":4,
-      "percent":30,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/angularw.png",
-      "imageHeight":70,
-      "imageWidth":65
-
+      "id": 4,
+      "percent": 30,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/angularw.png",
+      "imageHeight": 70,
+      "imageWidth": 65
     },
-
     {
-      "id":5,
-      "percent":30,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/white_git.png",
-      "imageHeight":75,
-      "imageWidth":75
-
+      "id": 5,
+      "percent": 30,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/white_git.png",
+      "imageHeight": 75,
+      "imageWidth": 75
     },
-
     {
-      "id":6,
-      "percent":30,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/logo-java.png",
-      "imageHeight":80,
-      "imageWidth":45
-
+      "id": 6,
+      "percent": 30,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/logo-java.png",
+      "imageHeight": 80,
+      "imageWidth": 45
     },
-
     {
-      "id":7,
-      "percent":70,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/Jquery.png",
-      "imageHeight":23,
-      "imageWidth":100
-
+      "id": 7,
+      "percent": 70,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/Jquery.png",
+      "imageHeight": 23,
+      "imageWidth": 100
     },
-
     {
-      "id":7,
-      "percent":70,
-      "radius":80,
-      "imageSrc":"../assets/img/Logos/Skills/MySQL.png",
-      "imageHeight":40,
-      "imageWidth":80
-
+      "id": 7,
+      "percent": 70,
+      "radius": 80,
+      "imageSrc": "../assets/img/Logos/Skills/MySQL.png",
+      "imageHeight": 40,
+      "imageWidth": 80
+    }
+  ],
+  "educations": [
+    {
+      "id": 1,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/UNR.jpg",
+      "institucion": "Universidad Nacional de Rosario",
+      "titulo": "Ingeniero Electrónico",
+      "inicio": "2022-04-20",
+      "fin": "2022-04-23",
+      "descripcion": "ME RECIBIIiiiiiiiiiiiiiiiiiiiiiiewrwerwerwer"
+    },
+    {
+      "id": 2,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-31",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
+    },
+    {
+      "id": 3,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-31",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
+    },
+    {
+      "id": 4,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-31",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
+    },
+    {
+      "id": 5,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-31",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
+    },
+    {
+      "id": 6,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-31",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
+    },
+    {
+      "id": 7,
+      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
+      "institucion": "asdasdasdasd",
+      "inicio": "2022-03-30",
+      "fin": "2022-03-10",
+      "titulo": "asdasdasda",
+      "descripcion": "1519195195"
     }
   ]
 }

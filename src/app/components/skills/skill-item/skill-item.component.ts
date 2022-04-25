@@ -16,9 +16,8 @@ export class SkillItemComponent implements OnInit {
   @Input() skill:ISkill = new Skill();
   @Input() buttonText:string="";
 
-  // TO DO , revisar esta implementacion
-  @Output() editEvent:EventEmitter<Skill> = new EventEmitter();
-  @Output() deleteEvent:EventEmitter<Skill> = new EventEmitter();
+  @Output() editEvent:EventEmitter<ISkill> = new EventEmitter();
+  @Output() deleteEvent:EventEmitter<ISkill> = new EventEmitter();
   @Input () showEditSkill:boolean = false;
   @Input () showDelete:boolean = true;
 
@@ -33,13 +32,8 @@ export class SkillItemComponent implements OnInit {
         alert("Por Favor elija una habilidad");
         return
       }
-
-
-      console.log(this.skill) //TO DO borrar este log
-
+     // console.log(this.skill) //TO DO borrar este log
       this.editEvent.emit(this.skill)
-
-
     }
 
     onDelete(){

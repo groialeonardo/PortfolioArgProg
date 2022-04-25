@@ -1,0 +1,107 @@
+.education-item{
+    border: 2px solid #19657ea4;
+    border-radius: 30px;
+    margin: 0.4%;
+  
+  /*para centrar*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .addeduc{
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  
+    border: 3px dotted #19657ea4;
+    border-radius: 30px;
+    margin: 0.4%;
+    padding: 0.5%;
+  */
+  
+  }
+  
+  .img-logos {
+    max-width: 70px;
+  }
+  
+  h1,h2,h3,h4,div,p{
+    padding: 5px;
+  }
+  
+  h2{
+    margin-right: 10px;
+  }
+  h4,p{
+    margin-left: 20px;
+    margin-right: 4%;
+  }
+  
+  #empresa{
+    margin-bottom: 10px;
+  }
+  
+  .form-control  {
+  border: none;
+  }
+  
+  .form-control input {
+    width: 100%;
+    height: 40px;
+    margin: 5px;
+    padding: 3px 7px;
+    font-size: 17px;
+    border-radius: 15px;
+    border: 2px solid #19657ea4;  
+  }
+  
+  label{
+    /*color:  #19657e;*/
+    color: #15576d;
+    font-weight: 600;
+    font-size:large;
+  }
+  
+  textarea{
+    border-radius: 15px;
+    border: 2px solid #19657ea4; 
+  }
+  
+  .button-submit {
+    display: inline-block;
+    border-radius: 15px;
+    background-color:#ca032e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 160px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin:20px;
+    opacity: 0.75;
+  }
+  
+  .button-submit:hover {
+    opacity: 1;
+  
+  }
+  
+  #fin, #inicio{
+    display: flex;
+    width: 150px;
+  }
+  
+  #fechas{
+    display: flex;
+    align-items: left;
+  }
+  
+  #descripcion{
+    display: flex;
+    vertical-align: middle;
+  }
+  

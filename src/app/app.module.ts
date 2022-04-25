@@ -19,6 +19,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
 import { DeletebtnComponent } from './components/general/deletebtn/deletebtn.component';
 import { EditbtnComponent } from './components/general/editbtn/editbtn.component';
+import { EducationComponent } from './components/education/education.component';
+import { EducationItemComponent } from './components/education/education-item/education-item.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { EditbtnComponent } from './components/general/editbtn/editbtn.component
     SkillsComponent,
     SkillItemComponent,
     DeletebtnComponent,
-    EditbtnComponent
+    EditbtnComponent,
+    EducationComponent,
+    EducationItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+//TO DO : Borrar
+
 import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 
 import { IExp } from '../../../Interfaces/IExp';

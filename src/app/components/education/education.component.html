@@ -1,0 +1,62 @@
+<div class="container-fluid">
+
+    <div class="row inner" id="title">
+  
+      <div class="col-lg-12 text-center">
+        <h1>Educación</h1>
+      </div>
+    
+    </div>
+  
+  </div>
+
+  <div class="row">
+    <app-btnshowexp
+    bgcolor="{{showAddEducation ? '#7e1921' : '#19657e'}}"
+    border="none"
+    text="{{showAddEducation ? 'Cerrar' : 'Agregar Educación'}}"
+    color="white"
+  
+    (onBbtnClick)="toggleAddEducation()"
+    *ngIf="hasRoute('/')"
+    >
+    </app-btnshowexp>
+  </div>
+
+  <div class="row ">
+
+    <div class="col-12" *ngIf ="showAddEducation">
+
+        <app-education-item
+
+        (editEvent)= "addEducation($event)"
+        buttonText="Agregar Educación"
+        [showEditEducation]=true
+        [showDelete]=false
+
+        >
+        </app-education-item>
+
+    </div>
+
+    <div class="row ">
+
+      <div class="col-lg-12">
+    
+        <app-education-item
+    
+          *ngFor="let education of educations"
+          [education] = education
+          (deleteEvent)="deleteEducation(education)"
+          (editEvent)= "editEducation($event)"
+    
+        >
+        </app-education-item>
+    
+      </div>
+    
+    </div>
+
+</div>
+
+ 
