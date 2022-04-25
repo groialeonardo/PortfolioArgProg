@@ -15,7 +15,7 @@
   align-items: center;
   width: 80%;
 
-  border: 2px dotted #19657ea4;
+  border: 3px dotted #19657ea4;
   border-radius: 30px;
   margin: 0.4%;
   padding: 0.5%;
@@ -53,8 +53,20 @@ border: none;
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  border-radius: 15px;
+  border: 2px solid #19657ea4;  
 }
 
+label{
+  color:  #19657e;
+  font-weight: 600;
+  font-size:large;
+}
+
+textarea{
+  border-radius: 15px;
+  border: 2px solid #19657ea4; 
+}
 
 .button-submit {
   display: inline-block;
