@@ -8,9 +8,9 @@
   
       <div class="flex-grow-1 ms-3">
   
-        <div id="institucion" class="row">
+        <div id="educacion" class="row">
           <div class="col-9">
-            <h2 class=" d-inline">{{education.institucion}}</h2>
+            <h2 class=" d-inline">{{education.titulo}}</h2>
             <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{education.inicio}} hasta {{education.fin}}</i></small></h5>
           </div>
   
@@ -32,8 +32,8 @@
   
         </div>
   
-        <h4>{{education.titulo}}</h4>
-        <p> {{education.descripcion}} PRUEBA</p>
+        <h4>{{education.institucion}}</h4>
+        <p> {{education.descripcion}}</p>
   
   
       </div>
@@ -44,6 +44,17 @@
     <div class="addeduc" *ngIf ="showEditEducation">
   
       <form class="inline" (ngSubmit)="onSubmit()" >
+
+        <div class="form-control">
+          <label for="nombreTitulo">Nombre del título</label>
+          <input
+            type="text"
+            name="titulo"
+            id="titulo"
+            placeholder="Agregar nombre del título"
+            [(ngModel)]="education.titulo"
+          />
+        </div>
   
         <div class="form-control">
           <label for="text">Nombre de la Institución</label>
@@ -92,18 +103,8 @@
           </div>
   
         </div>
-  
-  
-        <div class="form-control">
-          <label for="nombreTitulo">Nombre del título</label>
-          <input
-            type="text"
-            name="titulo"
-            id="titulo"
-            placeholder="Agregar nombre del título"
-            [(ngModel)]="education.titulo"
-          />
-        </div>
+
+
   
         <div class="form-control">
           <label for="descripcion">Descripcion</label>

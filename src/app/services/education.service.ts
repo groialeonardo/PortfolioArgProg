@@ -32,7 +32,7 @@ const httpOptions = {
 
 export class EducationService {
 
-  apiUrl = "http://localhost:5000/educations";
+  apiUrl = "http://localhost:8080/educations";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 
