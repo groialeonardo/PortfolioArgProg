@@ -46,7 +46,7 @@ export class EducationComponent implements OnInit {
 
     // Se consume el observable de UIexperienciaService que indica si se hizo clic en AddExp.
     //Copia el valor en showAddExp para hacer el toggle. En el html se muestra o no el formulario dependiendo del valor de esta ultima
-    this.subcription = this.UIexperienciaService.onToggle().subscribe((t)=>(this.showAddEducation=t))
+   // this.subcription = this.UIexperienciaService.onToggle().subscribe((t)=>(this.showAddEducation=t))
 
   }
 
@@ -73,6 +73,8 @@ export class EducationComponent implements OnInit {
 
     //llama al servicio para que maneje este click
     /*this.UIexperienciaService.toggleAddExp()*/
+
+    this.showAddEducation = !this.showAddEducation
 
   }
 

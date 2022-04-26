@@ -15,9 +15,9 @@
 
 #title{
   /*border-top:4px solid #49879c; */
-  border-top:4px solid #8eb5c5; 
+  border-top:4px solid #ffffffa4;
   border-top-right-radius: 20px;
-  border-bottom: 2px solid #7898a5; 
+  border-bottom: 2px solid #ffffffa4 
   /*border-bottom: 4px solid #3e7b8f;*/
 }
 
@@ -25,7 +25,7 @@
   padding-left: 0%;
   padding-top: 0.5%;
   padding-right: 0%;
-  background-color: #19657ec7;
+  background-color:#5c90a3;
   color: white;
 }
 

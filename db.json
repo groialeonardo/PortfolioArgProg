@@ -124,57 +124,21 @@
     },
     {
       "id": 2,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
+      "pathlogo": "https://scontent.feze14-2.fna.fbcdn.net/v/t39.30808-6/271051667_4768612743185645_4545681256047491303_n.jpg?stp=cp0_dst-jpg_e15_p64x64_q65&_nc_cat=102&ccb=1-5&_nc_sid=85a577&efg=eyJpIjoidCJ9&_nc_eui2=AeH6Ue3lSOj4WdCLJuDumAbcSMdB0XcdMP9Ix0HRdx0w_6I_F_MsB3EeFLMU9kkfFE4&_nc_ohc=BdkpGPtuBTwAX8_brxU&tn=_S7WM_FoOPa1PKGQ&_nc_zt=23&_nc_ht=scontent.feze14-2.fna&oh=00_AT_Y-EB3Ttt90AR60nAyimDRe-AKl6NldmE-_aD4WcaXGg&oe=626BE777",
+      "institucion": "Colegio del Sol",
       "inicio": "2022-03-30",
       "fin": "2022-03-31",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
+      "titulo": "Bachller en Humanidades y Artes - Orientación Informática y Comunicación",
+      "descripcion": "Colegio Secundario"
     },
     {
-      "id": 3,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
-      "inicio": "2022-03-30",
-      "fin": "2022-03-31",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
-    },
-    {
-      "id": 4,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
-      "inicio": "2022-03-30",
-      "fin": "2022-03-31",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
-    },
-    {
-      "id": 5,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
-      "inicio": "2022-03-30",
-      "fin": "2022-03-31",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
-    },
-    {
-      "id": 6,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
-      "inicio": "2022-03-30",
-      "fin": "2022-03-31",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
-    },
-    {
-      "id": 7,
-      "pathlogo": "../../../../assets/img/Logos/Experiencias/AxionEnergy.jpg",
-      "institucion": "asdasdasdasd",
-      "inicio": "2022-03-30",
-      "fin": "2022-03-10",
-      "titulo": "asdasdasda",
-      "descripcion": "1519195195"
+      "id": 8,
+      "pathlogo": "http://localhost:4200/assets/img/Logos/Experiencias/UNR.jpg",
+      "institucion": "Facultad de Humanidades y Artes, Escuela de Lenguas, UNR",
+      "inicio": "2022-04-07",
+      "fin": "2022-04-08",
+      "titulo": "Curso de Ingles Completo (6 años)",
+      "descripcion": "Curso de Ingles Completo (6 años)"
     }
   ]
 }
