@@ -21,6 +21,8 @@ import { DeletebtnComponent } from './components/general/deletebtn/deletebtn.com
 import { EditbtnComponent } from './components/general/editbtn/editbtn.component';
 import { EducationComponent } from './components/education/education.component';
 import { EducationItemComponent } from './components/education/education-item/education-item.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ProjectItemComponent } from './components/proyectos/project-item/project-item.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { EducationItemComponent } from './components/education/education-item/ed
     DeletebtnComponent,
     EditbtnComponent,
     EducationComponent,
-    EducationItemComponent
+    EducationItemComponent,
+    ProyectosComponent,
+    ProjectItemComponent
   ],
   imports: [
     BrowserModule,
