@@ -1,28 +1,28 @@
 <div class="row project-item ">
     <div class="d-flex ">
-   
+
         <div class="flex-grow-1 ms-3">
-    
+
             <div id="empresa" class="row">
             <div class="col-9">
                 <h2 class=" d-inline">Portfolio Argentina Programa</h2>
                 <h5 class="d-inline" d-inline><small class="text-muted"><i>   Portforlio   </i></small></h5>
             </div>
-    
+
             <div class="col-2">
                 <app-editbtn
 
-                
+
                 ></app-editbtn>
-    
+
             </div>
-    
+
             <div class="col-1">
                 <app-deletebtn
 
                 ></app-deletebtn>
             </div>
-    
+
             </div>
             <div class="row flex-shrink-0">
 
@@ -30,7 +30,7 @@
                     <h4>Tecnologìas Utilizadas</h4>
                     <div class="row ">
                         <div class="skills col-12 flex-shrink-0">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/html.png" class="img-fluid img-logos" alt="">
+                           <!-- <img src="http://localhost:4200/assets/img/Logos/Skills/color/html.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/css.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/js.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png" class="img-fluid img-logos" alt="">
@@ -39,15 +39,16 @@
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/springboot.png" class="img-logos" style="max-height: 40px;" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/hibernate.png" class="img-logos" style="max-height: 35px;" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/mysql.png" class="img-logos" style="max-height: 50px;" alt="">
-                         
+                             -->
+                             <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" *ngFor="let tecno of tecnos">
                         </div>
 
                     </div>
                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?</p>
                 </div>
-                
+
                 <div class="flex-shrink-0 col-4">
-                    <img src="https://blog.hubbado.com/content/images/2020/01/projectmanager.png" alt="- Logo"  class="img-fluid img-proy">
+                    <img src="../../../../assets/img/Proyectos/argentinaprograma.PNG" alt="- proyecto"  class="img-fluid img-proy">
                 </div>
 
             </div>
@@ -60,7 +61,7 @@
       <div class="addexp" *ngIf ="false">
 
         <form class="inline"  >
-    
+
           <div class="form-control">
             <label for="text">Tilulo del Proyecto</label>
             <input
@@ -68,10 +69,10 @@
               name="proyecto"
               id="proyecto"
               placeholder="Agregar nombre de la proyecto"
-              
+
             />
           </div>
-    
+
           <div class="form-control">
             <label for="text">Logo de la empresa</label>
             <input
@@ -79,8 +80,8 @@
               name="pathlogo"
               id="pathlogo"
               placeholder="Ingrese el path correspondiente al logo de la empresa"
-              
-              
+
+
             />
           </div>
           <div id="fechas">
@@ -91,10 +92,10 @@
                 name="inicio"
                 id="inicio"
                 placeholder="Fecha de Inicio (MM-AAAA)"
-                
+
               />
             </div>
-    
+
             <div class="form-control">
               <label for="fechaFin">Fin</label>
               <input
@@ -102,14 +103,14 @@
                 name="fin"
                 id="fin"
                 placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
-               
-    
+
+
               />
             </div>
-    
+
           </div>
-    
-    
+
+
           <div class="form-control">
             <label for="nombrePuesto">Nombre del Puesto</label>
             <input
@@ -117,36 +118,36 @@
               name="puesto"
               id="puesto"
               placeholder="Agregar nombre del puesto"
-              
+
             />
           </div>
-    
+
           <div class="form-control">
             <label for="descripcion">Descripcion</label>
             <div class="row">
-    
+
                 <textarea
                 name="descripcion"
                 id="descripcion"
                 cols="100"
                 rows="10"
                 placeholder="Agregar descripcion del puesto"
-    
-                
+
+
                 >
                 </textarea>
-    
-    
+
+
             </div>
-    
+
           </div>
-    
+
           <input type="submit" value="Guardar Cambios" class="button-submit" />
-    
-    
+
+
         </form>
-    
-    
+
+
       </div>
-    
+
 </div>
