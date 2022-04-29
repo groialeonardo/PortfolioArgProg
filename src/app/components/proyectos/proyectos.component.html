@@ -9,5 +9,24 @@
     </div>
   
 </div>
+<div class="row ">
 
-<app-project-item></app-project-item>
+  <div class="col-lg-12">
+
+    <app-project-item
+
+      *ngFor="let project of projects"
+      [project] = project
+
+
+    >
+    <!--
+      (deleteEvent)="deleteProject(exp)"
+      (editEvent)= "editProject($event)"
+-->
+    </app-project-item>
+
+  </div>
+
+</div>
+<!-- -->

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITecno } from 'src/app/Interfaces/ITecno';
-import { TECNOS } from 'src/app/mock-tecno';
+//import { PROJECTS } from 'src/app/mock-projects';
+import { IProject } from 'src/app/Interfaces/IProject';
+import { Proyecto } from 'src/app/Model/Proyecto';
 
 @Component({
   selector: 'app-project-item',
@@ -9,11 +11,17 @@ import { TECNOS } from 'src/app/mock-tecno';
 })
 export class ProjectItemComponent implements OnInit {
 
-  tecnos:ITecno[] = TECNOS;
+  //projects:IProject[]=PROJECTS;
+  //project:IProject =PROJECTS[0];
+  //tecnos:ITecno[] = this.project.tecnologias;
+
+  @Input() project:IProject =new Proyecto;
+  
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
