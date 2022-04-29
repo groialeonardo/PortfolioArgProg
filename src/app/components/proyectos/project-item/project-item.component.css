@@ -28,10 +28,10 @@
     width: 70px;
   /*  background-color: #15576d;*/
   /*  border-radius: 80%;*/
-    margin-left: 350px;
+    margin-left: 2.5%;
     margin-right: 4%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
