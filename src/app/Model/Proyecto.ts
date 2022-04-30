@@ -11,13 +11,14 @@ export class Proyecto implements IProject {
   inicio:string = "";
   fecha:string = "";
   descripcion:string="";
+  projectLink:string="http://localhost:4200/";
 
   constructor() {
 
-    
+
 
    }
 
-  
+
 
 }

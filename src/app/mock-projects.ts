@@ -10,7 +10,8 @@ export const PROJECTS: IProject[] = [
     titulo:"Portfolio Argentina Programa",
     tecnologias:TECNOS,
     fecha: "2021",
-    descripcion:"SARASAAA"
+    descripcion:"SARASAAA",
+    projectLink:"http://localhost:4200/"
   },
   {
     id:2,
@@ -18,7 +19,8 @@ export const PROJECTS: IProject[] = [
     titulo:"Paladini",
     tecnologias:TECNOS2,
     fecha: "1999",
-    descripcion:"Sarasasasa2"
+    descripcion:"Sarasasasa2",
+    projectLink:"http://localhost:4200/"
   },
   {
     id:3,
@@ -26,7 +28,8 @@ export const PROJECTS: IProject[] = [
     titulo:"Paladini2",
     tecnologias:TECNOS2,
     fecha: "2025",
-    descripcion:"Sarasasasa3"
+    descripcion:"Sarasasasa3",
+    projectLink:"http://localhost:4200/"
   }
-  
+
 ]

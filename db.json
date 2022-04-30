@@ -153,7 +153,8 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/html.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
+
         },
         {
           "id":2,
@@ -168,7 +169,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/js.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":4,
@@ -176,7 +177,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":5,
@@ -212,7 +213,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/mysql.png",
           "imgFluid":false,
           "maxHeight":50
-        }     
+        }
       ],
       "fecha": "2021",
       "descripcion":"SARASAAA"
@@ -256,7 +257,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/mysql.png",
           "imgFluid":false,
           "maxHeight":50
-        }     
+        }
       ],
       "fecha": "2000",
       "descripcion":"SARASAAA2000"
@@ -272,7 +273,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/html.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":2,
@@ -287,7 +288,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/js.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":4,
@@ -295,8 +296,8 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png",
           "imgFluid":true,
           "maxHeight":70
-      
-        }    
+
+        }
       ],
       "fecha": "1999",
       "descripcion":"Sarasasasa2"
@@ -312,7 +313,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/html.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":2,
@@ -327,7 +328,7 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/js.png",
           "imgFluid":true,
           "maxHeight":70
-      
+
         },
         {
           "id":4,
@@ -335,8 +336,8 @@
           "pathlogo":"http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png",
           "imgFluid":true,
           "maxHeight":70
-      
-        }    
+
+        }
       ],
       "fecha": "2025",
       "descripcion":"Sarasasasa3"

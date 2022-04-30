@@ -31,7 +31,8 @@ const httpOptions = {
 
 export class ProyectoService {
 
-  apiUrl = "http://localhost:5000/projects";
+  //apiUrl = "http://localhost:5000/projects";
+  apiUrl = "http://localhost:8080/projects"
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 

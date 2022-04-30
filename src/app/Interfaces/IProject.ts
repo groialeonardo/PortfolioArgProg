@@ -7,4 +7,5 @@ export interface IProject {
   tecnologias:ITecno[];
   fecha:string;
   descripcion:string;
+  projectLink:string;
 }

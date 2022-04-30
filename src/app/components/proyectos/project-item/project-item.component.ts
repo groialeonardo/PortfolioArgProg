@@ -16,12 +16,12 @@ export class ProjectItemComponent implements OnInit {
   //tecnos:ITecno[] = this.project.tecnologias;
 
   @Input() project:IProject =new Proyecto;
-  
+
 
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }
