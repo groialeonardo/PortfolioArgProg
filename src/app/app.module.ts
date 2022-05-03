@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { ProjectItemComponent } from './components/proyectos/project-item/projec
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 120,
       "space": -10,

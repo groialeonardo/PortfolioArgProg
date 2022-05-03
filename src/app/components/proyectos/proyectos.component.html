@@ -17,12 +17,13 @@
 
       *ngFor="let project of projects"
       [project] = project
+      (deleteEvent)="deleteProject(project)"
 
 
     >
-    <!--
-      (deleteEvent)="deleteProject(exp)"
-      (editEvent)= "editProject($event)"
+
+      
+    <!--      (editEvent)= "editProject($event)"
 -->
     </app-project-item>
 

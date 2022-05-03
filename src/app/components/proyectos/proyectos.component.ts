@@ -27,13 +27,13 @@ export class ProyectosComponent implements OnInit {
   
   editProject(project:IProject) {
 
-    //this.experienciaService.updateExp(exp).subscribe()
+    this.proyectoService.updateProject(project).subscribe()
   }
 
   deleteProject(project:IProject) {
-   /* this.experienciaService.deleteExps(exp).subscribe(()=>(
-      this.exps = this.exps.filter(t => t.id !==exp.id ))
-    );*/
+      this.proyectoService.deleteProject(project).subscribe(()=>(
+      this.projects = this.projects.filter(t => t.id !==project.id ))
+    );
   }
   
 }
