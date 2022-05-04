@@ -1,13 +1,11 @@
 ///PRUEBA
 import { CRUDHttpService } from './crud-http.service';
 ///
-
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { IProject } from '../Interfaces/IProject';
-
+import { ITecno } from '../Interfaces/ITecno';
 
 const httpOptions = {
   headers : new HttpHeaders ({
@@ -18,15 +16,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+export class TecnologiaService {
 
-export class ProyectoService {
+  //apiUrl = "http://localhost:5000/tecnologies";
+  apiUrl = "http://localhost:8080/tecnologies" 
 
-  //apiUrl = "http://localhost:5000/projects";
-  apiUrl = "http://localhost:8080/projects"
+  constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService ) { }
 
-  constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
-
-  getProjects() :  Observable< IProject []> {
+  getTecnologies() :  Observable<ITecno[]> {
 
     /*const exp = of (EXPS) //Para traer desde archivo monk-task
     return  exp;*/
@@ -34,38 +31,31 @@ export class ProyectoService {
     //return this.httpClient.get<Exp[]>(this.apiUrl);
     return this.crudHttpService.get(this.apiUrl)
 
-
   }
 
+  deleteTecnology(tecno:ITecno) : Observable<ITecno> {
 
-  deleteProject(proyect:IProject) : Observable<IProject> {
-
-   /* const url = `${this.apiUrl}/${exp.id}`;
-    return this.httpClient.delete<Exp>(url)*/
-
-    return this.crudHttpService.delete(proyect,this.apiUrl)
-
-
-   }
-
-  addProject(proyect:IProject) : Observable<IProject> {
+    /* const url = `${this.apiUrl}/${exp.id}`;
+     return this.httpClient.delete<Exp>(url)*/
+ 
+     return this.crudHttpService.delete(tecno,this.apiUrl)
+  
+  }
+  addTecnology(tecno:ITecno) : Observable<ITecno> {
 
     /*const url = `${this.apiUrl}/${exp.id}`;
     return this.httpClient.post<Exp>(this.apiUrl,exp,httpOptions)*/
 
-    return this.crudHttpService.post(proyect,this.apiUrl)
+    return this.crudHttpService.post(tecno,this.apiUrl)
 
   }
 
-  updateProject(proyect:IProject) : Observable<IProject> {
+  updateTecnology(tecno:ITecno) : Observable<ITecno> {
 
     /*const url = `${this.apiUrl}/${exp.id}`;
     return this.httpClient.put<Exp>(url,exp,httpOptions)*/
-    return this.crudHttpService.put(proyect,this.apiUrl)
+    return this.crudHttpService.put(tecno,this.apiUrl)
 
   }
 
-
 }
-
-

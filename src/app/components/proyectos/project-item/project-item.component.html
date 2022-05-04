@@ -129,10 +129,10 @@
             </div>
 
             <form [formGroup]="form" (ngSubmit)="addTecno()">
-              <label for="tecnologias">Tecnologias</label>
-              <select formControlName="tecnologias" id="tecnologias">
-                <option *ngFor="let tecnologia of tecnologias; let i = index" [value]="tecnologias[i].id">
-                  {{tecnologias[i].name}}
+              <label for="allTecnologies">Tecnologias</label>
+              <select formControlName="allTecnologies" id="allTecnologies">
+                <option *ngFor="let tecnologia of allTecnologies; let i = index" [value]="allTecnologies[i].name">
+                  {{allTecnologies[i].name}}
                 </option>
               </select>
             

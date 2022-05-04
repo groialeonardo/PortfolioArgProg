@@ -17,6 +17,8 @@
 
       *ngFor="let project of projects"
       [project] = project
+      [allTecnologies] = allTecnologies
+      [allTecnologies2] = allTecnologies
       (deleteEvent)="deleteProject(project)"
       (editEvent)= "editProject($event)"
     >

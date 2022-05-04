@@ -4,6 +4,8 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
 import { IProject } from 'src/app/Interfaces/IProject';
 import { PROJECTS } from 'src/app/mock-projects';
 
+import { TecnologiaService } from 'src/app/services/tecnologia.service';
+import { ITecno } from 'src/app/Interfaces/ITecno';
 
 @Component({
   selector: 'app-proyectos',
@@ -14,8 +16,12 @@ export class ProyectosComponent implements OnInit {
 
   //projects:IProject[]=PROJECTS;
   projects:IProject[]=[];
+  allTecnologies:ITecno[]=[];
 
-  constructor( private proyectoService:ProyectoService ) { }
+  constructor( 
+    private proyectoService:ProyectoService, 
+    private tecnologiaService:TecnologiaService 
+    ) {}
 
   ngOnInit(): void {
 
@@ -23,15 +29,18 @@ export class ProyectosComponent implements OnInit {
       this.projects=projectscallback
       ));
 
-    this.proyectoService.getProjects().subscribe((projectscallback)=>(
-      this.projects=projectscallback
+    this.tecnologiaService.getTecnologies().subscribe((tecnocallback)=>(
+      this.allTecnologies=tecnocallback
       ));
+
   }
 
   
   editProject(project:IProject) {
 
     this.proyectoService.updateProject(project).subscribe()
+    console.log(this.allTecnologies)
+    console.log(this.projects)
   }
 
   deleteProject(project:IProject) {

@@ -32,14 +32,19 @@ export class ProjectItemComponent implements OnInit {
   showTecno:boolean= true;
 
   @Input() project:IProject =new Proyecto;
+  @Input() allTecnologies:ITecno[]=[];
+  //prueba
+  @Input() allTecnologies2:ITecno[]=[];
+
+  toAdd:Tecnologia = this.allTecnologies[1];
 
   //newTecno:ITecno = new Tecnologia;
-  tecnologias = [
+  /*tecnologias = [
     { id: '1', name: 'order 1' },
     { id: '2', name: 'order 2' },
     { id: '3', name: 'order 3' },
     { id: '4', name: 'order 4' }
-  ];
+  ]; */
 
   form:FormGroup;
  
@@ -47,29 +52,41 @@ export class ProjectItemComponent implements OnInit {
 
   constructor( private formBuilder: FormBuilder ) { 
     this.form = this.formBuilder.group({
-      tecnologias: ['']
+     //tecnologias: ['']
+     allTecnologies:['']
     });
 
     
   }
 
   ngOnInit(): void {
-    this.tecnologias = this.getOrders();
+   /*this.tecnologias = this.getTecnos();*/
+   
 
   }
 
   //TO DO sacar
-  getOrders() {
-    return [
+ /* getTecnos() {
+    
+    return this.allTecnologies; /*[
       { id: '1', name: 'order 1' },
       { id: '2', name: 'order 2' },
       { id: '3', name: 'order 3' },
       { id: '4', name: 'order 4' }
     ];
-  }
+  }*/
 
   addTecno(){
+    //console.log(this.allTecnologies)
+    console.log(this.form.value.allTecnologies);
+   // console.log (this.allTecnologies.filter(x => x.name === this.form.value))
 
+    const index = this.allTecnologies.findIndex(object => {
+      return object.name === this.form.value.allTecnologies;
+      });
+    //console.log(index);
+   // console.log(this.allTecnologies[index]);
+    this.project.tecnologias.push(this.allTecnologies[index])
   }
 
   onDelete(proy:IProject) {
