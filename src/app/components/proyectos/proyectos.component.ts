@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProyectoService } from 'src/app/services/proyecto.service';
-
 import { IProject } from 'src/app/Interfaces/IProject';
 import { PROJECTS } from 'src/app/mock-projects';
+
 
 @Component({
   selector: 'app-proyectos',
@@ -18,6 +18,10 @@ export class ProyectosComponent implements OnInit {
   constructor( private proyectoService:ProyectoService ) { }
 
   ngOnInit(): void {
+
+    this.proyectoService.getProjects().subscribe((projectscallback)=>(
+      this.projects=projectscallback
+      ));
 
     this.proyectoService.getProjects().subscribe((projectscallback)=>(
       this.projects=projectscallback

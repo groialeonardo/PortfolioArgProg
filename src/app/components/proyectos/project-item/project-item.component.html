@@ -65,30 +65,43 @@
 
       <div class="addexp" *ngIf ="showEditProject">
 
-        <form class="inline"  >
+        <form class="inline" (ngSubmit)="onSubmit()" >
 
-          <div class="form-control">
+          <div class="form-control" >
             <label for="text">Tilulo del Proyecto</label>
             <input
               type="text"
               name="proyecto"
               id="proyecto"
               placeholder="Agregar nombre de la proyecto"
+              [(ngModel)]="project.titulo"
 
             />
           </div>
 
-          <div class="form-control">
+          <div class="form-control col-2">
             <label for="anio">Año</label>
             <input
               type="text"
               name="anio"
               id="anio"
               placeholder="Año de Desarrollo"
+              [(ngModel)]="project.fecha"
 
             />
           </div>
 
+          <div class="form-control col-10" >
+            <label for="text">Imagen</label>
+            <input
+              type="text"
+              name="pathimg"
+              id="pathimg"
+              placeholder="Agregar link de imagen del Proyecto"
+              [(ngModel)]="project.pathimg"
+
+            />
+          </div>
            
             <label class="col-12" for="text" *ngIf ="showTecno" >Tecnologías Utilizadas</label>
            <!-- <input #name class="form-check-input" type="checkbox" id="saveUserNameCheckBox" [checked]="showTecno" (change)="toggleTecno(name.checked)">
@@ -115,7 +128,16 @@
 
             </div>
 
-
+            <form [formGroup]="form" (ngSubmit)="addTecno()">
+              <label for="tecnologias">Tecnologias</label>
+              <select formControlName="tecnologias" id="tecnologias">
+                <option *ngFor="let tecnologia of tecnologias; let i = index" [value]="tecnologias[i].id">
+                  {{tecnologias[i].name}}
+                </option>
+              </select>
+            
+              <button type="submit">Agregar</button>
+            </form>
 
          
           <div class="form-control">
@@ -125,6 +147,7 @@
               name="link"
               id="link"
               placeholder="Agregar un Link del Proyecto"
+              [(ngModel)]="project.projectLink"
 
             />
           </div>
@@ -133,16 +156,16 @@
             <label for="descripcion">Descripcion</label>
             <div class="row">
 
-                <textarea
-                name="descripcion"
-                id="descripcion"
-                cols="100"
-                rows="10"
-                placeholder="Agregar descripcion del puesto"
+              <textarea
+              name="descripcion"
+              id="descripcion"
+              cols="100"
+              rows="10"
+              placeholder="Agregar descripcion del puesto"
+              [(ngModel)]="project.descripcion"
 
-
-                >
-                </textarea>
+              >
+              </textarea>
 
 
             </div>

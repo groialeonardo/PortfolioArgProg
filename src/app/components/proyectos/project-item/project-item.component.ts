@@ -24,7 +24,7 @@ export class ProjectItemComponent implements OnInit {
   //tecnos:ITecno[] = this.project.tecnologias;
   @Input() buttonText:string="";
 
-  //@Output() editEvent:EventEmitter<IProject> = new EventEmitter();
+  @Output() editEvent:EventEmitter<IProject> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IProject> = new EventEmitter();
   
   @Input () showEditProject:boolean = false;
@@ -34,11 +34,41 @@ export class ProjectItemComponent implements OnInit {
   @Input() project:IProject =new Proyecto;
 
   //newTecno:ITecno = new Tecnologia;
+  tecnologias = [
+    { id: '1', name: 'order 1' },
+    { id: '2', name: 'order 2' },
+    { id: '3', name: 'order 3' },
+    { id: '4', name: 'order 4' }
+  ];
+
+  form:FormGroup;
+ 
 
 
-  constructor() { }
+  constructor( private formBuilder: FormBuilder ) { 
+    this.form = this.formBuilder.group({
+      tecnologias: ['']
+    });
+
+    
+  }
 
   ngOnInit(): void {
+    this.tecnologias = this.getOrders();
+
+  }
+
+  //TO DO sacar
+  getOrders() {
+    return [
+      { id: '1', name: 'order 1' },
+      { id: '2', name: 'order 2' },
+      { id: '3', name: 'order 3' },
+      { id: '4', name: 'order 4' }
+    ];
+  }
+
+  addTecno(){
 
   }
 
@@ -59,6 +89,21 @@ export class ProjectItemComponent implements OnInit {
     this.project.tecnologias.forEach((value,index)=>{
       if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
   });
+
+  }
+
+  onSubmit(){
+
+    if(this.project.titulo.length === 0){
+      alert("Por Favor complete el tìtulo del proyecto");
+      return
+    }
+
+
+ //   console.log(this.exp)
+
+    this.editEvent.emit(this.project)
+
 
   }
 
