@@ -45,7 +45,7 @@
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/mysql.png" class="img-logos" style="max-height: 50px;" alt="">
                              -->
                               <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" *ngFor="let tecno of project.tecnologias">
-                            
+
                         </div>
                     </div>
 
@@ -102,19 +102,19 @@
 
             />
           </div>
-           
+
             <label class="col-12" for="text" *ngIf ="showTecno" >Tecnologías Utilizadas</label>
            <!-- <input #name class="form-check-input" type="checkbox" id="saveUserNameCheckBox" [checked]="showTecno" (change)="toggleTecno(name.checked)">
 
             <div class="form-check form-check-inline"  *ngFor="let tecno of project.tecnologias"  >
               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" [checked]="showTecno" (onChange)="toggleTecno2(tecno.name)">
               <label class="form-check-label" for="inlineCheckbox1">{{tecno.name}}</label>
-           
+
            <select name="tecnologias" [(ngModel)]="newTecno">
               <option [ngValue]="tecno" *ngFor="let tecno of project.tecnologias">{{tecno.name}}</option>
             </select>
-             
-            </div> --> 
+
+            </div> -->
 
 
             <div class="row">
@@ -129,17 +129,17 @@
             </div>
 
             <form [formGroup]="form" (ngSubmit)="addTecno()">
-              <label for="allTecnologies">Tecnologias</label>
-              <select formControlName="allTecnologies" id="allTecnologies">
-                <option *ngFor="let tecnologia of allTecnologies; let i = index" [value]="allTecnologies[i].name">
-                  {{allTecnologies[i].name}}
+              <label for="allTecnologiesFiltred">Elija Tecnologia para Agregar :</label>
+              <select formControlName="allTecnologiesFiltred" id="allTecnologiesFiltred">
+                <option *ngFor="let tecnologia of allTecnologiesFiltred; let i = index" [value]="allTecnologiesFiltred[i].name">
+                  {{allTecnologiesFiltred[i].name}}
                 </option>
               </select>
-            
+
               <button type="submit">Agregar</button>
             </form>
 
-         
+
           <div class="form-control">
             <label for="nombrePuesto">Link del Proyecto</label>
             <input
@@ -270,6 +270,6 @@
         </form>
 
 
-      </div> 
+      </div>
 -->
 </div>

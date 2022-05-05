@@ -26,7 +26,7 @@ export class ProjectItemComponent implements OnInit {
 
   @Output() editEvent:EventEmitter<IProject> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IProject> = new EventEmitter();
-  
+
   @Input () showEditProject:boolean = false;
   @Input () showDelete:boolean = true;
   showTecno:boolean= true;
@@ -34,9 +34,9 @@ export class ProjectItemComponent implements OnInit {
   @Input() project:IProject =new Proyecto;
   @Input() allTecnologies:ITecno[]=[];
   //prueba
-  @Input() allTecnologies2:ITecno[]=[];
+  allTecnologiesFiltred:ITecno[]=[];
 
-  toAdd:Tecnologia = this.allTecnologies[1];
+  //toAdd:Tecnologia = this.allTecnologies[1];
 
   //newTecno:ITecno = new Tecnologia;
   /*tecnologias = [
@@ -47,27 +47,47 @@ export class ProjectItemComponent implements OnInit {
   ]; */
 
   form:FormGroup;
- 
 
 
-  constructor( private formBuilder: FormBuilder ) { 
+
+  constructor( private formBuilder: FormBuilder ) {
     this.form = this.formBuilder.group({
      //tecnologias: ['']
-     allTecnologies:['']
+     allTecnologiesFiltred:['']
     });
 
-    
+
   }
 
   ngOnInit(): void {
-   /*this.tecnologias = this.getTecnos();*/
-   
+
+    //this.allTecnologiesFiltred = this.allTecnologies;
+
+   /* this.allTecnologiesFiltred = [
+
+      ...this.getDifference(this.project.tecnologias,this.allTecnologies),
+      ...this.getDifference(this.allTecnologies,this.project.tecnologias)
+
+    ];*/
+
+
+    //const result = this.allTecnologies.filter(({ id: id1 }) => !this.project.tecnologias.some(({ id: id2 }) => id2 === id1));
+
+  //  this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id)); // el que me funciono
+
+   /* var result = (
+      (array, ids) => array.filter(({ id }) => !ids.includes(id)))(this.allTecnologies, this.project.tecnologias.map(({ id }) => id)
+    );*/
+
+   // let result = this.allTecnologies.filter(({ id }) => !this.project.tecnologias.find(o => o.id == id));
+
+
 
   }
 
   //TO DO sacar
  /* getTecnos() {
-    
+
     return this.allTecnologies; /*[
       { id: '1', name: 'order 1' },
       { id: '2', name: 'order 2' },
@@ -76,17 +96,34 @@ export class ProjectItemComponent implements OnInit {
     ];
   }*/
 
+ /* //Borrar
+  getDifference(array1:ITecno[], array2:ITecno[]) {
+    return array1.filter(object1 => {
+      return !array2.some(object2 => {
+        return object1.id === object2.id;
+      });
+    });
+  }*/
+
+  refreshTecnos(){
+    this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id));
+  }
+
   addTecno(){
     //console.log(this.allTecnologies)
-    console.log(this.form.value.allTecnologies);
+    console.log(this.form.value.allTecnologiesFiltred);
    // console.log (this.allTecnologies.filter(x => x.name === this.form.value))
 
-    const index = this.allTecnologies.findIndex(object => {
-      return object.name === this.form.value.allTecnologies;
+    const index = this.allTecnologiesFiltred.findIndex(object => {
+      return object.name === this.form.value.allTecnologiesFiltred;
       });
     //console.log(index);
    // console.log(this.allTecnologies[index]);
-    this.project.tecnologias.push(this.allTecnologies[index])
+    this.project.tecnologias.push(this.allTecnologiesFiltred[index])
+
+    this.refreshTecnos()
+
+
   }
 
   onDelete(proy:IProject) {
@@ -98,6 +135,8 @@ export class ProjectItemComponent implements OnInit {
 
     this.showEditProject = !this.showEditProject;
 
+    this.refreshTecnos()
+
   }
 
   onDeleteTecno(tecno:ITecno) {
@@ -106,6 +145,8 @@ export class ProjectItemComponent implements OnInit {
     this.project.tecnologias.forEach((value,index)=>{
       if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
   });
+
+  this.refreshTecnos()
 
   }
 
