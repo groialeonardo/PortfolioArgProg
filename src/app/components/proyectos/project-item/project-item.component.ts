@@ -61,6 +61,8 @@ export class ProjectItemComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.refreshTecnos();
+
     //this.allTecnologiesFiltred = this.allTecnologies;
 
    /* this.allTecnologiesFiltred = [
@@ -119,11 +121,14 @@ export class ProjectItemComponent implements OnInit {
       });
     //console.log(index);
    // console.log(this.allTecnologies[index]);
-    this.project.tecnologias.push(this.allTecnologiesFiltred[index])
-
-    this.refreshTecnos()
-
-
+    if (index>-1){
+      this.project.tecnologias.push(this.allTecnologiesFiltred[index])
+      this.refreshTecnos()
+    }
+    else {
+      alert("Elija una tecnologia para agregar")
+    }
+  
   }
 
   onDelete(proy:IProject) {

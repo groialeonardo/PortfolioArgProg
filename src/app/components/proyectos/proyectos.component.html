@@ -9,6 +9,39 @@
     </div>
 
 </div>
+
+<div class="row">
+  <app-btnshowexp
+  bgcolor="{{showAddProject ? '#7e1921' : '#19657e'}}"
+  border="none"
+  text="{{showAddProject ? 'Cerrar' : 'Agregar Proyecto'}}"
+  color="white"
+
+  (onBbtnClick)="toggleAddProject()"
+  *ngIf="hasRoute('/')"
+  >
+  </app-btnshowexp>
+</div>
+
+<div class="row ">
+
+  <div class="col-12" *ngIf ="showAddProject">
+
+    <app-project-item
+
+      (editEvent)= "addProject($event)"      
+      buttonText="Agregar Proyecto"
+      [allTecnologies] = allTecnologies
+      [showEditProject]=true
+      [showDelete]=false
+
+    >
+    </app-project-item>
+
+  </div>
+
+</div>
+
 <div class="row ">
 
   <div class="col-lg-12">

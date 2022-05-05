@@ -63,7 +63,7 @@
     </div>
 
 
-      <div class="addexp" *ngIf ="showEditProject">
+      <div class="addProj" *ngIf ="showEditProject">
 
         <form class="inline" (ngSubmit)="onSubmit()" >
 
@@ -121,8 +121,7 @@
               <div class="skills col-12 flex-shrink-0" *ngFor="let tecno of project.tecnologias">
                 <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
                 <app-deletebtn
-                *ngIf="showDelete"
-                (click)= "onDeleteTecno(tecno)"
+                  (click)= "onDeleteTecno(tecno)"
                 ></app-deletebtn>
               </div>
 
@@ -131,7 +130,7 @@
             <form [formGroup]="form" (ngSubmit)="addTecno()">
               <label for="allTecnologiesFiltred">Elija Tecnologia para Agregar :</label>
               <select formControlName="allTecnologiesFiltred" id="allTecnologiesFiltred">
-                <option *ngFor="let tecnologia of allTecnologiesFiltred; let i = index" [value]="allTecnologiesFiltred[i].name">
+                <option *ngFor="let tecnologia of allTecnologiesFiltred; let i = index" [value]="allTecnologiesFiltred[i].name" selected=true >
                   {{allTecnologiesFiltred[i].name}}
                 </option>
               </select>

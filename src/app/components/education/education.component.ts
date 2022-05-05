@@ -22,7 +22,7 @@ import { EducationService } from 'src/app/services/education.service';
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { IEducation } from 'src/app/Interfaces/IEducation';
-//import { EXPS } from 'src/app/mock-exps';
+
 
 @Component({
   selector: 'app-education',
@@ -33,7 +33,7 @@ export class EducationComponent implements OnInit {
 
   //exps:Exp[] = EXPS;
   educations:IEducation[] = [];
-  subcription?:Subscription;
+  //subcription?:Subscription;
   showAddEducation:boolean = false;
 
   constructor(private educationService:EducationService , private UIexperienciaService:UIexperienciaService) { }

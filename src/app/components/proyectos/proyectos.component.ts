@@ -17,6 +17,7 @@ export class ProyectosComponent implements OnInit {
   //projects:IProject[]=PROJECTS;
   projects:IProject[]=[];
   allTecnologies:ITecno[]=[];
+  showAddProject:boolean = false;
 
   constructor( 
     private proyectoService:ProyectoService, 
@@ -35,6 +36,13 @@ export class ProyectosComponent implements OnInit {
 
   }
 
+  addProject(project:IProject) {
+
+    this.proyectoService.addProject(project).subscribe((t)=>(
+      this.projects.push(t)
+    ))
+  }
+
   
   editProject(project:IProject) {
 
@@ -48,5 +56,15 @@ export class ProyectosComponent implements OnInit {
       this.projects = this.projects.filter(t => t.id !==project.id ))
     );
   }
+
+  toggleAddProject(){
+
+   this.showAddProject=!this.showAddProject;
+
+  }
   
+  hasRoute(route:string){
+    //return this.router.url === route;
+    return true;
+  }
 }
