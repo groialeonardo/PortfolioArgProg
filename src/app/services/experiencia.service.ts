@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 import { IExp } from '../Interfaces/IExp';
 
 
@@ -21,7 +23,9 @@ const httpOptions = {
 
 export class ExperienciaService {
 
-  apiUrl = "http://localhost:8080/exps";
+  //apiUrl = "http://localhost:8080/exps";
+  apiUrl = environment.apiUrlRoot + "/exps";
+
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 

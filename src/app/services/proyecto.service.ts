@@ -5,6 +5,7 @@ import { CRUDHttpService } from './crud-http.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 import { IProject } from '../Interfaces/IProject';
 
@@ -22,7 +23,8 @@ const httpOptions = {
 export class ProyectoService {
 
   //apiUrl = "http://localhost:5000/projects";
-  apiUrl = "http://localhost:8080/projects"
+
+  apiUrl = environment.apiUrlRoot + "/projects";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 

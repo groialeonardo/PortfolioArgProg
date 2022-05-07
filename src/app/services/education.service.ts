@@ -18,6 +18,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { IEducation } from '../Interfaces/IEducation';
+import { environment } from 'src/environments/environment';
 
 
 const httpOptions = {
@@ -32,7 +33,8 @@ const httpOptions = {
 
 export class EducationService {
 
-  apiUrl = "http://localhost:8080/educations";
+  //apiUrl = "http://localhost:8080/educations";
+ apiUrl = environment.apiUrlRoot + "/educations";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 
@@ -41,7 +43,7 @@ export class EducationService {
     /*const educations = of (EDUCATIONS) //Para traer desde archivo monk-task
     return  educations;*/
     //return this.httpClient.get<Exp[]>(this.apiUrl);
-   
+
     return this.crudHttpService.get(this.apiUrl)
   }
 

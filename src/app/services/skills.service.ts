@@ -16,6 +16,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 import { ISkill } from '../Interfaces/ISkill';
 
 
@@ -31,7 +33,9 @@ const httpOptions = {
 
 export class SkillsService {
 
-  apiUrl = "http://localhost:8080/skills";
+  //apiUrl = "http://localhost:8080/skills";
+
+  apiUrl = environment.apiUrlRoot + "/skills";
 
   constructor( private crudHttpService:CRUDHttpService  ) { }
 

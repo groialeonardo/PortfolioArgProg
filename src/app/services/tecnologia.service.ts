@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 import { ITecno } from '../Interfaces/ITecno';
 
 const httpOptions = {
@@ -19,7 +21,8 @@ const httpOptions = {
 export class TecnologiaService {
 
   //apiUrl = "http://localhost:5000/tecnologies";
-  apiUrl = "http://localhost:8080/tecnologies" 
+  apiUrl = environment.apiUrlRoot +"/tecnologies";
+
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService ) { }
 
@@ -37,9 +40,9 @@ export class TecnologiaService {
 
     /* const url = `${this.apiUrl}/${exp.id}`;
      return this.httpClient.delete<Exp>(url)*/
- 
+
      return this.crudHttpService.delete(tecno,this.apiUrl)
-  
+
   }
   addTecnology(tecno:ITecno) : Observable<ITecno> {
 

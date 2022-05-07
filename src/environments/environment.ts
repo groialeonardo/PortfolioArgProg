@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //apiUrlRoot:"https://portfologroialeonardo.herokuapp.com" //HEROKU
+  apiUrlRoot:"http://localhost:8080" //NETBEANS-LOCALHOST
 };
 
 /*
@@ -14,3 +16,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
