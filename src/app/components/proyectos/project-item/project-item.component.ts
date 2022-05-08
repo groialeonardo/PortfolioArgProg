@@ -12,6 +12,8 @@ import { IProject } from 'src/app/Interfaces/IProject';
 import { Proyecto } from 'src/app/Model/Proyecto';
 import { Tecnologia } from 'src/app/Model/Tecnologia';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-project-item',
   templateUrl: './project-item.component.html',
@@ -50,7 +52,7 @@ export class ProjectItemComponent implements OnInit {
 
 
 
-  constructor( private formBuilder: FormBuilder ) {
+  constructor( private formBuilder: FormBuilder, private authService: AuthenticationService ) {
     this.form = this.formBuilder.group({
      //tecnologias: ['']
      allTecnologiesFiltred:['']
@@ -128,7 +130,7 @@ export class ProjectItemComponent implements OnInit {
     else {
       alert("Elija una tecnologia para agregar")
     }
-  
+
   }
 
   onDelete(proy:IProject) {
@@ -168,6 +170,10 @@ export class ProjectItemComponent implements OnInit {
     this.editEvent.emit(this.project)
 
 
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 

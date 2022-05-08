@@ -1,5 +1,7 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-editbtn',
   templateUrl: './editbtn.component.html',
@@ -11,7 +13,7 @@ export class EditbtnComponent implements OnInit {
 
   @Output() onBbtnClick = new EventEmitter();
 
-  constructor() { }
+  constructor(private authService:AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +23,9 @@ export class EditbtnComponent implements OnInit {
     this.onBbtnClick.emit();
 
   }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
+  }
+
 }

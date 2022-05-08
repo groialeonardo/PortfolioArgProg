@@ -7,6 +7,8 @@ import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 import { IExp } from 'src/app/Interfaces/IExp';
 import { EXPS } from 'src/app/mock-exps';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -19,7 +21,7 @@ export class ExperienciaComponent implements OnInit {
   subcription?:Subscription;
   showAddExp:boolean = false;
 
-  constructor(private experienciaService:ExperienciaService , private UIexperienciaService:UIexperienciaService) { }
+  constructor(private experienciaService:ExperienciaService , private UIexperienciaService:UIexperienciaService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
 
@@ -65,6 +67,11 @@ export class ExperienciaComponent implements OnInit {
     //return this.router.url === route;
     return true;
   }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
+  }
+
 
 
 }

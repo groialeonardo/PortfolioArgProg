@@ -5,6 +5,8 @@ import { ISkill } from '../../../Interfaces/ISkill';
 import { Skill } from '../../../Model/Skill';
 //import { SKILL } from 'src/app/mock-skills';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-skill-item',
   templateUrl: './skill-item.component.html',
@@ -21,7 +23,7 @@ export class SkillItemComponent implements OnInit {
   @Input () showEditSkill:boolean = false;
   @Input () showDelete:boolean = true;
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +40,10 @@ export class SkillItemComponent implements OnInit {
 
     onDelete(){
       this.deleteEvent.emit(this.skill)
+    }
+
+    checkLoggedIn():boolean{
+      return this.authService.isUserLoggedIn()
     }
 
 }

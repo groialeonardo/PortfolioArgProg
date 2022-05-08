@@ -63,7 +63,7 @@
     </div>
 
 
-      <div class="addProj" *ngIf ="showEditProject">
+      <div class="addProj" *ngIf ="showEditProject&&checkLoggedIn()">
 
         <form class="inline" (ngSubmit)="onSubmit()" >
 

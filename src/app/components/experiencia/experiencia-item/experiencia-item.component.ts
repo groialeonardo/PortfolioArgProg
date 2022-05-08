@@ -8,6 +8,7 @@ import { Exp } from 'src/app/Model/Exp';
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 //import { subscribeOn, Subscription} from 'rxjs';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-experiencia-item',
@@ -22,7 +23,7 @@ export class ExperienciaItemComponent implements OnInit {
   @Output() editEvent:EventEmitter<IExp> = new EventEmitter();
 // @Output() onDeleteEvent:EventEmitter<IExp> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IExp> = new EventEmitter();
-  
+
   @Input () showEditExp:boolean = false;
   @Input () showDelete:boolean = true;
 
@@ -30,7 +31,7 @@ export class ExperienciaItemComponent implements OnInit {
   //showEditExp:boolean=false;
   //Sub?:Subscription
 
-  constructor( private uiExperienciaService:UIexperienciaService ) { }
+  constructor( private uiExperienciaService:UIexperienciaService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
 
@@ -71,6 +72,10 @@ export class ExperienciaItemComponent implements OnInit {
 
     this.showEditExp = !this.showEditExp
 
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 

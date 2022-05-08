@@ -5,6 +5,8 @@ import { SkillsService } from 'src/app/services/skills.service';
 import { ISkill } from '../../Interfaces/ISkill';
 //import { SKILL } from 'src/app/mock-skills';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -19,7 +21,7 @@ export class SkillsComponent implements OnInit {
   showAddSkill:boolean=false;
   showEditSkill:boolean=false;
 
-  constructor( private skillsSevice:SkillsService ) { }
+  constructor( private skillsSevice:SkillsService, private authService: AuthenticationService ) { }
 
   ngOnInit(): void {
 
@@ -59,6 +61,10 @@ export class SkillsComponent implements OnInit {
 
     this.showEditSkill = !this.showEditSkill
 
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 }

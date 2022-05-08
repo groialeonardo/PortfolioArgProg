@@ -1,6 +1,7 @@
 <button
   class="button"
   [ngStyle]="{'border': border}"
+  *ngIf="checkLoggedIn()"
 
   (click)="onClick()"
 >

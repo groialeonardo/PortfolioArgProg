@@ -23,6 +23,8 @@ import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { IEducation } from 'src/app/Interfaces/IEducation';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 @Component({
   selector: 'app-education',
@@ -36,7 +38,7 @@ export class EducationComponent implements OnInit {
   //subcription?:Subscription;
   showAddEducation:boolean = false;
 
-  constructor(private educationService:EducationService , private UIexperienciaService:UIexperienciaService) { }
+  constructor(private educationService:EducationService , private UIexperienciaService:UIexperienciaService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
 
@@ -83,6 +85,10 @@ export class EducationComponent implements OnInit {
   hasRoute(route:string){
     //return this.router.url === route;
     return true;
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 

@@ -3,3 +3,21 @@
   --bs-gutter-x: 0;
 
 }
+.login-style{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.login-btn{
+  margin-bottom: 2%;
+}
+
+input{
+  border-radius: 10px;
+}

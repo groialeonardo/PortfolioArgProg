@@ -25,7 +25,7 @@
 
 
 
-  <form class="form-horizontal edit col-12" *ngIf="showEditSkill" (ngSubmit)="onSubmit()">
+  <form class="form-horizontal edit col-12" *ngIf="showEditSkill&&checkLoggedIn()" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label for="skill" class ="control-label">Habilidad</label>

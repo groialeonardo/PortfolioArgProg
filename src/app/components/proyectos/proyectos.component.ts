@@ -7,6 +7,8 @@ import { PROJECTS } from 'src/app/mock-projects';
 import { TecnologiaService } from 'src/app/services/tecnologia.service';
 import { ITecno } from 'src/app/Interfaces/ITecno';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
@@ -19,9 +21,10 @@ export class ProyectosComponent implements OnInit {
   allTecnologies:ITecno[]=[];
   showAddProject:boolean = false;
 
-  constructor( 
-    private proyectoService:ProyectoService, 
-    private tecnologiaService:TecnologiaService 
+  constructor(
+    private proyectoService:ProyectoService,
+    private tecnologiaService:TecnologiaService ,
+    private authService: AuthenticationService
     ) {}
 
   ngOnInit(): void {
@@ -43,7 +46,7 @@ export class ProyectosComponent implements OnInit {
     ))
   }
 
-  
+
   editProject(project:IProject) {
 
     this.proyectoService.updateProject(project).subscribe()
@@ -62,9 +65,13 @@ export class ProyectosComponent implements OnInit {
    this.showAddProject=!this.showAddProject;
 
   }
-  
+
   hasRoute(route:string){
     //return this.router.url === route;
     return true;
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 }

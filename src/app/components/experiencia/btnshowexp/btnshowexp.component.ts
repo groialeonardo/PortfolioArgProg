@@ -1,6 +1,8 @@
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-btnshowexp',
   templateUrl: './btnshowexp.component.html',
@@ -14,7 +16,7 @@ export class BtnshowexpComponent implements OnInit {
   @Input() border:string= "";
   @Output() onBbtnClick = new EventEmitter();
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,10 @@ export class BtnshowexpComponent implements OnInit {
 
     this.onBbtnClick.emit();
 
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 }

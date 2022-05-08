@@ -24,6 +24,8 @@ import { Education } from 'src/app/Model/Education';
 //import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 //import { subscribeOn, Subscription} from 'rxjs';
 
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 @Component({
   selector: 'app-education-item',
@@ -37,7 +39,7 @@ export class EducationItemComponent implements OnInit {
 
   @Output() editEvent:EventEmitter<IEducation> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IEducation> = new EventEmitter();
-  
+
   @Input () showEditEducation:boolean = false;
   @Input () showDelete:boolean = true;
 
@@ -45,7 +47,7 @@ export class EducationItemComponent implements OnInit {
   //showEditExp:boolean=false;
   //Sub?:Subscription
 
-  constructor(/* private uiExperienciaService:UIexperienciaService */) { } // HACER UI PAARA ESTE
+  constructor(/* private uiExperienciaService:UIexperienciaService */ private authService: AuthenticationService) { } // HACER UI PAARA ESTE
 
   ngOnInit(): void {
 
@@ -82,6 +84,10 @@ export class EducationItemComponent implements OnInit {
 
     this.showEditEducation = !this.showEditEducation;
 
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
 

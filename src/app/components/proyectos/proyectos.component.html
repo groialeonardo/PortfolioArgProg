@@ -25,11 +25,11 @@
 
 <div class="row ">
 
-  <div class="col-12" *ngIf ="showAddProject">
+  <div class="col-12" *ngIf ="showAddProject&&checkLoggedIn()">
 
     <app-project-item
 
-      (editEvent)= "addProject($event)"      
+      (editEvent)= "addProject($event)"
       buttonText="Agregar Proyecto"
       [allTecnologies] = allTecnologies
       [showEditProject]=true

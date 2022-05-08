@@ -18,7 +18,7 @@
           <app-editbtn
             (click)= "onToggleEditExp()"
             *ngIf="showDelete"
-            
+
           ></app-editbtn>
 
         </div>
@@ -41,7 +41,7 @@
 
 <!-- TO DO : pasar esto a un componente ///mmm capaz queda aca -->
 
-  <div class="addexp" *ngIf ="showEditExp">
+  <div class="addexp" *ngIf ="showEditExp&&checkLoggedIn()">
 
     <form class="inline" (ngSubmit)="onSubmit()" >
 
@@ -64,7 +64,7 @@
           id="pathlogo"
           placeholder="Ingrese el path correspondiente al logo de la empresa"
           [(ngModel)]="exp.pathlogo"
-          
+
         />
       </div>
       <div id="fechas">
