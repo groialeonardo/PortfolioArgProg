@@ -3,9 +3,23 @@
   margin-bottom: 5%;
   max-width: 80%;
   max-height: 80%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .row {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  /*margin-top: 2.5%;*/
+ /* margin-bottom: 2.5%;*/
+  margin-bottom: 0%;
   --bs-gutter-x: 0;
+}
+.div{
+  margin-bottom: 0%;
+}
+
+.logos-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

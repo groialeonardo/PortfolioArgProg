@@ -13,7 +13,8 @@ import { IExp } from '../Interfaces/IExp';
 
 const httpOptions = {
   headers : new HttpHeaders ({
-    'Content-Type':'application/json'
+    'Content-Type':'application/json',
+    'Authorization': 'Basic ' + btoa('admin:123456')
   })
 }
 
@@ -27,7 +28,7 @@ export class ExperienciaService {
   apiUrl = environment.apiUrlRoot + "/exps";
 
 
-  constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
+  constructor( private httpClient:HttpClient, private crudHttpService:CRUDHttpService  ) { }
 
   getExps() :  Observable<IExp[]> {
 
@@ -43,8 +44,8 @@ export class ExperienciaService {
 
   deleteExps(exp:IExp) : Observable<IExp> {
 
-   /* const url = `${this.apiUrl}/${exp.id}`;
-    return this.httpClient.delete<Exp>(url)*/
+    /*const url = `${this.apiUrl}/${exp.id}`;
+    return this.httpClient.delete<IExp>(url,httpOptions)*/
 
     return this.crudHttpService.delete(exp,this.apiUrl)
 

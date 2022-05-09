@@ -5,19 +5,35 @@
 }
 .login-style{
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
   align-content: center;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   color: white;
+  font-size: 15px;
 }
 
 .login-btn{
   margin-bottom: 2%;
+  margin-top: 1%;
 }
 
 input{
   border-radius: 10px;
+  max-width: 80%;
+  padding-inline-start: 10%;
+}
+
+.center{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.btn{
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
