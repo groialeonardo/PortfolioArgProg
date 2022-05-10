@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule }   from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -24,6 +24,8 @@ import { EducationComponent } from './components/education/education.component';
 import { EducationItemComponent } from './components/education/education-item/education-item.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProjectItemComponent } from './components/proyectos/project-item/project-item.component';
+
+import { BasicAuthHtppInterceptorService } from './services/basic-auth-htpp-interceptor-service.service';
 
 
 @NgModule({
@@ -74,7 +76,11 @@ import { ProjectItemComponent } from './components/proyectos/project-item/projec
       "lazy": false})
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

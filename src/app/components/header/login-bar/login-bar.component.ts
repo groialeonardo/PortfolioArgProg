@@ -17,7 +17,7 @@ export class LoginBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/*
   checkLogin() {
     if (this.authService.authenticate(this.username, this.password)
     ) {
@@ -26,6 +26,20 @@ export class LoginBarComponent implements OnInit {
     } else
       this.invalidLogin = true
   }
+*/
+
+checkLogin() {
+  (this.authService.authenticate(this.username, this.password).subscribe(
+    data => {
+      //this.router.navigate([''])
+      this.invalidLogin = false
+    },
+    error => {
+      this.invalidLogin = true
+    }
+  )
+  );
+}
 
   logOut() {
     this.authService.logOut();
