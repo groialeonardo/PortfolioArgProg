@@ -11,6 +11,32 @@ div {
   color: #ffffff;
 }
 
+.form-control{
+  border:none;
+  background-color:transparent;
+  margin: none;
+  padding: none ;
+}
+
+.button-submit {
+  display: inline-block;
+  border-radius: 15px;
+  background-color:#ca032e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:20px;
+  opacity: 0.75;
+}
+.button-submit:hover {
+  opacity: 1;
+
+}
 #acercademi {
   margin: 25px;
 }
@@ -39,7 +65,7 @@ textarea{
   text-align: center;
 }
 
-@media (min-width:576px) {
+@media (min-width:988px) {
 
   #myPhoto{
     margin-top: -39.3%;
@@ -49,4 +75,14 @@ textarea{
   }
 
 }
+@media (max-width:988px) {
 
+#myPhoto {
+  margin-top: -16.3%;
+  border-radius: 100%;
+  margin-left: 0%;
+  max-height: 61%;
+
+}
+
+}

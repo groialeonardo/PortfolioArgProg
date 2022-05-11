@@ -4,19 +4,28 @@
 
     <div class="col-lg-3 text-center">
       <img src={{personas[personaActual].image_perfil}} alt="" class="img-fluid" id="myPhoto">
+
       <h1>{{personas[personaActual].apellido}} {{personas[personaActual].nombres}}</h1>
       <h2>{{personas[personaActual].ocupacion}}</h2>
     </div>
 
     <div class="col-lg-9 text-center">
       <h1 id="acercademi">Acerca de mi</h1>
-     <p *ngIf = true>{{personas[personaActual].sobre_mi}}</p>
+      <p *ngIf = false>{{personas[personaActual].sobre_mi}}</p>
 
-     <textarea
-        *ngIf = false
-        [(ngModel)] = personas[personaActual].sobre_mi
-        rows="8"
-     > </textarea>
+      <form *ngIf = true>
+        <div class="form-control">
+            <textarea
+            name="sobre_mi"
+            id="sobre_mi"
+            [(ngModel)] = personas[personaActual].sobre_mi
+            rows="6"
+            > </textarea>
+            <input type="submit" value="Guardar Cambios" class="button-submit" />
+        </div>
+      </form>
+
+
 
 
      <!-- <p>Soy Ingeniero Electrónico con gran pasión por la programación y la implementación tecnológica. Soy docente de la Universidad Nacional de Rosario en materias de Ciencias Básicas: Física y Electrónica.
