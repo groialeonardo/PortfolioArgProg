@@ -1,23 +1,6 @@
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css']
-})
-export class EducationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-*/
-
 import { Component, OnInit } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+//import { Subscription } from 'rxjs';
 import { EducationService } from 'src/app/services/education.service';
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 

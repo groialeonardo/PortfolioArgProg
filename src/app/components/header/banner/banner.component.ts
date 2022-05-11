@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IPersona } from 'src/app/Interfaces/IPersona';
+import { Persona } from 'src/app/Model/Persona';
 
 @Component({
   selector: 'app-banner',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
+
+  @Input() persona:IPersona = new Persona();
 
   constructor() { }
 

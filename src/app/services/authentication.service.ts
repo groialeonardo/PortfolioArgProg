@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable} from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -13,13 +13,6 @@ export class AuthenticationService {
 
   constructor(private httpClient:HttpClient) { }
 
-/*  ngOnInit(): void {
-
-    // Se consume el observable de UIexperienciaService que indica si se hizo clic en AddExp.
-    //Copia el valor en showAddExp para hacer el toggle. En el html se muestra o no el formulario dependiendo del valor de esta ultima
-    this.Sub = this.authObs().subscribe((t)=>(this.prueba=t))
-
-  }*/
 /*
   authenticate(username:string, password:string) {
     if (username === "admin" && password === "123456") {

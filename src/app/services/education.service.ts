@@ -1,14 +1,3 @@
-/*import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class EducationService {
-
-  constructor() { }
-}
-*/
-
 ///PRUEBA
 import { CRUDHttpService } from './crud-http.service';
 ///

@@ -35,7 +35,7 @@
 
   <div class="row inner" >
 
-    <div class="add col-2" *ngIf ="showAddSkill&&checkLoggedIn()">
+    <div class="add col-lg-2 col-md-4 col-sm-6" *ngIf ="showAddSkill&&checkLoggedIn()">
       <app-skill-item
         class="col-12 skill-item "
         (editEvent)= "saveSkill($event)"
@@ -57,7 +57,7 @@
       [showDelete]=true
       (deleteEvent)="deleteSkill($event)"
 
-      class="skill-item col-2"
+      class="skill-item col-lg-2 col-md-4 col-sm-6"
 
 
     ></app-skill-item>

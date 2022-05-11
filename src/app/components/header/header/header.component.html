@@ -12,7 +12,7 @@
 
     <div class="col-lg-2">
 
-        <app-sociallink></app-sociallink>
+        <app-sociallink [persona] = personas[personaActual]></app-sociallink>
         <app-login-bar></app-login-bar>
 
     </div>
@@ -23,7 +23,7 @@
 
     <div class="col-12">
 
-      <app-banner class="app-banner"></app-banner>
+      <app-banner [persona] = personas[personaActual] class="app-banner"></app-banner>
 
     </div>
 
