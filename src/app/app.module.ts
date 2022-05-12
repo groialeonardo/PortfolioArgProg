@@ -27,6 +27,8 @@ import { ProjectItemComponent } from './components/proyectos/project-item/projec
 
 import { BasicAuthHtppInterceptorService } from './services/basic-auth-htpp-interceptor-service.service';
 
+import {AngularFireModule} from '@angular/fire/compat';
+
 
 @NgModule({
   declarations: [

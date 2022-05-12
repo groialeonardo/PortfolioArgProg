@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyBTxNc-82q-qj45lUNweZB90qGZINEUcu0",
+    authDomain: "portfoliogroialeonardo.firebaseapp.com",
+    projectId: "portfoliogroialeonardo",
+    storageBucket: "portfoliogroialeonardo.appspot.com",
+    messagingSenderId: "617505511961",
+    appId: "1:617505511961:web:fd88d29ed31703c7b52888",
+    measurementId: "G-QRNP1HLYBV"
+  },
   //apiUrlRoot:"https://portfologroialeonardo.herokuapp.com" //HEROKU
   apiUrlRoot:"http://localhost:8080" //NETBEANS-LOCALHOST
 };

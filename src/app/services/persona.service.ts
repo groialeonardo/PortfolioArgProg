@@ -53,11 +53,15 @@ export class PersonaService {
 
   addPersona(skill:IPersona) : Observable<IPersona> {
 
+
+
     return this.crudHttpService.post(skill,this.apiUrl)
 
   }
 
   updatePersona(skill:IPersona) : Observable<IPersona> {
+
+    console.log(skill)
 
     return this.crudHttpService.put(skill,this.apiUrl)
 

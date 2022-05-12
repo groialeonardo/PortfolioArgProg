@@ -3,7 +3,7 @@
 }
 
 p{
-  font-size: 18px;
+  font-size: 25px;
   margin: 10px;
 }
 div {
@@ -18,7 +18,8 @@ div {
   padding: none ;
 }
 
-.button-submit {
+
+.button-submit{
   display: inline-block;
   border-radius: 15px;
   background-color:#ca032e;
@@ -32,7 +33,30 @@ div {
   cursor: pointer;
   margin:20px;
   opacity: 0.75;
+  /*position:absolute;
+  margin-left: -35%;
+  margin-top: 1.9%;*/
 }
+
+.btn2 {
+  display: inline-block;
+  border-radius: 15px;
+  background-color:#ca032e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:20px;
+  opacity: 0.75;
+  position:absolute;
+  margin-left: -35%;
+  margin-top: 1.9%;
+}
+
 .button-submit:hover {
   opacity: 1;
 
@@ -41,14 +65,14 @@ div {
   margin: 25px;
 }
 
-#myPhoto{
+.myPhoto{
 
   border-radius: 100%;
 
 }
 
 
-textarea{
+textarea, input{
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,13 +85,71 @@ textarea{
   width: 99%;
   margin: 10px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 25px;
   text-align: center;
 }
 
+input{
+  margin-top: 13px;
+  padding: 2px;
+  font-size: 19px;
+  width: 95%;
+
+}
+
+.persData{
+  display:flex;
+  align-items: center;
+  background-color:transparent;
+  flex-wrap: wrap
+
+}
+/*Subir imagen*/
+#inputFile {
+  display: none;
+}
+
+.labelInputFile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #5c90a3;
+  border: 1px solid #064e66;
+  position: absolute;
+  padding: 1rem;
+  box-shadow: 0 0 10px -1px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-top: -8%;
+  margin-left: 16%;
+}
+
+.labelInputFile img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.labelInputFile:active {
+  transform: scale(0.9);
+}
+
+.labelInputFile:hover {
+
+  background-color: #346d81;
+
+}
+
+/**/
+
+
+
+
 @media (min-width:988px) {
 
-  #myPhoto{
+  .myPhoto{
     margin-top: -39.3%;
     border-radius: 100%;
     margin-left: 0%;
@@ -77,12 +159,12 @@ textarea{
 }
 @media (max-width:988px) {
 
-#myPhoto {
-  margin-top: -16.3%;
-  border-radius: 100%;
-  margin-left: 0%;
-  max-height: 61%;
+  .myPhoto {
+    margin-top: -16.3%;
+    border-radius: 100%;
+    margin-left: 0%;
+    max-height: 61%;
 
-}
+  }
 
 }
