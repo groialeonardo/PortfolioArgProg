@@ -1,3 +1,8 @@
 
-  <img src={{persona.image_background_header}} alt="" class="img-fluid banner-img">
+  <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="inputFileBanner">
+  <label for="inputFileBanner" class="labelInputFile" *ngIf = "showEdit">
+    <img src="../../assets/img/icons/pencil.png" alt="upload file" >
+  </label>
 
+  <img src={{persona.image_background_header}} alt="" class="img-fluid banner-img" *ngIf = "newBannerImg[0]==null">
+  <img src={{newBannerImg[0]}} alt="" class="img-fluid banner-img" *ngIf = "newBannerImg[0]!=null">

@@ -15,6 +15,9 @@ export class AcercaDeComponent implements OnInit {
   personaActual:number = 0;
   imagenes: any[] = [];
 
+  showEdit:boolean=false;
+
+
   constructor(private personaService:PersonaService, private storageService:StorageService) { }
 
   ngOnInit(): void {
@@ -28,15 +31,24 @@ export class AcercaDeComponent implements OnInit {
 
   refreshPersona(){
     this.personaActual = this.personas.findIndex(object => {
-      return object.apellido === "Groia";
+      return object.mail === "groialeonardo@gmail.com";
       });
       //console.log( "Apellido : "+this.personaActual)
   }
 
-  addPersona(persona:IPersona) {
+  onToggleEditPerfil(){
+    this.showEdit=!this.showEdit
+  }
+
+ async addPersona(persona:IPersona) {
 
     if (this.imagenes[0] != null){
-      this.storageImagen();
+      try {
+        await this.storageImagen();
+      }
+      catch (err) {
+        console.log(err);
+      }
     }
 
     this.personaService.addPersona(persona).subscribe((t)=>(
@@ -60,6 +72,7 @@ export class AcercaDeComponent implements OnInit {
      this.personaService.updatePersona(persona).subscribe()
   }
 
+  //debe ser async y borrar la imagen de firebase¡?
   deletePersona(persona:IPersona) {
     this.personaService.deletePersona(persona).subscribe(()=>(
       this.personas = this.personas.filter(t => t.id !==persona.id ))
@@ -87,7 +100,7 @@ export class AcercaDeComponent implements OnInit {
       });
    } catch (err) {
     console.log(err);
-  }
+   }
 
   }
 

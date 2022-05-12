@@ -8,13 +8,46 @@
 
     </div>
 
-    <div class="col-lg-8"></div>
+    <div class="col-lg-8">
+      <div class="persData" *ngIf = "showEdit">
+        <label  for="text">Linkedin :</label>
+        <input  type="text" placeholder="" [(ngModel)]="personas[personaActual].linkedin_link"/>
+      </div>
+      <div class="persData" *ngIf = "showEdit">
+        <label for="text">Github :</label>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].github_link"/>
+      </div>
+      <div class="persData" *ngIf = "showEdit">
+        <label for="text">Facebook :</label>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].facebook_link"/>
+      </div>
+      <div class="persData" *ngIf = "showEdit">
+        <label for="text">Instagram: </label>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].instagram_link"/>
+      </div>
+      <div class="persData" *ngIf = "showEdit">
+        <label for="text">Twitter: </label>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].twitter_link"/>
+      </div>
+    </div>
 
     <div class="col-lg-2">
 
         <app-sociallink [persona] = personas[personaActual]></app-sociallink>
+
+
         <app-login-bar></app-login-bar>
 
+        <div class="row editbtn">
+          <app-editbtn
+        border="1px solid #FFFFFF"
+        class="col-12 editbtn"
+        (onBbtnClick)="onToggleEditPerfil()"
+        ></app-editbtn>
+        </div>
+        <div class="row editbtn">
+        <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
+        </div>
     </div>
   </div>
 
@@ -23,7 +56,11 @@
 
     <div class="col-12">
 
-      <app-banner [persona] = personas[personaActual] class="app-banner"></app-banner>
+      <app-banner
+        [persona] = personas[personaActual] class="app-banner"
+        (newBannerImgEvent)="addNewBanner($event)"
+        [showEdit]="showEdit"
+      ></app-banner>
 
     </div>
 

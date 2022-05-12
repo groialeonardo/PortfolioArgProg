@@ -1,1 +1,44 @@
+input{
+  margin-top: 13px;
+  padding: 2px;
+  font-size: 19px;
+  width: 95%;
 
+}
+
+#inputFileBanner {
+  display: none;
+}
+
+.labelInputFile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #5c90a3;
+  border: 1px solid #064e66;
+  position: absolute;
+  padding: 1rem;
+  box-shadow: 0 0 10px -1px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 1%;
+  margin-left: 95%;
+}
+
+.labelInputFile img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.labelInputFile:active {
+  transform: scale(0.9);
+}
+
+.labelInputFile:hover {
+
+  background-color: #346d81;
+
+}

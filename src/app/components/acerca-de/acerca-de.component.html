@@ -5,69 +5,57 @@
     <div class="col-lg-3 text-center">
 
       <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="inputFile">
-      <label for="inputFile" class="labelInputFile" *ngIf = true>
+      <label for="inputFile" class="labelInputFile" *ngIf = "showEdit">
         <img src="../../assets/img/icons/pencil.png" alt="upload file" >
       </label>
 
       <img src={{personas[personaActual].image_perfil}} alt="" class="img-fluid myPhoto" id="myPhoto" *ngIf = "imagenes[0]==null"
-       [ngStyle]="{'max-height': imagenes[0]== null ? '70%' : '70%' }"
+       [ngStyle]="{'max-height': showEdit ? '43.9%' : '70%' }"
       >
-      <img src={{imagenes[0]}} alt="" class="img-fluid myPhoto" id="myPhoto1"
-        [ngStyle]="{'max-height': imagenes[0]!= null ? '44.9%' : '44.9%' }"
+      <img src={{imagenes[0]}} alt="" class="img-fluid myPhoto" id="myPhoto2"
+        [ngStyle]="{'max-height': showEdit ? '43.9%' : '70%' }"
       >
 
-      <div class="persData" *ngIf = "imagenes[0]!=null">
+      <div class="persData" *ngIf = "showEdit">
         <label  for="text">Apellido</label>
         <input  type="text" placeholder="" [(ngModel)]="personas[personaActual].apellido"/>
       </div>
-      <div class="persData" *ngIf = "imagenes[0]!=null">
+      <div class="persData" *ngIf = "showEdit">
         <label for="text">Nombres</label>
         <input type="text" placeholder="" [(ngModel)]="personas[personaActual].nombres"/>
       </div>
-      <div class="persData" *ngIf = "imagenes[0]!=null">
+      <div class="persData" *ngIf = "showEdit">
         <label for="text">Ocupación</label>
         <input type="text" placeholder="" [(ngModel)]="personas[personaActual].ocupacion"/>
       </div>
 
-      <input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
+      <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
 
 
-      <h1 *ngIf = "imagenes[0]==null">{{personas[personaActual].apellido}} {{personas[personaActual].nombres}}</h1>
-      <h2 *ngIf = "imagenes[0]==null">{{personas[personaActual].ocupacion}}</h2>
+      <h1 *ngIf = "!showEdit">{{personas[personaActual].apellido}} {{personas[personaActual].nombres}}</h1>
+      <h2 *ngIf = "!showEdit">{{personas[personaActual].ocupacion}}</h2>
     </div>
 
     <div class="col-lg-9 text-center">
-     <!-- <input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="btn2" (click)="editPersona(personas[personaActual])" />-->
+      <!--<input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="btn2" (click)="editPersona(personas[personaActual])" />-->
+      <app-editbtn
+      border="1px solid #FFFFFF"
+      style="padding: 5px;"
+      class="col-2 editbtn"
+      (onBbtnClick)="onToggleEditPerfil()"
+      ></app-editbtn>
+
       <h1 id="acercademi">Acerca de mi</h1>
-      <p *ngIf = "imagenes[0]==null">{{personas[personaActual].sobre_mi}}</p>
+      <p *ngIf = "!showEdit">{{personas[personaActual].sobre_mi}}</p>
 
       <textarea
       name="sobre_mi"
       id="sobre_mi"
       [(ngModel)] = personas[personaActual].sobre_mi
       rows="13"
-      *ngIf = "imagenes[0]!=null"
+      *ngIf = "showEdit"
       > </textarea>
 
-     <!-- <form *ngIf = true>
-        <div class="form-control">
-            <textarea
-            name="sobre_mi"
-            id="sobre_mi"
-            [(ngModel)] = personas[personaActual].sobre_mi
-            rows="6"
-            > </textarea>
-            <input type="submit" value="Guardar Cambios" class="button-submit" />
-        </div>
-      </form>
-    -->
-
-
-     <!-- <p>Soy Ingeniero Electrónico con gran pasión por la programación y la implementación tecnológica. Soy docente de la Universidad Nacional de Rosario en materias de Ciencias Básicas: Física y Electrónica.
-      <p>Profesionalmente poseo 10 años de experiencia en automatización de procesos industrales llegando a liderar el Departamento de Automatizacion e Inovación Tecnológica.</p>
-      <p>Hace 2 años comencé a capacitarme en Desarrollo Web Full Stack y he realizado algunos proyectos de manera Freelance para algunas empresas con HTML, CSS, Bootstap y JS.</p>
-      <p>En este momento me encuentro desarrolando proyectos con Angular, Java y MySQL, como así tambien con C# y ASP.NET</p>
-      <p>Mi intención es poder dedicarme Full Time al desarrollo Web</p>  -->
     </div>
 
   </div>
