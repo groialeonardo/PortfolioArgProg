@@ -46,7 +46,7 @@
           ></app-editbtn>
         </div>
         <div class="row editbtn">
-        <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="onSave(persona)" />
+        <input *ngIf = "showEdit&&loggedIn" value="Guardar Cambios" class="button-submit" (click)="onSave(persona)" />
         </div>
     </div>
   </div>
