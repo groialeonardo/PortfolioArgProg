@@ -9,7 +9,7 @@
         <img src="../../assets/img/icons/pencil.png" alt="upload file" >
       </label>
 
-      <img src={{persona.image_perfil}} alt="" class="img-fluid myPhoto" id="myPhoto" *ngIf = "imagenes[0]==null"
+      <img src={{personas[personaActual].image_perfil}} alt="" class="img-fluid myPhoto" id="myPhoto" *ngIf = "imagenes[0]==null"
        [ngStyle]="{'max-height': showEdit ? '43.9%' : '70%' }"
       >
       <img src={{imagenes[0]}} alt="" class="img-fluid myPhoto" id="myPhoto2"
@@ -18,40 +18,40 @@
 
       <div class="persData" *ngIf = "showEdit">
         <label  for="text">Apellido</label>
-        <input  type="text" placeholder="" [(ngModel)]="persona.apellido" (ngModelChange)="OnPersonaChange()"/>
+        <input  type="text" placeholder="" [(ngModel)]="personas[personaActual].apellido"/>
       </div>
       <div class="persData" *ngIf = "showEdit">
         <label for="text">Nombres</label>
-        <input type="text" placeholder="" [(ngModel)]="persona.nombres"/>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].nombres"/>
       </div>
       <div class="persData" *ngIf = "showEdit">
         <label for="text">Ocupación</label>
-        <input type="text" placeholder="" [(ngModel)]="persona.ocupacion"/>
+        <input type="text" placeholder="" [(ngModel)]="personas[personaActual].ocupacion"/>
       </div>
 
-    <!--  <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
--->
+      <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
 
-      <h1 *ngIf = "!showEdit">{{persona.apellido}} {{persona.nombres}}</h1>
-      <h2 *ngIf = "!showEdit">{{persona.ocupacion}}</h2>
+
+      <h1 *ngIf = "!showEdit">{{personas[personaActual].apellido}} {{personas[personaActual].nombres}}</h1>
+      <h2 *ngIf = "!showEdit">{{personas[personaActual].ocupacion}}</h2>
     </div>
 
     <div class="col-lg-9 text-center">
-      <!--<input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="btn2" (click)="editPersona(personas[personaActual])" />
+      <!--<input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="btn2" (click)="editPersona(personas[personaActual])" />-->
       <app-editbtn
       border="1px solid #FFFFFF"
       style="padding: 5px;"
       class="col-2 editbtn"
       (onBbtnClick)="onToggleEditPerfil()"
       ></app-editbtn>
--->
+
       <h1 id="acercademi">Acerca de mi</h1>
-      <p *ngIf = "!showEdit">{{persona.sobre_mi}}</p>
+      <p *ngIf = "!showEdit">{{personas[personaActual].sobre_mi}}</p>
 
       <textarea
       name="sobre_mi"
       id="sobre_mi"
-      [(ngModel)] = persona.sobre_mi
+      [(ngModel)] = personas[personaActual].sobre_mi
       rows="13"
       *ngIf = "showEdit"
       > </textarea>

@@ -1,8 +1,9 @@
-import { Component, OnInit, AfterViewInit, Input, EventEmitter, Output } from '@angular/core';
+/*
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { IPersona } from 'src/app/Interfaces/IPersona';
-import { Persona } from 'src/app/Model/Persona';
-//import { PersonaService } from 'src/app/services/persona.service';
-//import { StorageService } from 'src/app/services/storage.service';
+import { PersonaService } from 'src/app/services/persona.service';
+
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -11,51 +12,21 @@ import { Persona } from 'src/app/Model/Persona';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() persona:IPersona = new Persona();
-  @Output() onSaveEvent:EventEmitter<IPersona> = new EventEmitter()
-  @Output() newBannerimgEvent:EventEmitter<any[]> = new EventEmitter()
-  @Output() OnToggleShowEdit:EventEmitter<boolean> =new EventEmitter()
-/*
   personas:IPersona[] =[];
   personaActual:number = 0;
-*/
   imagenes: any[] = [];
 
   showEdit:boolean=false;
 
-  constructor(/*private personaService:PersonaService, private storageService:StorageService*/) { }
+  constructor(private personaService:PersonaService, private storageService:StorageService) { }
 
   ngOnInit(): void {
-    //this too
-    /*
+
     this.personaService.getPersonas().subscribe((personacallback)=>(
       this.personas=personacallback));
     console.log(this.personas)
-*/
-  }
-
-  onToggleEditPerfil(){
-    this.showEdit=!this.showEdit;
-    this.OnToggleShowEdit.emit(this.showEdit);
-  }
-
-  addNewBanner(newBaneer:any){
-    //this.imagenes[0]=newBaneer;
-    //this.newBannerimgEvent.emit(this.imagenes[0]);
-    console.log("pasando por banner en header")
-    this.newBannerimgEvent.emit(newBaneer);
 
   }
-
-  onSave(persona:IPersona){
-
-
-    this.onSaveEvent.emit(persona);
-
-
-  }
-//from here
-/*
   ngAfterViewInit(): void {
     this.refreshPersona();
   }
@@ -65,6 +36,14 @@ export class HeaderComponent implements OnInit {
       return object.mail === "groialeonardo@gmail.com";
       });
       console.log( "Apellido : "+this.personaActual)
+  }
+
+  onToggleEditPerfil(){
+    this.showEdit=!this.showEdit
+  }
+
+  addNewBanner(newBaneer:any){
+    this.imagenes[0]=newBaneer;
   }
 
   async addPersona(persona:IPersona) {
@@ -112,5 +91,6 @@ export class HeaderComponent implements OnInit {
      console.log(err);
     }
   }
-*/
+
 }
+*/

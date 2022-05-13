@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit, Input, Output,EventEmitter } from '@angular/core';
+/*
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { IPersona } from 'src/app/Interfaces/IPersona';
-import { Persona } from 'src/app/Model/Persona';
 import { PersonaService } from 'src/app/services/persona.service';
+
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -10,48 +11,19 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-/*
+
   personas:IPersona[] =[];
   personaActual:number = 0;
-*/
   imagenes: any[] = [];
 
-  @Input() persona:IPersona = new Persona();
-  @Output() onPersonaChangeEvent:EventEmitter<IPersona> = new EventEmitter()
-  @Output() newPhotoimgEvent:EventEmitter<any> = new EventEmitter()
-
-  @Input() showEdit:boolean=false; //aca necesito que sea un input
+  showEdit:boolean=false;
 
 
-  constructor(/*private personaService:PersonaService, private storageService:StorageService*/) { }
+  constructor(private personaService:PersonaService, private storageService:StorageService) { }
 
   ngOnInit(): void {
-   /* this.personaService.getPersonas().subscribe((personacallback)=>(
-      this.personas=personacallback));*/
-  }
-
-  cargarImagen(event: any) {
-    let archivos = event.target.files;
-    let reader = new FileReader();
-    reader.readAsDataURL(archivos[0]);
-    reader.onloadend = () => {
-      this.imagenes[0]=reader.result;
-      this.newPhotoimgEvent.emit(reader.result)
-    }
-  }
-
-  OnPersonaChange(){
-
-    this.onPersonaChangeEvent.emit(this.persona);
-
-
-
-  }
-
-
-/*
-  onToggleEditPerfil(){
-    this.showEdit=!this.showEdit
+    this.personaService.getPersonas().subscribe((personacallback)=>(
+      this.personas=personacallback));
   }
 
   ngAfterViewInit(): void {
@@ -63,6 +35,10 @@ export class AcercaDeComponent implements OnInit {
       return object.mail === "groialeonardo@gmail.com";
       });
       //console.log( "Apellido : "+this.personaActual)
+  }
+
+  onToggleEditPerfil(){
+    this.showEdit=!this.showEdit
   }
 
  async addPersona(persona:IPersona) {
@@ -104,6 +80,16 @@ export class AcercaDeComponent implements OnInit {
     );
   }
 
+
+  cargarImagen(event: any) {
+    let archivos = event.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+      this.imagenes[0]=reader.result;
+    }
+  }
+
  async storageImagen(){
    try{
     await this.storageService.subirImagen(
@@ -119,9 +105,10 @@ export class AcercaDeComponent implements OnInit {
 
   }
 
-*/
+
 
 
 
 
 }
+*/
