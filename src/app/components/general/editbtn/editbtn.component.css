@@ -27,6 +27,7 @@
 }
 
 .button span:after {
+
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -43,3 +44,91 @@
   opacity: 1;
   right: 0;
 }
+
+img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: none;
+}
+
+@media (max-width:629px) {
+
+  #editBtn{
+    display: none;
+  }
+
+  img {
+
+    display:flex;
+  }
+
+  .button {
+    display: flex;
+    border-radius: 40px;
+    background-color: #19657e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+    opacity: 0.80;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+/*
+.labelInputFile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #5c90a3;
+  border: 1px solid #064e66;
+  padding: 1rem;
+  box-shadow: 0 0 10px -1px gray;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+
+.labelInputFile img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.labelInputFile:active {
+  transform: scale(0.9);
+}
+
+.labelInputFile:hover {
+
+  background-color: #346d81;
+
+}
+
+@media (max-width:629px) {
+
+  #editBtn{
+    display: none;
+  }
+
+  .labelInputFile {
+
+    display:flex;
+  }
+
+}
+
+*/
+
+

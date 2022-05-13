@@ -58,9 +58,6 @@
 
   }
 
-
-
-
   #deleteBtnTec{
     position: relative;
     margin-left: 86%;
@@ -75,7 +72,7 @@
     margin: 10%
   }
   .img-proy {
-    max-width: 80%;
+   /* max-width: 80%;*/
     border-radius: 15px;
   }
 
@@ -155,4 +152,34 @@
   #descripcion{
     display: flex;
     vertical-align: middle;
+  }
+
+  #proyImgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 0px;
+  }
+
+  @media (max-width: 1200px) {
+
+  #proyTecImgContainer {
+
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+
+  #proyImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 0px;
+    padding: 1%;
+    padding-right: 7%;
+    padding-left: 6%;
+}
+
   }
