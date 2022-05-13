@@ -32,9 +32,20 @@
 
                 <div class="col-8">
                     <h4>Tecnologías Utilizadas</h4>
+
+                    <div class="row skills-container" id="skill-cont-card">
+                      <div class="skills" *ngFor="let tecno of project.tecnologias">
+
+                        <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
+
+                      </div>
+
+                    </div>
+<!--
                     <div class="row ">
+
                         <div class="skills col-12 flex-shrink-0">
-                           <!-- <img src="http://localhost:4200/assets/img/Logos/Skills/color/html.png" class="img-fluid img-logos" alt="">
+                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/html.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/css.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/js.png" class="img-fluid img-logos" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png" class="img-fluid img-logos" alt="">
@@ -43,12 +54,13 @@
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/springboot.png" class="img-logos" style="max-height: 40px;" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/hibernate.png" class="img-logos" style="max-height: 35px;" alt="">
                             <img src="http://localhost:4200/assets/img/Logos/Skills/color/mysql.png" class="img-logos" style="max-height: 50px;" alt="">
-                             -->
+
                               <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" *ngFor="let tecno of project.tecnologias">
 
                         </div>
-                    </div>
 
+                    </div>
+-->
                     <p>  {{project.descripcion}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi odit fugiat unde neque nam illum voluptatum nesciunt ad rerum dolore suscipit, ratione amet dolorem atque quod ex voluptate autem vero?</p>
                 </div>
 
@@ -104,25 +116,39 @@
           </div>
 
             <label class="col-12" for="text" *ngIf ="showTecno" >Tecnologías Utilizadas</label>
-           <!-- <input #name class="form-check-input" type="checkbox" id="saveUserNameCheckBox" [checked]="showTecno" (change)="toggleTecno(name.checked)">
+<!--
+            <input #name class="form-check-input" type="checkbox" id="saveUserNameCheckBox" [checked]="showTecno" (change)="toggleTecno(name.checked)">
 
             <div class="form-check form-check-inline"  *ngFor="let tecno of project.tecnologias"  >
               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" [checked]="showTecno" (onChange)="toggleTecno2(tecno.name)">
               <label class="form-check-label" for="inlineCheckbox1">{{tecno.name}}</label>
 
-           <select name="tecnologias" [(ngModel)]="newTecno">
+            <select name="tecnologias" [(ngModel)]="newTecno">
               <option [ngValue]="tecno" *ngFor="let tecno of project.tecnologias">{{tecno.name}}</option>
             </select>
 
-            </div> -->
+            </div>
+-->
 
-
+<!--
             <div class="row">
               <div class="skills col-12 flex-shrink-0" *ngFor="let tecno of project.tecnologias">
                 <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
                 <app-deletebtn
                   (click)= "onDeleteTecno(tecno)"
                 ></app-deletebtn>
+              </div>
+
+            </div>
+-->
+            <div class="row skills-container">
+              <div class="skills" *ngFor="let tecno of project.tecnologias">
+                <app-deletebtn
+                (click)= "onDeleteTecno(tecno)"
+                id="deleteBtnTec"
+                ></app-deletebtn>
+                <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
+
               </div>
 
             </div>

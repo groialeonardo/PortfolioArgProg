@@ -24,17 +24,50 @@
   }
 
  .skills {
-    height: 70px;
-    width: 70px;
+   /* height: 70px;
+    width: 70px;*/
   /*  background-color: #15576d;*/
   /*  border-radius: 80%;*/
-    margin-left: 2.5%;
+  /*  margin-left: 2.5%;
     margin-right: 4%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;*/
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+   /* align-content: space-around;*/
+    width: auto;
 
   }
+
+  .skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: auto;
+  }
+
+  #skill-cont-card{
+
+    justify-content: flex-start;
+    margin-left: 2%;
+
+  }
+
+
+
+
+  #deleteBtnTec{
+    position: relative;
+    margin-left: 86%;
+    margin-bottom: -22%;
+  }
+
+
 
   .img-logos {
     max-height: 70px;
