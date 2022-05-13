@@ -13,8 +13,8 @@ export const environment = {
     appId: "1:617505511961:web:fd88d29ed31703c7b52888",
     measurementId: "G-QRNP1HLYBV"
   },
-  //apiUrlRoot:"https://portfologroialeonardo.herokuapp.com" //HEROKU
-  apiUrlRoot:"http://localhost:8080" //NETBEANS-LOCALHOST
+  apiUrlRoot:"https://portfologroialeonardo.herokuapp.com" //HEROKU
+  //apiUrlRoot:"http://localhost:8080" //NETBEANS-LOCALHOST
 };
 
 /*

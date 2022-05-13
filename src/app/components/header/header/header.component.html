@@ -9,23 +9,23 @@
     </div>
 
     <div class="col-lg-8">
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label  for="text">Linkedin :</label>
         <input  type="text" placeholder="" [(ngModel)]="persona.linkedin_link"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Github :</label>
         <input type="text" placeholder="" [(ngModel)]="persona.github_link"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Facebook :</label>
         <input type="text" placeholder="" [(ngModel)]="persona.facebook_link"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Instagram: </label>
         <input type="text" placeholder="" [(ngModel)]="persona.instagram_link"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Twitter: </label>
         <input type="text" placeholder="" [(ngModel)]="persona.twitter_link"/>
       </div>
@@ -40,10 +40,10 @@
 
         <div class="row editbtn">
           <app-editbtn
-        border="1px solid #FFFFFF"
-        class="col-12 editbtn"
-        (onBbtnClick)="onToggleEditPerfil()"
-        ></app-editbtn>
+          border="1px solid #FFFFFF"
+          class="col-12 editbtn"
+          (onBbtnClick)="onToggleEditPerfil()"
+          ></app-editbtn>
         </div>
         <div class="row editbtn">
         <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="onSave(persona)" />
@@ -57,9 +57,10 @@
     <div class="col-12">
 
       <app-banner
-        [persona] = persona class="app-banner"
+        [persona] = persona
+        class="app-banner"
         (newBannerImgEvent)="addNewBanner($event)"
-        [showEdit]="showEdit"
+        [showEdit]="showEdit&&loggedIn"
       ></app-banner>
 
     </div>

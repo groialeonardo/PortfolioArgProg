@@ -12,6 +12,7 @@ import { Persona } from 'src/app/Model/Persona';
 export class HeaderComponent implements OnInit {
 
   @Input() persona:IPersona = new Persona();
+  @Input() loggedIn:boolean = false;
   @Output() onSaveEvent:EventEmitter<IPersona> = new EventEmitter()
   @Output() newBannerimgEvent:EventEmitter<any[]> = new EventEmitter()
   @Output() OnToggleShowEdit:EventEmitter<boolean> =new EventEmitter()

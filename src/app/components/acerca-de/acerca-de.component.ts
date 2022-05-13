@@ -17,6 +17,7 @@ export class AcercaDeComponent implements OnInit {
   imagenes: any[] = [];
 
   @Input() persona:IPersona = new Persona();
+  @Input() loggedIn:boolean = false;
   @Output() onPersonaChangeEvent:EventEmitter<IPersona> = new EventEmitter()
   @Output() newPhotoimgEvent:EventEmitter<any> = new EventEmitter()
 

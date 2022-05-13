@@ -5,26 +5,26 @@
     <div class="col-lg-3 text-center">
 
       <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="inputFile">
-      <label for="inputFile" class="labelInputFile" *ngIf = "showEdit">
+      <label for="inputFile" class="labelInputFile" *ngIf = "showEdit&&loggedIn">
         <img src="../../assets/img/icons/pencil.png" alt="upload file" >
       </label>
 
       <img src={{persona.image_perfil}} alt="" class="img-fluid myPhoto" id="myPhoto" *ngIf = "imagenes[0]==null"
-       [ngStyle]="{'max-height': showEdit ? '43.9%' : '70%' }"
+       [ngStyle]="{'max-height': showEdit&&loggedIn ? '43.9%' : '70%' }"
       >
       <img src={{imagenes[0]}} alt="" class="img-fluid myPhoto" id="myPhoto2"
-        [ngStyle]="{'max-height': showEdit ? '43.9%' : '70%' }"
+        [ngStyle]="{'max-height': showEdit&&loggedIn ? '43.9%' : '70%' }"
       >
 
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label  for="text">Apellido</label>
         <input  type="text" placeholder="" [(ngModel)]="persona.apellido" (ngModelChange)="OnPersonaChange()"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Nombres</label>
         <input type="text" placeholder="" [(ngModel)]="persona.nombres"/>
       </div>
-      <div class="persData" *ngIf = "showEdit">
+      <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Ocupación</label>
         <input type="text" placeholder="" [(ngModel)]="persona.ocupacion"/>
       </div>
@@ -32,8 +32,8 @@
     <!--  <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
 -->
 
-      <h1 *ngIf = "!showEdit">{{persona.apellido}} {{persona.nombres}}</h1>
-      <h2 *ngIf = "!showEdit">{{persona.ocupacion}}</h2>
+      <h1 *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.apellido}} {{persona.nombres}}</h1>
+      <h2 *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.ocupacion}}</h2>
     </div>
 
     <div class="col-lg-9 text-center">
@@ -46,14 +46,14 @@
       ></app-editbtn>
 -->
       <h1 id="acercademi">Acerca de mi</h1>
-      <p *ngIf = "!showEdit">{{persona.sobre_mi}}</p>
+      <p *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.sobre_mi}}</p>
 
       <textarea
       name="sobre_mi"
       id="sobre_mi"
       [(ngModel)] = persona.sobre_mi
       rows="13"
-      *ngIf = "showEdit"
+      *ngIf = "showEdit&&loggedIn"
       > </textarea>
 
     </div>

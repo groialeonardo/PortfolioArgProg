@@ -3,10 +3,12 @@
   (newBannerimgEvent)="addNewBanner($event)"
   (onSaveEvent)="editPersona($event)"
   (OnToggleShowEdit)="ToggleShowEdit($event)"
+  [loggedIn]=checkLoggedIn()
 ></app-header>
 <app-acerca-de
   [persona]=personas[personaActual]
   (onPersonaChangeEvent)="OnChangeFromAcercaDe($event)"
   (newPhotoimgEvent)="addNewProfilePhoto($event)"
   [showEdit]=showEdit
+  [loggedIn]=checkLoggedIn()
 ></app-acerca-de>

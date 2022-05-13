@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IPersona } from 'src/app/Interfaces/IPersona';
 import { PersonaService } from 'src/app/services/persona.service';
-
 import { StorageService } from 'src/app/services/storage.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   showEdit:boolean=false;
 
-  constructor(private personaService:PersonaService, private storageService:StorageService) { }
+  constructor(private personaService:PersonaService, private storageService:StorageService,private authService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.personaService.getPersonas().subscribe((personacallback)=>(
@@ -50,6 +50,10 @@ export class ProfileComponent implements OnInit {
 
   OnChangeFromAcercaDe(Changes:IPersona){
     this.personas[this.personaActual] =Changes;
+  }
+
+  checkLoggedIn():boolean{
+    return this.authService.isUserLoggedIn()
   }
 
   async addPersona(persona:IPersona) {
