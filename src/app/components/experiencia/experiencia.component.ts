@@ -37,14 +37,19 @@ export class ExperienciaComponent implements OnInit {
 
   addExp(exp:IExp) {
 
-    this.experienciaService.addExp(exp).subscribe((t)=>(
-      this.exps.push(t)
-    ))
+    this.experienciaService.addExp(exp).subscribe((t)=>{
+      this.exps.push(t);
+      alert("Se ha añadido una nueva Experiencia");
+      this.showAddExp = false; 
+    })
+
   }
 
   editExp(exp:IExp) {
 
-    this.experienciaService.updateExp(exp).subscribe()
+    this.experienciaService.updateExp(exp).subscribe(()=>{      
+      alert("Los datos se han guardado satisfactoriamente");       
+    });
   }
 
   deleteExp(exp:IExp) {
