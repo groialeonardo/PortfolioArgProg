@@ -37,14 +37,18 @@ export class EducationComponent implements OnInit {
 
   addEducation(educ:IEducation) {
 
-    this.educationService.addEducation(educ).subscribe((t)=>(
+    this.educationService.addEducation(educ).subscribe((t)=>{
       this.educations.push(t)
-    ))
+      alert("Se ha añadido una nueva Educación");
+      this.showAddEducation = false; 
+  })
   }
 
   editEducation(educ:IEducation) {
 
-    this.educationService.updateEducation(educ).subscribe()
+    this.educationService.updateEducation(educ).subscribe(()=>{      
+      alert("Los datos se han guardado satisfactoriamente");       
+    })
   }
 
   deleteEducation(educ:IEducation) {

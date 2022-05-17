@@ -41,11 +41,7 @@ export class SkillsService {
 
   getSkills() :  Observable<ISkill[]> {
 
-     const a = this.crudHttpService.get(this.apiUrl);
-
-     console.log(a);
-
-     return a;
+     return this.crudHttpService.get(this.apiUrl);
 
   }
 

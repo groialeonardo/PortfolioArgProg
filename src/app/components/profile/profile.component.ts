@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.personaService.getPersonas().subscribe((personacallback)=>(
       this.personas=personacallback));
-    console.log(this.personas)
+    //console.log(this.personas)
   }
 
   ngAfterViewInit(): void {
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     this.personaActual = this.personas.findIndex(object => {
       return object.mail === "groialeonardo@gmail.com";
       });
-      console.log( "Apellido : "+this.personaActual)
+      console.log( "Usuario : "+ this.personas[this.personaActual].mail)
   }
 
   ToggleShowEdit(showEdit:boolean){
@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   }
 
   addNewBanner(newBaneer:any){
-    console.log("pasando por banner en profile")
+   // console.log("pasando por banner en profile")
     this.imagenes[0]=newBaneer;
   }
   addNewProfilePhoto(newProfilePhoto:any){
@@ -64,6 +64,7 @@ export class ProfileComponent implements OnInit {
       }
       catch (err) {
         console.log(err);
+        alert("Error en el guardado de imagen");
       }
     }
     if (this.imagenes[1] != null){
@@ -72,17 +73,22 @@ export class ProfileComponent implements OnInit {
       }
       catch (err) {
         console.log(err);
+        alert("Error en el guardado de imagen");
       }
     }
 
-    this.personaService.addPersona(persona).subscribe((t)=>(
-      this.personas.push(t)
-    ));
+    //Por ahora en desuso, TO DO: implementar poder agregar nueva persona
+    this.personaService.addPersona(persona).subscribe((t)=>{
+      this.personas.push(t);
+      alert("Se ha añadido una nueva Persona");
+    }
+      
+    );
   }
 
   async editPersona(persChanges:IPersona) {
 
-    console.log(persChanges)
+    //console.log(persChanges)
 
     if (this.imagenes[0] != null){
       try {
@@ -90,6 +96,7 @@ export class ProfileComponent implements OnInit {
       }
       catch (err) {
         console.log(err);
+        alert("Error en el guardado de imagen");
       }
     }
     if (this.imagenes[1] != null){
@@ -98,6 +105,7 @@ export class ProfileComponent implements OnInit {
       }
       catch (err) {
         console.log(err);
+        alert("Error en el guardado de imagen");
       }
     }
 
@@ -107,8 +115,10 @@ export class ProfileComponent implements OnInit {
     this.personas[this.personaActual].instagram_link=persChanges.instagram_link;
     this.personas[this.personaActual].twitter_link=persChanges.twitter_link;
 
-    console.log(this.personas[this.personaActual])
-    this.personaService.updatePersona(this.personas[this.personaActual]).subscribe()
+    //console.log(this.personas[this.personaActual])
+    this.personaService.updatePersona(this.personas[this.personaActual]).subscribe(()=>{      
+      alert("Los datos se han guardado satisfactoriamente");       
+    })
   }
 
   async storageImagen(img:any,storeDirectory:string){

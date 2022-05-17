@@ -23,6 +23,7 @@ export class StorageService {
       return await respuesta.ref.getDownloadURL();
     } catch (err) {
       console.log(err);
+      alert("Se ha producido un error al guardar la imagen")
       return null;
     }
 

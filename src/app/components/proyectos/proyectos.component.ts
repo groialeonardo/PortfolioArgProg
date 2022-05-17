@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProyectoService } from 'src/app/services/proyecto.service';
 import { IProject } from 'src/app/Interfaces/IProject';
-import { PROJECTS } from 'src/app/mock-projects';
+//import { PROJECTS } from 'src/app/mock-projects';
 
 import { TecnologiaService } from 'src/app/services/tecnologia.service';
 import { ITecno } from 'src/app/Interfaces/ITecno';
@@ -41,17 +41,21 @@ export class ProyectosComponent implements OnInit {
 
   addProject(project:IProject) {
 
-    this.proyectoService.addProject(project).subscribe((t)=>(
+    this.proyectoService.addProject(project).subscribe((t)=>{
       this.projects.push(t)
-    ))
+      alert("Se ha añadido un nuevo Proyecto");
+      this.showAddProject = false; 
+  })
   }
 
 
   editProject(project:IProject) {
 
-    this.proyectoService.updateProject(project).subscribe()
-    console.log(this.allTecnologies)
-    console.log(this.projects)
+    this.proyectoService.updateProject(project).subscribe(()=>{      
+      alert("Los datos se han guardado satisfactoriamente");       
+    })
+    //console.log(this.allTecnologies)
+    //console.log(this.projects)
   }
 
   deleteProject(project:IProject) {

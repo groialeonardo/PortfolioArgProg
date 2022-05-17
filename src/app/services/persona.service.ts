@@ -1,14 +1,3 @@
-/*import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class PersonaService {
-
-  constructor() { }
-}
-*/
-
 import { CRUDHttpService } from './crud-http.service';
 
 import { Injectable } from '@angular/core';
@@ -37,33 +26,25 @@ export class PersonaService {
 
   getPersonas() :  Observable<IPersona[]> {
 
-     const a = this.crudHttpService.get(this.apiUrl);
-
-     console.log(a);
-
-     return a;
+     return  this.crudHttpService.get(this.apiUrl);;
 
   }
 
-  deletePersona(skill:IPersona) : Observable<IPersona> {
+  deletePersona(persona:IPersona) : Observable<IPersona> {
 
-    return this.crudHttpService.delete(skill,this.apiUrl)
+    return this.crudHttpService.delete(persona,this.apiUrl)
 
    }
 
-  addPersona(skill:IPersona) : Observable<IPersona> {
+  addPersona(persona:IPersona) : Observable<IPersona> {
 
-
-
-    return this.crudHttpService.post(skill,this.apiUrl)
+    return this.crudHttpService.post(persona,this.apiUrl)
 
   }
 
-  updatePersona(skill:IPersona) : Observable<IPersona> {
+  updatePersona(persona:IPersona) : Observable<IPersona> {
 
-    console.log(skill)
-
-    return this.crudHttpService.put(skill,this.apiUrl)
+    return this.crudHttpService.put(persona,this.apiUrl)
 
   }
 

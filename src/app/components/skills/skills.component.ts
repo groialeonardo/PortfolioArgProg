@@ -34,14 +34,19 @@ export class SkillsComponent implements OnInit {
 
   editSkill(skill:ISkill) {
 
-    this.skillsSevice.updateSkill(skill).subscribe()
+    this.skillsSevice.updateSkill(skill).subscribe(()=>{      
+      alert("Los datos se han guardado satisfactoriamente");       
+    })
   }
 
   saveSkill(skill:ISkill) {
 
-    this.skillsSevice.addSkill(skill).subscribe((t)=>(
-      this.skills.push(t)
-    ))
+    this.skillsSevice.addSkill(skill).subscribe((t)=>{
+      this.skills.push(t);
+      alert("Se ha añadido una nueva Experiencia");
+      this.showAddSkill = false;
+      
+    })
   }
 
   deleteSkill(skill:ISkill) {

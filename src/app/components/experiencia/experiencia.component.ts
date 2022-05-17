@@ -5,7 +5,7 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { IExp } from 'src/app/Interfaces/IExp';
-import { EXPS } from 'src/app/mock-exps';
+//import { EXPS } from 'src/app/mock-exps';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
