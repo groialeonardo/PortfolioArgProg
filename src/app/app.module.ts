@@ -69,6 +69,7 @@ import { ProfileComponent } from './components/profile/profile.component';
       "outerStrokeGradientStopColor": "#67acc1",
       "innerStrokeColor": "#e0ebff",
       "innerStrokeWidth": 10,
+      "showTitle": true,
       "animateTitle": false,
       "animationDuration": 1000,
       "showUnits": true,
