@@ -9,6 +9,8 @@ import { IExp } from 'src/app/Interfaces/IExp';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+import { ModalService } from 'src/app/_modal';
+
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -21,7 +23,10 @@ export class ExperienciaComponent implements OnInit {
   subcription?:Subscription;
   showAddExp:boolean = false;
 
-  constructor(private experienciaService:ExperienciaService , private UIexperienciaService:UIexperienciaService, private authService: AuthenticationService) { }
+  constructor(private experienciaService:ExperienciaService,
+    private UIexperienciaService:UIexperienciaService,
+    private authService: AuthenticationService,
+    private modalService: ModalService) { }
 
   ngOnInit(): void {
 
@@ -40,15 +45,15 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.addExp(exp).subscribe((t)=>{
       this.exps.push(t);
       alert("Se ha añadido una nueva Experiencia");
-      this.showAddExp = false; 
+      this.showAddExp = false;
     })
 
   }
 
   editExp(exp:IExp) {
 
-    this.experienciaService.updateExp(exp).subscribe(()=>{      
-      alert("Los datos se han guardado satisfactoriamente");       
+    this.experienciaService.updateExp(exp).subscribe(()=>{
+      alert("Los datos se han guardado satisfactoriamente");
     });
   }
 
@@ -75,6 +80,14 @@ export class ExperienciaComponent implements OnInit {
 
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 

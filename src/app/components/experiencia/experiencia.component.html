@@ -10,7 +10,18 @@
 
 </div>
 
+<div class="row">
+  <app-btnshowexp
+  bgcolor='#19657e'
+  border="none"
+  text="Agregar Experiencia"
+  color="white"
+  (onBbtnClick)="openModal('expModal')"
+  >
+  </app-btnshowexp>
+</div>
 
+<!-- sin modal
 <div class="row">
   <app-btnshowexp
   bgcolor="{{showAddExp ? '#7e1921' : '#19657e'}}"
@@ -19,33 +30,44 @@
   color="white"
 
   (onBbtnClick)="toggleAddExp()"
+  (onBbtnClick)="openModal('custom-modal-1')"
   *ngIf="hasRoute('/')"
   >
   </app-btnshowexp>
 </div>
+-->
 
 <!-- TODO : Reemplazar esto por un experiencia item
  <app-addexp
   (addExpEvent) = "addExp($event)"
  ></app-addexp>-->
 
- <div class="row ">
+  <div class="row ">
+      <jw-modal id="expModal">
 
-  <div class="col-12" *ngIf ="showAddExp&&checkLoggedIn()">
+  <!-- sin modal
+        <div class="col-12" *ngIf ="showAddExp&&checkLoggedIn()"></div>
+  -->
+    <!--  <div id="closeModalCont">
+        <button id="closeModalBtn"(click)="closeModal('custom-modal');">Cerrar</button>
+      </div>
+  -->
+      <div class="col-12" *ngIf ="checkLoggedIn()">
 
-    <app-experiencia-item
+        <app-experiencia-item
 
-      (editEvent)= "addExp($event)"
-      buttonText="Agregar Experiencia"
-      [showEditExp]=true
-      [showDelete]=false
+          (editEvent)= "addExp($event)"
+          buttonText="Agregar Experiencia"
+          [showEditExp]=true
+          [showEditBtn]=false
+          (deleteEvent)="closeModal('expModal');"
 
-    >
-    </app-experiencia-item>
+        >
+        </app-experiencia-item>
 
+      </div>
+    </jw-modal>
   </div>
-
-</div>
 
 <div class="row ">
 

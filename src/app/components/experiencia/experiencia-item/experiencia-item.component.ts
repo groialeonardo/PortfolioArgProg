@@ -10,6 +10,8 @@ import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+
+
 @Component({
   selector: 'app-experiencia-item',
   templateUrl: './experiencia-item.component.html',
@@ -26,6 +28,7 @@ export class ExperienciaItemComponent implements OnInit {
 
   @Input () showEditExp:boolean = false;
   @Input () showDelete:boolean = true;
+  @Input () showEditBtn:boolean = true;
 
 
   //showEditExp:boolean=false;
@@ -56,15 +59,7 @@ export class ExperienciaItemComponent implements OnInit {
       alert("Por Favor complete el nombre del puesto");
       return
     }
-
-//    const {this.exp.pathlogo,empresa,inicio,fin,puesto,descripcion} = this;
-
- //   const newExp = {pathlogo,empresa,inicio,fin, puesto,descripcion};
-
- //   console.log(this.exp)
-
     this.editEvent.emit(this.exp)
-
 
   }
 
@@ -77,6 +72,5 @@ export class ExperienciaItemComponent implements OnInit {
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
-
 
 }

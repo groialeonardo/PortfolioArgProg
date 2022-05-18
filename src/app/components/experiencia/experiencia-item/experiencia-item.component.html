@@ -17,7 +17,7 @@
         <div class="col-2">
           <app-editbtn
             (click)= "onToggleEditExp()"
-            *ngIf="showDelete"
+            *ngIf="showEditBtn"
 
           ></app-editbtn>
 
@@ -40,6 +40,8 @@
  </div>
 
 <!-- TO DO : pasar esto a un componente ///mmm capaz queda aca -->
+
+
 
   <div class="addexp" *ngIf ="showEditExp&&checkLoggedIn()">
 
@@ -131,7 +133,6 @@
 
 
   </div>
-
 
 </div>
 

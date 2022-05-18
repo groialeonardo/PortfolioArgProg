@@ -12,6 +12,18 @@
 
 <div class="row">
   <app-btnshowexp
+  bgcolor='#19657e'
+  border="none"
+  text="Agregar Proyecto"
+  color="white"
+  (onBbtnClick)="openModal('proyModal')"
+  >
+  </app-btnshowexp>
+</div>
+
+<!-- Sin modal
+<div class="row">
+  <app-btnshowexp
   bgcolor="{{showAddProject ? '#7e1921' : '#19657e'}}"
   border="none"
   text="{{showAddProject ? 'Cerrar' : 'Agregar Proyecto'}}"
@@ -22,24 +34,26 @@
   >
   </app-btnshowexp>
 </div>
+>-->
 
 <div class="row ">
+  <jw-modal id="proyModal">
+    <div class="col-12" *ngIf ="checkLoggedIn()">
 
-  <div class="col-12" *ngIf ="showAddProject&&checkLoggedIn()">
+      <app-project-item
 
-    <app-project-item
+        (editEvent)= "addProject($event)"
+        buttonText="Agregar Proyecto"
+        [allTecnologies] = allTecnologies
+        [showEditProject]=true
+        [showEditBtn]=false
+        (deleteEvent)="closeModal('proyModal');"
 
-      (editEvent)= "addProject($event)"
-      buttonText="Agregar Proyecto"
-      [allTecnologies] = allTecnologies
-      [showEditProject]=true
-      [showDelete]=false
+      >
+      </app-project-item>
 
-    >
-    </app-project-item>
-
-  </div>
-
+    </div>
+  </jw-modal>
 </div>
 
 <div class="row ">

@@ -42,6 +42,7 @@ export class EducationItemComponent implements OnInit {
 
   @Input () showEditEducation:boolean = false;
   @Input () showDelete:boolean = true;
+  @Input () showEditBtn:boolean =true;
 
 
   //showEditExp:boolean=false;

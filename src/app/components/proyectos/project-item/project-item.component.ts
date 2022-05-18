@@ -31,6 +31,7 @@ export class ProjectItemComponent implements OnInit {
 
   @Input () showEditProject:boolean = false;
   @Input () showDelete:boolean = true;
+  @Input () showEditBtn:boolean = true;
   showTecno:boolean= true;
 
   @Input() project:IProject =new Proyecto;

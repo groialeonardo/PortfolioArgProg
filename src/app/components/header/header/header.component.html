@@ -8,17 +8,19 @@
 
     </div>
 
+
+
     <div class="col-lg-8">
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label  for="text">Linkedin :</label>
+        <label  for="text">Linkedin:</label>
         <input  type="text" placeholder="" [(ngModel)]="persona.linkedin_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label for="text">Github :</label>
+        <label for="text">Github:</label>
         <input type="text" placeholder="" [(ngModel)]="persona.github_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label for="text">Facebook :</label>
+        <label for="text">Facebook:</label>
         <input type="text" placeholder="" [(ngModel)]="persona.facebook_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">

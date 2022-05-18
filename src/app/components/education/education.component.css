@@ -1,36 +1,36 @@
 h1 {
     margin: 25px;
-  
+
   }
-  
+
   .row{
-  
+
     --bs-gutter-x: 0;
-  
-  
+
+
   }
-  
+
   .inner {
    /* background-color: #19657e;*/
    /* background-color: white;*/
    /* background-color: #19657e85;*/
   /* background-color:#5c90a3;*/
-  
+
   }
-  
+
   #title{
     /*color: #15576d;*/
     color: white;
    /* border-top:4px solid #49879c; */
    /* border-top:4px solid #71abbe; */
-    border-top:4px solid #346b80; 
+    border-top:4px solid #346b80;
     border-top-right-radius: 20px;
-    /*border-bottom: 2px solid #8eb5c5; 
+    /*border-bottom: 2px solid #8eb5c5;
     /*border-bottom: 4px solid #3e7b8f;*/
    /* background-color: #19657ec2;*/
   /* background-color:#5c90a3;*/
   }
-  
+
   #agregar, #title, .inner{
    /* background-color: #19657ec2;*/
    background-color:#5c90a3;
@@ -45,5 +45,4 @@ h1 {
     background-color: white;
     color: white;
   }
-  
-  
+

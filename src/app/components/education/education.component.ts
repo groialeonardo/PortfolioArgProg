@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 //import { Subscription } from 'rxjs';
 import { EducationService } from 'src/app/services/education.service';
-import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { IEducation } from 'src/app/Interfaces/IEducation';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+import { ModalService } from 'src/app/_modal';
 
 @Component({
   selector: 'app-education',
@@ -21,7 +21,10 @@ export class EducationComponent implements OnInit {
   //subcription?:Subscription;
   showAddEducation:boolean = false;
 
-  constructor(private educationService:EducationService , private UIexperienciaService:UIexperienciaService, private authService: AuthenticationService) { }
+
+  constructor(private educationService:EducationService,
+    private authService: AuthenticationService,
+    private modalService: ModalService) { }
 
   ngOnInit(): void {
 
@@ -40,14 +43,14 @@ export class EducationComponent implements OnInit {
     this.educationService.addEducation(educ).subscribe((t)=>{
       this.educations.push(t)
       alert("Se ha añadido una nueva Educación");
-      this.showAddEducation = false; 
+      this.showAddEducation = false;
   })
   }
 
   editEducation(educ:IEducation) {
 
-    this.educationService.updateEducation(educ).subscribe(()=>{      
-      alert("Los datos se han guardado satisfactoriamente");       
+    this.educationService.updateEducation(educ).subscribe(()=>{
+      alert("Los datos se han guardado satisfactoriamente");
     })
   }
 
@@ -57,25 +60,22 @@ export class EducationComponent implements OnInit {
     );
   }
 
-    //Metodo que se llama desde el header.component.html cuando se detecta el evento emitido por el componente Button al hacer click
   toggleAddEducation() {
-
-    //llama al servicio para que maneje este click
-    /*this.UIexperienciaService.toggleAddExp()*/
 
     this.showAddEducation = !this.showAddEducation
 
   }
 
-  //Obtiene un string desde el html para compararlo con la ruta actual. Si coincide con el string devuelve true.
-  //Se usa para esconder el boton cuando se sale de task component.
-  hasRoute(route:string){
-    //return this.router.url === route;
-    return true;
-  }
-
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 
