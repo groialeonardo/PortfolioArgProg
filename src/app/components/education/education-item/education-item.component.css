@@ -148,7 +148,7 @@
     }
   }
 
-  @media (max-width:450px) {
+  @media (max-width:470px) {
 
     #fechas{
       flex-wrap: wrap;

@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, Input, Output,EventEmitter } from '@angular/core';
 import { IPersona } from 'src/app/Interfaces/IPersona';
 import { Persona } from 'src/app/Model/Persona';
-import { PersonaService } from 'src/app/services/persona.service';
-import { StorageService } from 'src/app/services/storage.service';
+//import { PersonaService } from 'src/app/services/persona.service';
+//import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -42,11 +42,7 @@ export class AcercaDeComponent implements OnInit {
   }
 
   OnPersonaChange(){
-
     this.onPersonaChangeEvent.emit(this.persona);
-
-
-
   }
 
 

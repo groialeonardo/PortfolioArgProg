@@ -9,21 +9,6 @@
   align-items: center;
 }
 
-.addexp{
-  /*display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-
-  border: 3px dotted #19657ea4;
-  border-radius: 30px;
-  margin: 0.4%;
-  padding: 0.5%;
-*/
-
-}
-
-
 .img-logos {
   max-width: 70px;
 }
@@ -99,7 +84,7 @@ textarea{
 
 #fin, #inicio{
   display: flex;
-  width: 150px;
+  width: 190px;
 }
 
 #fechas{
@@ -131,7 +116,7 @@ textarea{
 }
 
 
-@media (max-width:450px) {
+@media (max-width:470px) {
 
   #fechas{
     flex-wrap: wrap;

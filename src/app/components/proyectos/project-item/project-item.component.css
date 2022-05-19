@@ -2,37 +2,13 @@
     border: 2px solid #19657ea4;
     border-radius: 30px;
     margin: 0.4%;
-
   /*para centrar*/
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .addProj{
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-
-    border: 3px dotted #19657ea4;
-    border-radius: 30px;
-    margin: 0.4%;
-    padding: 0.5%;
-  */
-
-  }
-
  .skills {
-   /* height: 70px;
-    width: 70px;*/
-  /*  background-color: #15576d;*/
-  /*  border-radius: 80%;*/
-  /*  margin-left: 2.5%;
-    margin-right: 4%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;*/
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -40,7 +16,6 @@
     flex-direction: row;
    /* align-content: space-around;*/
     width: auto;
-
   }
 
   .skills-container {
@@ -52,10 +27,8 @@
   }
 
   #skill-cont-card{
-
     justify-content: flex-start;
     margin-left: 2%;
-
   }
 
   #deleteBtnTec{
@@ -63,8 +36,6 @@
     margin-left: 86%;
     margin-bottom: -22%;
   }
-
-
 
   .img-logos {
     max-height: 70px;
@@ -145,16 +116,16 @@
 
   }
 
-  #fin, #inicio{
+  #anio{
     display: flex;
-    width: 150px;
+    width: 60px;
   }
-
+/*
   #fechas{
     display: flex;
     align-items: left;
   }
-
+*/
   #descripcion{
     display: flex;
     vertical-align: middle;
@@ -196,23 +167,23 @@
 
   @media (max-width: 1200px) {
 
-  #proyTecImgContainer {
+    #proyTecImgContainer {
 
-    display: flex;
-    flex-direction: column-reverse;
+      display: flex;
+      flex-direction: column-reverse;
 
-  }
+    }
 
-  #proyImgContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 10px;
-    padding-left: 0px;
-    padding: 1%;
-    padding-right: 7%;
-    padding-left: 6%;
-}
+    #proyImgContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 10px;
+      padding-left: 0px;
+      padding: 1%;
+      padding-right: 7%;
+      padding-left: 6%;
+    }
 
   }
 
