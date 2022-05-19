@@ -1,5 +1,5 @@
 <div class="row education-item ">
-    <div class="d-flex ">
+    <div class="d-flex " id="edu-item-inner">
 
 
       <div class="flex-shrink-0">
@@ -8,16 +8,16 @@
 
       <div class="flex-grow-1 ms-3">
 
-        <div id="educacion" class="row">
-          <div class="col-9">
-            <h2 class=" d-inline">{{education.titulo}}</h2>
-            <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{education.inicio}} hasta {{education.fin}}</i></small></h5>
+        <div id="titulo" class="row">
+          <div class="col-9" id="eduResp">
+            <h2 class=" d-inline" style="text-align: center">{{education.titulo}}</h2>
+            <h5 class="d-inline" style="text-align: center" d-inline><small class="text-muted"><i>    {{education.inicio}} hasta {{education.fin}}</i></small></h5>
           </div>
 
           <div class="col-2">
             <app-editbtn
               (click)= "onToggleEditEducation()"
-              *ngIf="showDelete"
+              *ngIf="showEditBtn"
 
             ></app-editbtn>
 

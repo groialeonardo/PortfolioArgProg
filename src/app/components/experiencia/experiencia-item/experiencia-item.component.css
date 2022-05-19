@@ -23,6 +23,7 @@
 
 }
 
+
 .img-logos {
   max-width: 70px;
 }
@@ -41,6 +42,12 @@ h4,p{
 
 #empresa{
   margin-bottom: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .form-control  {
@@ -104,3 +111,30 @@ textarea{
   display: flex;
   vertical-align: middle;
 }
+
+
+
+@media (max-width:482px) {
+
+  #exp-item-inner{  
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
+  #empResp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width:450px) {
+
+  #fechas{
+    flex-wrap: wrap;
+  }
+}
+

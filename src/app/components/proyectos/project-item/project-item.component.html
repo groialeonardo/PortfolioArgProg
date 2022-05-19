@@ -3,7 +3,7 @@
 
         <div class="flex-grow-1 ms-3">
 
-            <div id="empresa" class="row">
+            <div id="proyecto" class="row">
             <div class="col-9">
                 <h2 class=" d-inline">{{project.titulo}}</h2>
                 <h5 class="d-inline" d-inline><small class="text-muted"><i>   {{project.fecha}}     </i></small></h5>
@@ -13,7 +13,7 @@
             <div class="col-2">
                 <app-editbtn
                 (click)= "onToggleEditProject()"
-                *ngIf="showDelete"
+                *ngIf="showEditBtn"
                 ></app-editbtn>
 
             </div>
@@ -153,7 +153,7 @@
 
             </div>
 
-            <form [formGroup]="form" (ngSubmit)="addTecno()">
+            <form [formGroup]="form" (ngSubmit)="addTecno()" id="tecForm">
               <label for="allTecnologiesFiltred">Elija Tecnologia para Agregar :</label>
               <select formControlName="allTecnologiesFiltred" id="allTecnologiesFiltred">
                 <option *ngFor="let tecnologia of allTecnologiesFiltred; let i = index" [value]="allTecnologiesFiltred[i].name" selected=true >
@@ -161,7 +161,7 @@
                 </option>
               </select>
 
-              <button type="submit">Agregar</button>
+              <button type="submit" id="agregarTec">Agregar</button>
             </form>
 
 

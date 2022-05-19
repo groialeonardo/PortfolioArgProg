@@ -1,5 +1,5 @@
 <div class="row experiencia-item ">
-  <div class="d-flex ">
+  <div class="d-flex" id="exp-item-inner">
 
 
     <div class="flex-shrink-0">
@@ -9,15 +9,15 @@
     <div class="flex-grow-1 ms-3">
 
       <div id="empresa" class="row">
-        <div class="col-9">
-          <h2 class=" d-inline">{{exp.empresa}}</h2>
-          <h5 class="d-inline" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
+        <div class="col-9" id="empResp">
+          <h2 class="d-inline" style="text-align: center">{{exp.empresa}}</h2>
+          <h5 class="d-inline" style="text-align: center" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
         </div>
 
         <div class="col-2">
           <app-editbtn
             (click)= "onToggleEditExp()"
-            *ngIf="showDelete"
+            *ngIf="showEditBtn"
 
           ></app-editbtn>
 
@@ -40,6 +40,8 @@
  </div>
 
 <!-- TO DO : pasar esto a un componente ///mmm capaz queda aca -->
+
+
 
   <div class="addexp" *ngIf ="showEditExp&&checkLoggedIn()">
 
@@ -131,7 +133,6 @@
 
 
   </div>
-
 
 </div>
 

@@ -2,23 +2,21 @@
 <div class="container-fluid" id="header">
   <div class="row" id="header-top">
 
-    <div class="col-lg-2">
-
+    <div class="col-lg-2 col-md-2">
       <app-logo-arg-prog></app-logo-arg-prog>
-
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-md-6">
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label  for="text">Linkedin :</label>
+        <label  for="text">Linkedin:</label>
         <input  type="text" placeholder="" [(ngModel)]="persona.linkedin_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label for="text">Github :</label>
+        <label for="text">Github:</label>
         <input type="text" placeholder="" [(ngModel)]="persona.github_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
-        <label for="text">Facebook :</label>
+        <label for="text">Facebook:</label>
         <input type="text" placeholder="" [(ngModel)]="persona.facebook_link"/>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
@@ -31,10 +29,9 @@
       </div>
     </div>
 
-    <div class="col-lg-2">
+    <div class="col-lg-2 col-md-4">
 
         <app-sociallink [persona] = persona></app-sociallink>
-
 
         <app-login-bar></app-login-bar>
 
@@ -64,7 +61,6 @@
       ></app-banner>
 
     </div>
-
 
   </div>
 

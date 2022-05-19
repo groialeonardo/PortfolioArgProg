@@ -63,21 +63,21 @@ div {
 
 .button-submit:hover {
   opacity: 1;
-
 }
 #acercademi {
   margin: 25px;
 }
 
 .myPhoto{
-
   border-radius: 100%;
-
+  margin-top: -39.3%;
+  border-radius: 100%;
+  margin-left: 0%;
+  max-height: 70%;
 }
 
 
 textarea, input{
-
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -98,7 +98,6 @@ input{
   padding: 2px;
   font-size: 19px;
   width: 95%;
-
 }
 
 .persData{
@@ -106,7 +105,6 @@ input{
   align-items: center;
   background-color:transparent;
   flex-wrap: wrap
-
 }
 /*Subir imagen*/
 #inputFile {
@@ -141,28 +139,12 @@ input{
 }
 
 .labelInputFile:hover {
-
   background-color: #346d81;
-
 }
 
 /**/
 
-
-
-
-@media (min-width:988px) {
-
-  .myPhoto{
-    margin-top: -39.3%;
-    border-radius: 100%;
-    margin-left: 0%;
-    max-height: 70%;
-  }
-
-}
-@media (max-width:988px) {
-
+@media (max-width:991px) {
   .myPhoto {
     margin-top: -16.3%;
     border-radius: 100%;
@@ -170,5 +152,8 @@ input{
     max-height: 61%;
 
   }
-
+  .labelInputFile {
+    margin-top: -15%;
+    margin-left: 55%
+  }
 }

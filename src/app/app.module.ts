@@ -31,6 +31,8 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
 import {AngularFireModule} from '@angular/fire/compat';
 import { ProfileComponent } from './components/profile/profile.component';
 
+//prueba modals
+import { ModalModule } from './_modal';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ModalModule,
     NgCircleProgressModule.forRoot({
       "radius": 120,
       "space": -10,

@@ -1,7 +1,11 @@
-#LogoAP{
-
-}
 .img-fluid{
   max-width: 80%;
   height: auto;
+}
+
+
+@media (max-width:767px) {
+  .img-fluid{
+    max-width: 25%;    
+  }
 }

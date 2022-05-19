@@ -9,6 +9,8 @@ import { ITecno } from 'src/app/Interfaces/ITecno';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+import { ModalService } from 'src/app/_modal';
+
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
@@ -24,7 +26,8 @@ export class ProyectosComponent implements OnInit {
   constructor(
     private proyectoService:ProyectoService,
     private tecnologiaService:TecnologiaService ,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private modalService: ModalService
     ) {}
 
   ngOnInit(): void {
@@ -44,15 +47,15 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.addProject(project).subscribe((t)=>{
       this.projects.push(t)
       alert("Se ha añadido un nuevo Proyecto");
-      this.showAddProject = false; 
+      this.showAddProject = false;
   })
   }
 
 
   editProject(project:IProject) {
 
-    this.proyectoService.updateProject(project).subscribe(()=>{      
-      alert("Los datos se han guardado satisfactoriamente");       
+    this.proyectoService.updateProject(project).subscribe(()=>{
+      alert("Los datos se han guardado satisfactoriamente");
     })
     //console.log(this.allTecnologies)
     //console.log(this.projects)
@@ -78,4 +81,13 @@ export class ProyectosComponent implements OnInit {
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
+
 }

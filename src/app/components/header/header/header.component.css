@@ -1,23 +1,15 @@
 #header {
-
-
-
   padding-left: 0%;
   padding-right: 0%;
-
  }
 
-
-
-.row{
+ .row{
   padding-top: 0.5%;
   --bs-gutter-x: 0;
-
 }
 
 div {
   background-color: #19657ea4;
-
 }
 
 .container-fluid {
@@ -29,7 +21,6 @@ div {
 display: flex;
 flex-direction: column;
 }
-
 
 .button-submit{
   display: inline-block;
@@ -69,7 +60,8 @@ input{
   border: 2px solid #ffffffa4;
   border-radius: 30px;
   margin: auto;
-  width: 40%;
+  /*width: 40%;*/
+  width: 100%;
   margin: 5px;
   margin-top: 5px;
   padding: 2px;
@@ -85,5 +77,6 @@ input{
   align-items: baseline;
   color: #FFFFFF;
   font-size: 19px;
-
+  margin-left: 10px;
+  margin-right: 10px;
 }

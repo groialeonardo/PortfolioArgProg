@@ -44,8 +44,14 @@
     margin-right: 4%;
   }
   
-  #empresa{
+  #titulo{
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
   
   .form-control  {
@@ -124,4 +130,27 @@
 
   .education-item,textarea, .form-control input{
     border: 2px solid  #ffffffa4
+  }
+
+  @media (max-width:482px) {
+
+    #edu-item-inner{  
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+    }
+    #eduResp{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width:450px) {
+
+    #fechas{
+      flex-wrap: wrap;
+    }
   }

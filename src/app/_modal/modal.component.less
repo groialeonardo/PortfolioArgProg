@@ -1,0 +1,114 @@
+﻿/* MODAL STYLES
+-------------------------------*/
+jw-modal {
+    /* modals are hidden by default */
+    display: none;
+
+
+    .jw-modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* z-index must be higher than .jw-modal-background */
+        z-index: 1000;
+
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .jw-modal-body {
+            padding: 1px;
+            background: #fff;
+            /* margin exposes part of the modal background */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
+            border-radius: 30px;
+        }
+        @media (max-width:550px) {
+
+          .jw-modal-body{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+        }
+        
+        @media (max-width:450px) {
+
+          .jw-modal-body{
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 1px;
+            margin-right: 1px;
+          }
+        }
+
+        @media (max-width:375px) {
+
+          .jw-modal-body{
+            margin-top: 1px;
+            margin-bottom: 1px;
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+        }
+        
+
+      
+    }
+
+    .jw-modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+
+        /* z-index must be below .jw-modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.jw-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+
+}
+
+#closeModalCont {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#closeModalBtn {
+  display: inline-block;
+  border-radius: 15px;
+  background-color:#7e1921;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:20px;
+  opacity: 0.75;
+}
+
+#closeModalBtn:hover {
+  opacity: 1;
+
+}
