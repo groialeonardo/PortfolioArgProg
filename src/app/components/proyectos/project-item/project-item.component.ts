@@ -11,8 +11,8 @@ import { ITecno } from 'src/app/Interfaces/ITecno';
 import { IProject } from 'src/app/Interfaces/IProject';
 import { Proyecto } from 'src/app/Model/Proyecto';
 import { Tecnologia } from 'src/app/Model/Tecnologia';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-project-item',
@@ -20,7 +20,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./project-item.component.css']
 })
 export class ProjectItemComponent implements OnInit {
-
+  
+  imagenes: any[] = [];
   //projects:IProject[]=PROJECTS;
   //project:IProject =PROJECTS[0];
   //tecnos:ITecno[] = this.project.tecnologias;
@@ -53,7 +54,9 @@ export class ProjectItemComponent implements OnInit {
 
 
 
-  constructor( private formBuilder: FormBuilder, private authService: AuthenticationService ) {
+  constructor( private formBuilder: FormBuilder, 
+    private authService: AuthenticationService,
+    private storageService:StorageService ) {
     this.form = this.formBuilder.group({
      //tecnologias: ['']
      allTecnologiesFiltred:['']
@@ -158,7 +161,7 @@ export class ProjectItemComponent implements OnInit {
 
   }
 
-  onSubmit(){
+async onSubmit(){
 
     if(this.project.titulo.length === 0){
       alert("Por Favor complete el tìtulo del proyecto");
@@ -168,15 +171,48 @@ export class ProjectItemComponent implements OnInit {
 
  //   console.log(this.exp)
 
+ if (this.imagenes[0] != null){
+  try {
+    await this.storageImagen(this.imagenes[0],"/portfolio/img/proyectos/");
+  }
+  catch (err) {
+    console.log(err);
+    alert("Error en el guardado de imagen");
+  }
+  }
     this.editEvent.emit(this.project)
-
-
   }
 
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
+  onPathLogoChange(){
+    this.imagenes[0]=null;
+  }
 
+  cargarImagen(event: any) {
+    let archivos = event.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+      this.imagenes[0]=reader.result;
+      //this.newPhotoimgEvent.emit(reader.result)
+    }
+    this.project.pathimg="";
+
+  }
+
+  async storageImagen(img:any,storeDirectory:string){
+    try{
+     await this.storageService.subirImagen(
+        this.project.id+ "_" +this.project.titulo+ "_" + Date.now(),
+        storeDirectory,img).then(urlImagen => {   
+         this.project.pathimg=urlImagen?.toString() ?? "";
+       });
+    } catch (err) {
+     console.log(err);
+    }
+  }
 
 
 }

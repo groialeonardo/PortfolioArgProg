@@ -36,8 +36,7 @@
                     <div class="row skills-container" id="skill-cont-card">
                       <div class="skills" *ngFor="let tecno of project.tecnologias">
 
-                        <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
-
+                        <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="">                        
                       </div>
 
                     </div>
@@ -65,7 +64,8 @@
                 </div>
 
                 <div class="flex-shrink-0 col-xl-4 col-lg-12" id="proyImgContainer">
-                    <img src={{project.pathimg}}  alt="proyecto"  class="img-fluid img-proy">
+                    <img src={{project.pathimg}}  alt="proyecto"  class="img-fluid img-proy"  *ngIf = "imagenes[0]==null">
+                    <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-proy" *ngIf = "imagenes[0]!=null">
                 </div>
 
             </div>
@@ -105,12 +105,14 @@
 
           <div class="form-control col-10" >
             <label for="text">Imagen</label>
+            <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
             <input
               type="text"
               name="pathimg"
               id="pathimg"
               placeholder="Agregar link de imagen del Proyecto"
               [(ngModel)]="project.pathimg"
+              (change)="onPathLogoChange()"
 
             />
           </div>
