@@ -132,6 +132,23 @@
     border: 2px solid  #ffffffa4
   }
 
+  
+  #agregarImg{     
+    display: flex;
+    border-radius: -15px;
+    background-color: transparent;
+    color: #5c90a3;
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 6px;
+    opacity: 0.80;
+    width: 194px;
+  }
+  #agregarImg:hover {
+    opacity: 1;
+  }
+
   @media (max-width:482px) {
 
     #edu-item-inner{  

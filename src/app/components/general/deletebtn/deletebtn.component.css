@@ -12,6 +12,7 @@
   cursor: pointer;
   /*margin: 2px;*/
   opacity: 0.80;
+  margin: -10px;
 }
 
 .button-x:hover {

@@ -97,7 +97,21 @@ textarea{
   vertical-align: middle;
 }
 
-
+#agregarImg{     
+  display: flex;
+  border-radius: -15px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 6px;
+  opacity: 0.80;
+  width: 194px;
+}
+#agregarImg:hover {
+  opacity: 1;
+}
 
 @media (max-width:482px) {
 

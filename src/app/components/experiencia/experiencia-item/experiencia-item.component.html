@@ -3,7 +3,9 @@
 
 
     <div class="flex-shrink-0">
-        <img src="{{exp.pathlogo}}" alt="- Logo"  class="img-fluid img-logos">
+      
+        <img src="{{exp.pathlogo}}" alt="- Logo"  class="img-fluid img-logos" *ngIf = "imagenes[0]==null">
+        <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-logos" *ngIf = "imagenes[0]!=null">
     </div>
 
     <div class="flex-grow-1 ms-3">
@@ -59,16 +61,18 @@
       </div>
 
       <div class="form-control">
-        <label for="text">Logo de la empresa</label>
+        <label for="text">Logo de la empresa</label>      
+        <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
         <input
           type="text"
           name="pathlogo"
           id="pathlogo"
           placeholder="Ingrese el path correspondiente al logo de la empresa"
           [(ngModel)]="exp.pathlogo"
-
-        />
+          (change)="onPathLogoChange()"   
+        />       
       </div>
+      
       <div id="fechas">
         <div class="form-control">
           <label for="fechaInicio">Inicio</label>

@@ -3,7 +3,8 @@
 
 
       <div class="flex-shrink-0">
-          <img src="{{education.pathlogo}}" alt="- Logo"  class="img-fluid img-logos">
+        <img src="{{education.pathlogo}}" alt="- Logo"  class="img-fluid img-logos"  *ngIf = "imagenes[0]==null">
+        <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-logos" *ngIf = "imagenes[0]!=null">
       </div>
 
       <div class="flex-grow-1 ms-3">
@@ -69,12 +70,14 @@
 
         <div class="form-control">
           <label for="text">Logo de la Institución</label>
+          <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
           <input
             type="text"
             name="pathlogo"
             id="pathlogo"
             placeholder="Ingrese el path correspondiente al logo de la Institución"
             [(ngModel)]="education.pathlogo"
+            (change)="onPathLogoChange()"
 
           />
         </div>

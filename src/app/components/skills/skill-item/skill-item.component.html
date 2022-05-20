@@ -11,6 +11,17 @@
       [imageHeight]="skill.imageHeight"
       [imageWidth]="skill.imageWidth"
       class="col-12"
+      *ngIf = "imagenes[0]==null"
+      ></circle-progress>
+
+      <circle-progress
+      [percent]="skill.percent"
+      [radius]="skill.radius"
+      [imageSrc]="imagenes[0]"
+      [imageHeight]="skill.imageHeight"
+      [imageWidth]="skill.imageWidth"
+      class="col-12"
+      *ngIf = "imagenes[0]!=null"
       ></circle-progress>
 
     </div>
@@ -29,7 +40,8 @@
 
     <div class="form-group">
       <label for="skill" class ="control-label">Habilidad</label>
-      <input type="text" class="form-control changeskill" id="skill" name="skill"  [(ngModel)]="skill.imageSrc">
+      <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
+      <input type="text" class="form-control changeskill" id="skill" name="skill"  [(ngModel)]="skill.imageSrc" (change)="onPathLogoChange()">
     </div>
 
     <div class="form-group">

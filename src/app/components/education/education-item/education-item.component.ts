@@ -1,31 +1,8 @@
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-education-item',
-  templateUrl: './education-item.component.html',
-  styleUrls: ['./education-item.component.css']
-})
-export class EducationItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}*/
-
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-
 import { IEducation } from '../../../Interfaces/IEducation';
 import { Education } from 'src/app/Model/Education';
-//import { EXPS } from '../../../mock-exps';
-
-// TO DO , revisar esta implementacion
-//import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
-//import { subscribeOn, Subscription} from 'rxjs';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-education-item',
@@ -33,6 +10,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./education-item.component.css']
 })
 export class EducationItemComponent implements OnInit {
+
+  imagenes: any[] = [];
 
   @Input() education:IEducation = new Education();
   @Input() buttonText:string="";
@@ -44,16 +23,11 @@ export class EducationItemComponent implements OnInit {
   @Input () showDelete:boolean = true;
   @Input () showEditBtn:boolean =true;
 
-
-  //showEditExp:boolean=false;
-  //Sub?:Subscription
-
-  constructor(/* private uiExperienciaService:UIexperienciaService */ private authService: AuthenticationService) { } // HACER UI PAARA ESTE
+  constructor( private authService: AuthenticationService,
+    private storageService:StorageService) { } 
 
   ngOnInit(): void {
 
-    // TO DO , revisar esta implementacion
-   // this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showEditExp=t)) //se cambio por toogle local
   }
 
   onDelete(educ:IEducation) {
@@ -62,7 +36,7 @@ export class EducationItemComponent implements OnInit {
   }
 
   // TO DO en otro componente
-  onSubmit(){
+  async onSubmit(){
 
     if(this.education.institucion.length === 0){
       alert("Por Favor complete el nombre de la empresa");
@@ -74,12 +48,19 @@ export class EducationItemComponent implements OnInit {
       return
     }
 
+    if (this.imagenes[0] != null){
+      try {
+        await this.storageImagen(this.imagenes[0],"/portfolio/img/logos/educacion/");
+      }
+      catch (err) {
+        console.log(err);
+        alert("Error en el guardado de imagen");
+      }
+    }
  //   console.log(this.exp)
-
     this.editEvent.emit(this.education)
-
-
   }
+  
 
   onToggleEditEducation() {
 
@@ -90,6 +71,35 @@ export class EducationItemComponent implements OnInit {
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
+
+  onPathLogoChange(){
+    this.imagenes[0]=null;
+  }
+
+  cargarImagen(event: any) {
+    let archivos = event.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+      this.imagenes[0]=reader.result;
+      //this.newPhotoimgEvent.emit(reader.result)
+    }
+    this.education.pathlogo="";
+
+  }
+
+  async storageImagen(img:any,storeDirectory:string){
+    try{
+     await this.storageService.subirImagen(
+        this.education.id+ "_" +this.education.titulo+ "_" + Date.now(),
+        storeDirectory,img).then(urlImagen => {   
+         this.education.pathlogo=urlImagen?.toString() ?? "";
+       });
+    } catch (err) {
+     console.log(err);
+    }
+  }
+
 
 
 }
