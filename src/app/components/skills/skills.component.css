@@ -1,6 +1,5 @@
 h1 {
   margin: 25px;
-
 }
 
 .row{
@@ -15,15 +14,11 @@ h1 {
 
 .inner {
   background-color: #19657e;
-
 }
 
 #title{
-  /*border-top:4px solid #49879c; */
   border-top:4px solid #ffffffa4;
   border-top-right-radius: 20px;
- /* border-bottom: 2px solid #ffffffa4*/
-  /*border-bottom: 4px solid #3e7b8f;*/
 }
 
 .container-fluid {
@@ -36,7 +31,6 @@ h1 {
 
 .skill-item{
   text-align : center;
-
 }
 
 .add {

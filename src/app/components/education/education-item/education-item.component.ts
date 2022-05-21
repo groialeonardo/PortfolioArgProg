@@ -24,7 +24,7 @@ export class EducationItemComponent implements OnInit {
   @Input () showEditBtn:boolean =true;
 
   constructor( private authService: AuthenticationService,
-    private storageService:StorageService) { } 
+    private storageService:StorageService) { }
 
   ngOnInit(): void {
 
@@ -35,7 +35,7 @@ export class EducationItemComponent implements OnInit {
 
   }
 
-  // TO DO en otro componente
+
   async onSubmit(){
 
     if(this.education.institucion.length === 0){
@@ -60,7 +60,7 @@ export class EducationItemComponent implements OnInit {
  //   console.log(this.exp)
     this.editEvent.emit(this.education)
   }
-  
+
 
   onToggleEditEducation() {
 
@@ -82,7 +82,6 @@ export class EducationItemComponent implements OnInit {
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
       this.imagenes[0]=reader.result;
-      //this.newPhotoimgEvent.emit(reader.result)
     }
     this.education.pathlogo="";
 
@@ -92,14 +91,13 @@ export class EducationItemComponent implements OnInit {
     try{
      await this.storageService.subirImagen(
         this.education.id+ "_" +this.education.titulo+ "_" + Date.now(),
-        storeDirectory,img).then(urlImagen => {   
+        storeDirectory,img).then(urlImagen => {
          this.education.pathlogo=urlImagen?.toString() ?? "";
        });
     } catch (err) {
      console.log(err);
     }
   }
-
 
 
 }

@@ -15,13 +15,10 @@ export class DeletebtnComponent implements OnInit {
   constructor(private authService:AuthenticationService) { }
 
   ngOnInit(): void {
-
   }
 
   onClick(){
-
     this.onBbtnClick.emit();
-
   }
 
   checkLoggedIn():boolean{

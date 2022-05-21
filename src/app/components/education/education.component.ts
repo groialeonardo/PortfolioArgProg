@@ -18,7 +18,6 @@ export class EducationComponent implements OnInit {
 
   //exps:Exp[] = EXPS;
   educations:IEducation[] = [];
-  //subcription?:Subscription;
   showAddEducation:boolean = false;
 
 
@@ -31,10 +30,6 @@ export class EducationComponent implements OnInit {
     this.educationService.getEducations().subscribe((educscallback)=>(
       this.educations=educscallback
       ));
-
-    // Se consume el observable de UIexperienciaService que indica si se hizo clic en AddExp.
-    //Copia el valor en showAddExp para hacer el toggle. En el html se muestra o no el formulario dependiendo del valor de esta ultima
-   // this.subcription = this.UIexperienciaService.onToggle().subscribe((t)=>(this.showAddEducation=t))
 
   }
 

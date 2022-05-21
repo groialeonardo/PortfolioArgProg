@@ -17,16 +17,6 @@ export class LoginBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-/*
-  checkLogin() {
-    if (this.authService.authenticate(this.username, this.password)
-    ) {
-      //this.router.navigate([''])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
-  }
-*/
 
 checkLogin() {
   (this.authService.authenticate(this.username, this.password).subscribe(

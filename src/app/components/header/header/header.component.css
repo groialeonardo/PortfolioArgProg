@@ -36,9 +36,6 @@ flex-direction: column;
   cursor: pointer;
   margin:20px;
   opacity: 0.75;
- /* position: absolute;*/
-  /*margin-top: 0.55%;*/
-  /* margin-left: -35%;*/
 }
 .editbtn{
   background-color: transparent;

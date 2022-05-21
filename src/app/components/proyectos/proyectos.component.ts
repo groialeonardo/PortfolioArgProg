@@ -57,8 +57,6 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.updateProject(project).subscribe(()=>{
       alert("Los datos se han guardado satisfactoriamente");
     })
-    //console.log(this.allTecnologies)
-    //console.log(this.projects)
   }
 
   deleteProject(project:IProject) {
@@ -72,12 +70,12 @@ export class ProyectosComponent implements OnInit {
    this.showAddProject=!this.showAddProject;
 
   }
-
+/*
   hasRoute(route:string){
     //return this.router.url === route;
     return true;
   }
-
+*/
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }

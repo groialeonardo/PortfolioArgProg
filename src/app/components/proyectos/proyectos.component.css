@@ -1,30 +1,22 @@
 h1 {
     margin: 25px;
-  
   }
-  
+
   .row{
-  
     --bs-gutter-x: 0;
-  
-  
   }
-  
+
   .inner {
-   /* background-color: #19657e;*/
     background-color: white;
-  
   }
-  
+
   #title{
     color: #15576d;
-   /* border-top:4px solid #49879c; */
-    border-top:4px solid #71abbe; 
+    border-top:4px solid #71abbe;
     border-top-right-radius: 20px;
-    /*border-bottom: 2px solid #8eb5c5; 
-    /*border-bottom: 4px solid #3e7b8f;*/
+
   }
-  
+
   .container-fluid {
     padding-left: 0%;
     padding-top: 0.5%;
@@ -32,4 +24,4 @@ h1 {
     background-color: #19657e;
     color: white;
   }
-  
+

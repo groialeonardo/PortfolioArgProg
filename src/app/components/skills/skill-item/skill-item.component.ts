@@ -27,7 +27,7 @@ export class SkillItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // TO DO en otro componente
+
 async onSubmit(){
 
     if((this.skill.imageSrc.length === 0)&&(this.imagenes[0]===null)){  //TO DO realizar mejor esta parte
@@ -65,7 +65,6 @@ async onSubmit(){
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
       this.imagenes[0]=reader.result;
-      //this.newPhotoimgEvent.emit(reader.result)
     }
     this.skill.imageSrc="";
   }
@@ -74,7 +73,7 @@ async onSubmit(){
     try{
      await this.storageService.subirImagen(
         this.skill.id+ "_" +/*this.skill.nombre+ "_" +*/ Date.now(),
-        storeDirectory,img).then(urlImagen => {   
+        storeDirectory,img).then(urlImagen => {
          this.skill.imageSrc=urlImagen?.toString() ?? "";
        });
     } catch (err) {

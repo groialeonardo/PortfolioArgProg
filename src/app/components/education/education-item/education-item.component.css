@@ -2,7 +2,6 @@
   color: #FFFFFF;
 }
 .education-item{
-    /*border: 2px solid #8eb5c5;*/ /*#19657ea4;*/
     border-radius: 30px;
     margin: 0.4%;
 
@@ -13,18 +12,7 @@
   }
 
   .addeduc{
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-
-    border: 3px dotted #19657ea4;
     border-radius: 30px;
-    margin: 0.4%;
-    padding: 0.5%;
-  */
-    border-radius: 30px;
-
   }
 
   .img-logos {
@@ -55,8 +43,7 @@
   }
 
   .form-control  {
-  border: none;
-  /*background-color: #19657e85;*/
+    border: none;
   }
 
   .form-control input {
@@ -66,13 +53,9 @@
     padding: 3px 7px;
     font-size: 17px;
     border-radius: 15px;
-   /* border: 2px solid #8eb5c5;*/ /* #19657ea4;  */
-    /*background-color: #19657e85;*/
   }
 
   label{
-    /*color:  #19657e;*/
-    /*color: #15576d;*/
     color: white;
     font-weight: 600;
     font-size:large;
@@ -80,8 +63,6 @@
 
   textarea{
     border-radius: 15px;
-    /*border: 2px solid #8eb5c5; *//* #19657ea4; */
-    /*color: #15576d;*/
   }
 
   .button-submit {
@@ -99,10 +80,7 @@
     margin:20px;
     opacity: 0.75;
   }
-  form {
-    /*background-color: #19657e85;*/
 
-  }
   .button-submit:hover {
     opacity: 1;
 
@@ -124,7 +102,6 @@
   }
 
   .addeduc, .form-control, form, .form-control input,textarea {
-    /*background-color: #52889b;    */
     background-color:#5c90a3;
   }
 

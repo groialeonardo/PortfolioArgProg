@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Subscription } from 'rxjs';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
-import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ModalService } from 'src/app/_modal';
+//import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
 
 import { IExp } from 'src/app/Interfaces/IExp';
 //import { EXPS } from 'src/app/mock-exps';
 
-import { AuthenticationService } from 'src/app/services/authentication.service';
 
-import { ModalService } from 'src/app/_modal';
 
 @Component({
   selector: 'app-experiencia',
@@ -24,7 +23,7 @@ export class ExperienciaComponent implements OnInit {
   showAddExp:boolean = false;
 
   constructor(private experienciaService:ExperienciaService,
-    private UIexperienciaService:UIexperienciaService,
+    /*private UIexperienciaService:UIexperienciaService,*/
     private authService: AuthenticationService,
     private modalService: ModalService) { }
 
@@ -33,10 +32,9 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.getExps().subscribe((expscallback)=>(
       this.exps=expscallback
       ));
-
     // Se consume el observable de UIexperienciaService que indica si se hizo clic en AddExp.
     //Copia el valor en showAddExp para hacer el toggle. En el html se muestra o no el formulario dependiendo del valor de esta ultima
-    this.subcription = this.UIexperienciaService.onToggle().subscribe((t)=>(this.showAddExp=t))
+   // this.subcription = this.UIexperienciaService.onToggle().subscribe((t)=>(this.showAddExp=t))
 
   }
 
@@ -63,21 +61,22 @@ export class ExperienciaComponent implements OnInit {
     );
   }
 
-    //Metodo que se llama desde el header.component.html cuando se detecta el evento emitido por el componente Button al hacer click
+ /*   //Metodo que se llama desde el header.component.html cuando se detecta el evento emitido por el componente Button al hacer click
   toggleAddExp() {
 
     //llama al servicio para que maneje este click
     this.UIexperienciaService.toggleAddExp()
 
   }
-
+*/
   //Obtiene un string desde el html para compararlo con la ruta actual. Si coincide con el string devuelve true.
   //Se usa para esconder el boton cuando se sale de task component.
+  /*
   hasRoute(route:string){
     //return this.router.url === route;
     return true;
   }
-
+*/
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
@@ -89,7 +88,5 @@ export class ExperienciaComponent implements OnInit {
   closeModal(id: string) {
     this.modalService.close(id);
   }
-
-
 
 }

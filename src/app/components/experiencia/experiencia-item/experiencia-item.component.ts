@@ -1,17 +1,9 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-
 import { IExp } from '../../../Interfaces/IExp';
 import { Exp } from 'src/app/Model/Exp';
 //import { EXPS } from '../../../mock-exps';
-
-// TO DO , revisar esta implementacion
-import { UIexperienciaService } from 'src/app/services/uiexperiencia.service';
-//import { subscribeOn, Subscription} from 'rxjs';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
-//prueba img
 import { StorageService } from 'src/app/services/storage.service';
-
 
 @Component({
   selector: 'app-experiencia-item',
@@ -20,31 +12,24 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class ExperienciaItemComponent implements OnInit {
 
-  imagenes: any[] = [];//prueba img
+  imagenes: any[] = [];
 
   @Input() exp:IExp = new  Exp();
   @Input() buttonText:string="";
 
   @Output() editEvent:EventEmitter<IExp> = new EventEmitter();
-// @Output() onDeleteEvent:EventEmitter<IExp> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IExp> = new EventEmitter();
 
   @Input () showEditExp:boolean = false;
   @Input () showDelete:boolean = true;
   @Input () showEditBtn:boolean = true;
 
-
-  //showEditExp:boolean=false;
   //Sub?:Subscription
 
-  constructor( /*private uiExperienciaService:UIexperienciaService,*/ 
-    private authService: AuthenticationService,
+  constructor( private authService: AuthenticationService,
     private storageService:StorageService,) { }
 
   ngOnInit(): void {
-
-    // TO DO , revisar esta implementacion
-   // this.Sub = this.uiExperienciaService.onToggle().subscribe((t)=>(this.showEditExp=t)) //se cambio por toogle local
   }
 
   onDelete(exp:IExp) {
@@ -52,7 +37,6 @@ export class ExperienciaItemComponent implements OnInit {
 
   }
 
-  // TO DO en otro componente
   async onSubmit(){
 
     if(this.exp.empresa.length === 0){
@@ -86,8 +70,6 @@ export class ExperienciaItemComponent implements OnInit {
     return this.authService.isUserLoggedIn()
   }
 
-  //prueba img
-
   onPathLogoChange(){
     this.imagenes[0]=null;
   }
@@ -98,7 +80,6 @@ export class ExperienciaItemComponent implements OnInit {
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
       this.imagenes[0]=reader.result;
-      //this.newPhotoimgEvent.emit(reader.result)
     }
     this.exp.pathlogo="";
 
@@ -107,7 +88,7 @@ export class ExperienciaItemComponent implements OnInit {
     try{
      await this.storageService.subirImagen(
         this.exp.id+ "_" +this.exp.empresa+ "_" + Date.now(),
-        storeDirectory,img).then(urlImagen => {   
+        storeDirectory,img).then(urlImagen => {
          this.exp.pathlogo=urlImagen?.toString() ?? "";
        });
     } catch (err) {

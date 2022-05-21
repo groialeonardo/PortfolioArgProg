@@ -29,22 +29,12 @@
         <input type="text" placeholder="" [(ngModel)]="persona.ocupacion"/>
       </div>
 
-    <!--  <input *ngIf = "showEdit" value="Guardar Cambios" class="button-submit" (click)="editPersona(personas[personaActual])" />
--->
-
       <h1 *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.apellido}} {{persona.nombres}}</h1>
       <h2 *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.ocupacion}}</h2>
     </div>
 
     <div class="col-lg-9 text-center">
-      <!--<input *ngIf = "imagenes[0]!=null" value="Guardar Cambios" class="btn2" (click)="editPersona(personas[personaActual])" />
-      <app-editbtn
-      border="1px solid #FFFFFF"
-      style="padding: 5px;"
-      class="col-2 editbtn"
-      (onBbtnClick)="onToggleEditPerfil()"
-      ></app-editbtn>
--->
+
       <h1 id="acercademi">Acerca de mi</h1>
       <p *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.sobre_mi}}</p>
 

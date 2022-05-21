@@ -4,7 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule }   from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header/header.component';
 import { LogoArgProgComponent } from './components/header/logo-arg-prog/logo-arg-prog.component';
@@ -14,7 +13,6 @@ import { BannerComponent } from './components/header/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
-import { AddexpComponent } from './components/experiencia/addexp/addexp.component';
 import { BtnshowexpComponent } from './components/experiencia/btnshowexp/btnshowexp.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
@@ -24,14 +22,10 @@ import { EducationComponent } from './components/education/education.component';
 import { EducationItemComponent } from './components/education/education-item/education-item.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProjectItemComponent } from './components/proyectos/project-item/project-item.component';
-
 import { BasicAuthHtppInterceptorService } from './services/basic-auth-htpp-interceptor-service.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
-
 import {AngularFireModule} from '@angular/fire/compat';
 import { ProfileComponent } from './components/profile/profile.component';
-
-//prueba modals
 import { ModalModule } from './_modal';
 
 @NgModule({
@@ -45,7 +39,6 @@ import { ModalModule } from './_modal';
     AcercaDeComponent,
     ExperienciaComponent,
     ExperienciaItemComponent,
-    AddexpComponent,
     BtnshowexpComponent,
     SkillsComponent,
     SkillItemComponent,

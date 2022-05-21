@@ -21,21 +21,6 @@
   </app-btnshowexp>
 </div>
 
-<!-- Sin modal
-<div class="row">
-  <app-btnshowexp
-  bgcolor="{{showAddProject ? '#7e1921' : '#19657e'}}"
-  border="none"
-  text="{{showAddProject ? 'Cerrar' : 'Agregar Proyecto'}}"
-  color="white"
-
-  (onBbtnClick)="toggleAddProject()"
-  *ngIf="hasRoute('/')"
-  >
-  </app-btnshowexp>
-</div>
->-->
-
 <div class="row ">
   <jw-modal id="proyModal">
     <div class="col-12" *ngIf ="checkLoggedIn()">
@@ -68,13 +53,9 @@
       (deleteEvent)="deleteProject(project)"
       (editEvent)= "editProject($event)"
     >
-
-
-    <!--
--->
     </app-project-item>
 
   </div>
 
 </div>
-<!-- -->
+

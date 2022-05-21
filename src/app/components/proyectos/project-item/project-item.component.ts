@@ -20,45 +20,28 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./project-item.component.css']
 })
 export class ProjectItemComponent implements OnInit {
-  
-  imagenes: any[] = [];
-  //projects:IProject[]=PROJECTS;
-  //project:IProject =PROJECTS[0];
-  //tecnos:ITecno[] = this.project.tecnologias;
+
+
+
   @Input() buttonText:string="";
+  @Input () showEditProject:boolean = false;
+  @Input () showDelete:boolean = true;
+  @Input () showEditBtn:boolean = true;
+  @Input() project:IProject =new Proyecto;
+  @Input() allTecnologies:ITecno[]=[];
 
   @Output() editEvent:EventEmitter<IProject> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IProject> = new EventEmitter();
 
-  @Input () showEditProject:boolean = false;
-  @Input () showDelete:boolean = true;
-  @Input () showEditBtn:boolean = true;
   showTecno:boolean= true;
-
-  @Input() project:IProject =new Proyecto;
-  @Input() allTecnologies:ITecno[]=[];
-  //prueba
+  imagenes: any[] = [];
   allTecnologiesFiltred:ITecno[]=[];
-
-  //toAdd:Tecnologia = this.allTecnologies[1];
-
-  //newTecno:ITecno = new Tecnologia;
-  /*tecnologias = [
-    { id: '1', name: 'order 1' },
-    { id: '2', name: 'order 2' },
-    { id: '3', name: 'order 3' },
-    { id: '4', name: 'order 4' }
-  ]; */
-
   form:FormGroup;
 
-
-
-  constructor( private formBuilder: FormBuilder, 
+  constructor( private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private storageService:StorageService ) {
     this.form = this.formBuilder.group({
-     //tecnologias: ['']
      allTecnologiesFiltred:['']
     });
 
@@ -66,67 +49,21 @@ export class ProjectItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.refreshTecnos();
-
-    //this.allTecnologiesFiltred = this.allTecnologies;
-
-   /* this.allTecnologiesFiltred = [
-
-      ...this.getDifference(this.project.tecnologias,this.allTecnologies),
-      ...this.getDifference(this.allTecnologies,this.project.tecnologias)
-
-    ];*/
-
-
-    //const result = this.allTecnologies.filter(({ id: id1 }) => !this.project.tecnologias.some(({ id: id2 }) => id2 === id1));
-
-  //  this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id)); // el que me funciono
-
-   /* var result = (
-      (array, ids) => array.filter(({ id }) => !ids.includes(id)))(this.allTecnologies, this.project.tecnologias.map(({ id }) => id)
-    );*/
-
-   // let result = this.allTecnologies.filter(({ id }) => !this.project.tecnologias.find(o => o.id == id));
-
-
-
   }
-
-  //TO DO sacar
- /* getTecnos() {
-
-    return this.allTecnologies; /*[
-      { id: '1', name: 'order 1' },
-      { id: '2', name: 'order 2' },
-      { id: '3', name: 'order 3' },
-      { id: '4', name: 'order 4' }
-    ];
-  }*/
-
- /* //Borrar
-  getDifference(array1:ITecno[], array2:ITecno[]) {
-    return array1.filter(object1 => {
-      return !array2.some(object2 => {
-        return object1.id === object2.id;
-      });
-    });
-  }*/
 
   refreshTecnos(){
     this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id));
   }
 
   addTecno(){
-    //console.log(this.allTecnologies)
+
     console.log(this.form.value.allTecnologiesFiltred);
-   // console.log (this.allTecnologies.filter(x => x.name === this.form.value))
 
     const index = this.allTecnologiesFiltred.findIndex(object => {
       return object.name === this.form.value.allTecnologiesFiltred;
-      });
-    //console.log(index);
-   // console.log(this.allTecnologies[index]);
+    });
+
     if (index>-1){
       this.project.tecnologias.push(this.allTecnologiesFiltred[index])
       this.refreshTecnos()
@@ -139,46 +76,38 @@ export class ProjectItemComponent implements OnInit {
 
   onDelete(proy:IProject) {
     this.deleteEvent.emit(proy);
-
   }
 
   onToggleEditProject() {
 
     this.showEditProject = !this.showEditProject;
-
     this.refreshTecnos()
-
   }
 
   onDeleteTecno(tecno:ITecno) {
-    //this.project.tecnologias.pop();
+      this.project.tecnologias.forEach((value,index)=>{
+        if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
+      });
 
-    this.project.tecnologias.forEach((value,index)=>{
-      if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
-  });
-
-  this.refreshTecnos()
-
+    this.refreshTecnos()
   }
 
 async onSubmit(){
 
-    if(this.project.titulo.length === 0){
-      alert("Por Favor complete el tìtulo del proyecto");
-      return
+  if(this.project.titulo.length === 0){
+    alert("Por Favor complete el tìtulo del proyecto");
+    return
+  }
+
+
+  if (this.imagenes[0] != null){
+    try {
+      await this.storageImagen(this.imagenes[0],"/portfolio/img/proyectos/");
     }
-
-
- //   console.log(this.exp)
-
- if (this.imagenes[0] != null){
-  try {
-    await this.storageImagen(this.imagenes[0],"/portfolio/img/proyectos/");
-  }
-  catch (err) {
-    console.log(err);
-    alert("Error en el guardado de imagen");
-  }
+    catch (err) {
+      console.log(err);
+      alert("Error en el guardado de imagen");
+    }
   }
     this.editEvent.emit(this.project)
   }
@@ -196,7 +125,6 @@ async onSubmit(){
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
       this.imagenes[0]=reader.result;
-      //this.newPhotoimgEvent.emit(reader.result)
     }
     this.project.pathimg="";
 
@@ -206,7 +134,7 @@ async onSubmit(){
     try{
      await this.storageService.subirImagen(
         this.project.id+ "_" +this.project.titulo+ "_" + Date.now(),
-        storeDirectory,img).then(urlImagen => {   
+        storeDirectory,img).then(urlImagen => {
          this.project.pathimg=urlImagen?.toString() ?? "";
        });
     } catch (err) {

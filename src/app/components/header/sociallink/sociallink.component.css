@@ -9,8 +9,6 @@
   flex-direction: column;
 }
 .row {
-  /*margin-top: 2.5%;*/
- /* margin-bottom: 2.5%;*/
   margin-bottom: 0%;
   --bs-gutter-x: 0;
 }
@@ -28,6 +26,6 @@
 @media (max-width:767px) {
   .img-fluid{
     max-width: 70%;
-    max-height: 70%;    
+    max-height: 70%;
   }
 }

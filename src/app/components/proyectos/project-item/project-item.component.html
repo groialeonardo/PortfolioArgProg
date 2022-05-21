@@ -43,26 +43,7 @@
                       </div>
 
                     </div>
-<!--
-                    <div class="row ">
 
-                        <div class="skills col-12 flex-shrink-0">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/html.png" class="img-fluid img-logos" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/css.png" class="img-fluid img-logos" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/js.png" class="img-fluid img-logos" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/bootstrap.png" class="img-fluid img-logos" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/angular.png" class="img-fluid img-logos" style="max-height: 50px;" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/java.png" class="img-fluid img-logos" style="max-height: 70px;" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/springboot.png" class="img-logos" style="max-height: 40px;" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/hibernate.png" class="img-logos" style="max-height: 35px;" alt="">
-                            <img src="http://localhost:4200/assets/img/Logos/Skills/color/mysql.png" class="img-logos" style="max-height: 50px;" alt="">
-
-                              <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" *ngFor="let tecno of project.tecnologias">
-
-                        </div>
-
-                    </div>
--->
                     <p>  {{project.descripcion}}</p>
                 </div>
 
@@ -121,31 +102,7 @@
           </div>
 
             <label class="col-12" for="text" *ngIf ="showTecno" >Tecnologías Utilizadas</label>
-<!--
-            <input #name class="form-check-input" type="checkbox" id="saveUserNameCheckBox" [checked]="showTecno" (change)="toggleTecno(name.checked)">
 
-            <div class="form-check form-check-inline"  *ngFor="let tecno of project.tecnologias"  >
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" [checked]="showTecno" (onChange)="toggleTecno2(tecno.name)">
-              <label class="form-check-label" for="inlineCheckbox1">{{tecno.name}}</label>
-
-            <select name="tecnologias" [(ngModel)]="newTecno">
-              <option [ngValue]="tecno" *ngFor="let tecno of project.tecnologias">{{tecno.name}}</option>
-            </select>
-
-            </div>
--->
-
-<!--
-            <div class="row">
-              <div class="skills col-12 flex-shrink-0" *ngFor="let tecno of project.tecnologias">
-                <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="" >
-                <app-deletebtn
-                  (click)= "onDeleteTecno(tecno)"
-                ></app-deletebtn>
-              </div>
-
-            </div>
--->
             <div class="row skills-container">
               <div class="skills" *ngFor="let tecno of project.tecnologias">
                 <app-deletebtn
@@ -210,96 +167,4 @@
 
       </div>
 
-     <!--<div class="addexp" *ngIf ="showEditProject">
-
-        <form class="inline"  >
-
-          <div class="form-control">
-            <label for="text">Tilulo del Proyecto</label>
-            <input
-              type="text"
-              name="proyecto"
-              id="proyecto"
-              placeholder="Agregar nombre de la proyecto"
-
-            />
-          </div>
-
-          <div class="form-control">
-            <label for="text">Logo de la empresa</label>
-            <input
-              type="text"
-              name="pathlogo"
-              id="pathlogo"
-              placeholder="Ingrese el path correspondiente al logo de la empresa"
-
-
-            />
-          </div>
-          <div id="fechas">
-            <div class="form-control">
-              <label for="fechaInicio">Inicio</label>
-              <input
-                type="date"
-                name="inicio"
-                id="inicio"
-                placeholder="Fecha de Inicio (MM-AAAA)"
-
-              />
-            </div>
-
-            <div class="form-control">
-              <label for="fechaFin">Fin</label>
-              <input
-                type="date"
-                name="fin"
-                id="fin"
-                placeholder="Fecha Fin (MM-AAAA) o ACTUAL"
-
-
-              />
-            </div>
-
-          </div>
-
-
-          <div class="form-control">
-            <label for="nombrePuesto">Nombre del Puesto</label>
-            <input
-              type="text"
-              name="puesto"
-              id="puesto"
-              placeholder="Agregar nombre del puesto"
-
-            />
-          </div>
-
-          <div class="form-control">
-            <label for="descripcion">Descripcion</label>
-            <div class="row">
-
-                <textarea
-                name="descripcion"
-                id="descripcion"
-                cols="100"
-                rows="10"
-                placeholder="Agregar descripcion del puesto"
-
-
-                >
-                </textarea>
-
-
-            </div>
-
-          </div>
-
-          <input type="submit" value="Guardar Cambios" class="button-submit" />
-
-
-        </form>
-
-
-      </div>
--->
 </div>

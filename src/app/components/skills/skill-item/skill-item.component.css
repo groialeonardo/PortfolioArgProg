@@ -26,7 +26,6 @@
   height: 10px;
   border-radius: 5px;
   background: #ffffff;
-  /*outline: none;*/
   opacity: 0.8;
   -webkit-transition: .2s;
   transition: opacity .2s;
@@ -65,8 +64,7 @@
 
  }
 
-
- #agregarImg{     
+ #agregarImg{
   display: flex;
   border-radius: -15px;
   background-color: transparent;

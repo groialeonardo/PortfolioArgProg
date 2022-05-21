@@ -24,48 +24,37 @@ export class SkillsComponent implements OnInit {
   constructor( private skillsSevice:SkillsService, private authService: AuthenticationService ) { }
 
   ngOnInit(): void {
-
     this.skillsSevice.getSkills().subscribe((skillscallback)=>(
       this.skills=skillscallback
       ));
-   // console.log(this.skills)
-
   }
 
   editSkill(skill:ISkill) {
 
-    this.skillsSevice.updateSkill(skill).subscribe(()=>{      
-      alert("Los datos se han guardado satisfactoriamente");       
+    this.skillsSevice.updateSkill(skill).subscribe(()=>{
+      alert("Los datos se han guardado satisfactoriamente");
     })
   }
 
   saveSkill(skill:ISkill) {
-
     this.skillsSevice.addSkill(skill).subscribe((t)=>{
       this.skills.push(t);
       alert("Se ha añadido una nueva Experiencia");
       this.showAddSkill = false;
-      
     })
   }
 
   deleteSkill(skill:ISkill) {
-
-
     this.skillsSevice.deleteSkill(skill).subscribe(()=>(
       this.skills = this.skills.filter(t => t.id !==skill.id ))
     );
   }
 
   onToggleAddskill() {
-
       this.showAddSkill = !this.showAddSkill
-
   }
   onToggleEditskill() {
-
     this.showEditSkill = !this.showEditSkill
-
   }
 
   checkLoggedIn():boolean{

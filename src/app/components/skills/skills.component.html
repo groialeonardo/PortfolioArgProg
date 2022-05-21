@@ -25,11 +25,7 @@
       style="padding: 5px;"
       class="col-2 centeritems"
       (onBbtnClick)="onToggleEditskill()"
-
-
     ></app-editbtn>
-
-
 
   </div>
 
@@ -46,20 +42,14 @@
     </div>
 
     <app-skill-item
-
       *ngFor="let skill of skills"
-
       buttonText="Guardar Cambios"
       [skill] = skill
       [showEditSkill]=showEditSkill
       (editEvent)= "editSkill($event)"
-
       [showDelete]=true
       (deleteEvent)="deleteSkill($event)"
-
       class="skill-item col-lg-2 col-md-4 col-sm-6"
-
-
     ></app-skill-item>
 
   </div>

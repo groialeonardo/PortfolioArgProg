@@ -20,23 +20,10 @@
     >
     </app-btnshowexp>
   </div>
-<!-- sin modal
-  <div class="row inner" id="agregar">
-    <app-btnshowexp
-    bgcolor="{{showAddEducation ? '#7e1921' : '#19657e'}}"
-    border="none"
-    text="{{showAddEducation ? 'Cerrar' : 'Agregar Educación'}}"
-    color="white"
-    (onBbtnClick)="toggleAddEducation()"
-    >
-    </app-btnshowexp>
-  </div>
--->
+
   <div class="row inner ">
     <jw-modal id="educModal" bodyColor="#5c90a3">
-<!-- sin modal
-    <div class="col-12" *ngIf ="showAddEducation&&checkLoggedIn()">
--->
+
       <div class="col-12" *ngIf ="checkLoggedIn()">
 
         <app-education-item

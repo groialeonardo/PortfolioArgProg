@@ -84,7 +84,6 @@
   }
 
   label{
-    /*color:  #19657e;*/
     color: #15576d;
     font-weight: 600;
     font-size:large;
@@ -120,12 +119,7 @@
     display: flex;
     width: 60px;
   }
-/*
-  #fechas{
-    display: flex;
-    align-items: left;
-  }
-*/
+
   #descripcion{
     display: flex;
     vertical-align: middle;
