@@ -5,37 +5,37 @@
     /*border: 2px solid #8eb5c5;*/ /*#19657ea4;*/
     border-radius: 30px;
     margin: 0.4%;
-  
+
   /*para centrar*/
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .addeduc{
     /*display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
-  
+
     border: 3px dotted #19657ea4;
     border-radius: 30px;
     margin: 0.4%;
     padding: 0.5%;
   */
     border-radius: 30px;
-  
+
   }
-  
+
   .img-logos {
     max-width: 70px;
     border-radius: 50%;
   }
-  
+
   h1,h2,h3,h4,div,p{
     padding: 5px;
   }
-  
+
   h2{
     margin-right: 10px;
   }
@@ -43,22 +43,22 @@
     margin-left: 20px;
     margin-right: 4%;
   }
-  
+
   #titulo{
     margin-bottom: 10px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
   }
-  
+
   .form-control  {
   border: none;
   /*background-color: #19657e85;*/
   }
-  
+
   .form-control input {
     width: 100%;
     height: 40px;
@@ -69,7 +69,7 @@
    /* border: 2px solid #8eb5c5;*/ /* #19657ea4;  */
     /*background-color: #19657e85;*/
   }
-  
+
   label{
     /*color:  #19657e;*/
     /*color: #15576d;*/
@@ -77,13 +77,13 @@
     font-weight: 600;
     font-size:large;
   }
-  
+
   textarea{
     border-radius: 15px;
     /*border: 2px solid #8eb5c5; *//* #19657ea4; */
     /*color: #15576d;*/
   }
-  
+
   .button-submit {
     display: inline-block;
     border-radius: 15px;
@@ -101,39 +101,39 @@
   }
   form {
     /*background-color: #19657e85;*/
-    
+
   }
   .button-submit:hover {
     opacity: 1;
-  
+
   }
-  
+
   #fin, #inicio{
     display: flex;
     width: 150px;
   }
-  
+
   #fechas{
     display: flex;
     align-items: left;
   }
-  
+
   #descripcion{
     display: flex;
     vertical-align: middle;
   }
-  
+
   .addeduc, .form-control, form, .form-control input,textarea {
     /*background-color: #52889b;    */
-    background-color:#5c90a3; 
+    background-color:#5c90a3;
   }
 
   .education-item,textarea, .form-control input{
     border: 2px solid  #ffffffa4
   }
 
-  
-  #agregarImg{     
+
+  #agregarImg{
     display: flex;
     border-radius: -15px;
     background-color: transparent;
@@ -151,7 +151,7 @@
 
   @media (max-width:482px) {
 
-    #edu-item-inner{  
+    #edu-item-inner{
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
@@ -162,6 +162,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+    }
+    #titulo{
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
     }
   }
 

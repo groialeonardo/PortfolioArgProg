@@ -15,7 +15,7 @@
             <h5 class="d-inline" style="text-align: center" d-inline><small class="text-muted"><i>    {{education.inicio}} hasta {{education.fin}}</i></small></h5>
           </div>
 
-          <div class="col-2">
+          <div class="col-2"  *ngIf ="checkLoggedIn()">
             <app-editbtn
               (click)= "onToggleEditEducation()"
               *ngIf="showEditBtn"
@@ -24,7 +24,7 @@
 
           </div>
 
-          <div class="col-1">
+          <div class="col-1" *ngIf ="checkLoggedIn()">
             <app-deletebtn
               *ngIf="showDelete"
               (click)= "onDelete(education)"

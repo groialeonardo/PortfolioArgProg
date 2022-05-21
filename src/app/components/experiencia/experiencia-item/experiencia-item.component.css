@@ -30,7 +30,7 @@ h4,p{
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
 }
@@ -46,7 +46,7 @@ border: none;
   padding: 3px 7px;
   font-size: 17px;
   border-radius: 15px;
-  border: 2px solid #19657ea4;  
+  border: 2px solid #19657ea4;
 }
 
 label{
@@ -58,7 +58,7 @@ label{
 
 textarea{
   border-radius: 15px;
-  border: 2px solid #19657ea4; 
+  border: 2px solid #19657ea4;
 }
 
 .button-submit {
@@ -97,7 +97,7 @@ textarea{
   vertical-align: middle;
 }
 
-#agregarImg{     
+#agregarImg{
   display: flex;
   border-radius: -15px;
   background-color: transparent;
@@ -115,7 +115,7 @@ textarea{
 
 @media (max-width:482px) {
 
-  #exp-item-inner{  
+  #exp-item-inner{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -126,12 +126,21 @@ textarea{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+  }
+  #empresa{
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 }
 
 
 @media (max-width:470px) {
-
   #fechas{
     flex-wrap: wrap;
   }

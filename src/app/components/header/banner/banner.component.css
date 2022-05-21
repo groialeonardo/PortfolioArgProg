@@ -3,7 +3,6 @@ input{
   padding: 2px;
   font-size: 19px;
   width: 95%;
-
 }
 
 #inputFileBanner {
@@ -38,18 +37,10 @@ input{
 }
 
 .labelInputFile:hover {
-
   background-color: #346d81;
-
 }
 
-@media (min-width:988px) {
-
-
-
-}
 @media (max-width:988px) {
-
   .labelInputFile {
     margin-left: 90%;
   }
@@ -57,9 +48,7 @@ input{
 }
 
 @media (max-width:482px) {
-
   .labelInputFile {
     margin-left: 83%;
   }
-
 }

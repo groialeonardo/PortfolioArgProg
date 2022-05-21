@@ -3,7 +3,7 @@
 
 
     <div class="flex-shrink-0">
-      
+
         <img src="{{exp.pathlogo}}" alt="- Logo"  class="img-fluid img-logos" *ngIf = "imagenes[0]==null">
         <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-logos" *ngIf = "imagenes[0]!=null">
     </div>
@@ -16,7 +16,7 @@
           <h5 class="d-inline" style="text-align: center" d-inline><small class="text-muted"><i>    {{exp.inicio}} hasta {{exp.fin}}</i></small></h5>
         </div>
 
-        <div class="col-2">
+        <div class="col-2" *ngIf ="checkLoggedIn()">
           <app-editbtn
             (click)= "onToggleEditExp()"
             *ngIf="showEditBtn"
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1"  *ngIf ="checkLoggedIn()">
           <app-deletebtn
             *ngIf="showDelete"
             (click)= "onDelete(exp)"
@@ -61,7 +61,7 @@
       </div>
 
       <div class="form-control">
-        <label for="text">Logo de la empresa</label>      
+        <label for="text">Logo de la empresa</label>
         <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
         <input
           type="text"
@@ -69,10 +69,10 @@
           id="pathlogo"
           placeholder="Ingrese el path correspondiente al logo de la empresa"
           [(ngModel)]="exp.pathlogo"
-          (change)="onPathLogoChange()"   
-        />       
+          (change)="onPathLogoChange()"
+        />
       </div>
-      
+
       <div id="fechas">
         <div class="form-control">
           <label for="fechaInicio">Inicio</label>
