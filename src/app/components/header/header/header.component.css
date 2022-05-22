@@ -45,6 +45,7 @@ flex-direction: column;
   justify-content: center;
   flex-direction: row;
   /*margin-right: 15%;*/
+  margin: 3px;
 }
 
 input{
