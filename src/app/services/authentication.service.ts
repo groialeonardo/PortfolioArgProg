@@ -13,18 +13,6 @@ export class AuthenticationService {
 
   constructor(private httpClient:HttpClient) { }
 
-/*
-  authenticate(username:string, password:string) {
-    if (username === "admin" && password === "123456") {
-      sessionStorage.setItem('username', username)
-      sessionStorage.setItem('password', password)
-      return true;
-    } else {
-      return false;
-    }
-  }
-*/
-
   authenticate(username:string, password:string) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<IUser>(environment.apiUrlRoot +"/auth",{headers}).pipe(

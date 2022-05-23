@@ -1,13 +1,8 @@
-///PRUEBA
 import { CRUDHttpService } from './crud-http.service';
-///
-
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { environment } from 'src/environments/environment';
-
 import { IExp } from '../Interfaces/IExp';
 
 

@@ -11,9 +11,7 @@ firebase.initializeApp(environment.firebaseConfig);
 export class StorageService {
   storareRef = firebase.app().storage().ref();
 
-
   constructor() { }
-
 
   async subirImagen(nombre: string, path:string, imgBase64: any) {
 
