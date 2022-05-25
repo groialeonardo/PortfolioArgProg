@@ -30,11 +30,12 @@ export class AuthenticationService {
 
   isUserLoggedIn() {
 
-   // let user = sessionStorage.getItem('username')
+    let user = sessionStorage.getItem('currentUser')
       //console.log(!(user === null))
-    //  return !(user === null)
+    return !(user === null)
+      //return !(this.currentUserSubject.value === null);
 
-      return !(this.currentUserSubject.value === null);
+     // return (this.UsuarioAutenticado.email && this.UsuarioAutenticado.acceessToken)
   }
 
   logOut() {

@@ -115,8 +115,8 @@ async onSubmit(){
   }
 
   checkLoggedIn():boolean{
-    this.refreshTecnos()
-    return this.authService.isUserLoggedIn() //esto podria estar mejor, es para que no se vacie la lista cuando hacen F5
+    this.refreshTecnos()  //esto podria estar mejor, es para que no se vacie la lista cuando hacen F5
+    return this.authService.isUserLoggedIn()
   }
   onPathLogoChange(){
     this.imagenes[0]=null;
