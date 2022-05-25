@@ -54,6 +54,8 @@ export class ProjectItemComponent implements OnInit {
 
   refreshTecnos(){
     this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id));
+    //console.log("AllTecnologies" + JSON.stringify(this.allTecnologies));
+   // console.log("AllTecnologiesFilterd" + JSON.stringify(this.form.value.allTecnologiesFiltred));
   }
 
   addTecno(){
@@ -113,7 +115,8 @@ async onSubmit(){
   }
 
   checkLoggedIn():boolean{
-    return this.authService.isUserLoggedIn()
+    this.refreshTecnos()
+    return this.authService.isUserLoggedIn() //esto podria estar mejor, es para que no se vacie la lista cuando hacen F5
   }
   onPathLogoChange(){
     this.imagenes[0]=null;
@@ -144,3 +147,4 @@ async onSubmit(){
 
 
 }
+

@@ -76,6 +76,7 @@ export class ProyectosComponent implements OnInit {
     return true;
   }
 */
+
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
   }
@@ -89,3 +90,4 @@ export class ProyectosComponent implements OnInit {
   }
 
 }
+

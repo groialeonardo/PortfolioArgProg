@@ -3,7 +3,7 @@ import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../Interfaces/IUser';
-import { map } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,8 +11,40 @@ import { map } from 'rxjs';
 })
 export class AuthenticationService {
 
-  constructor(private httpClient:HttpClient) { }
+  currentUserSubject: BehaviorSubject<any>
+  constructor(private httpClient:HttpClient) {
+    console.log("El servicio de autenticación está corriendo")
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'))
+  }
 
+  IniciarSesion(credenciales:any):Observable<any>{
+    return this.httpClient.post(environment.apiUrlRoot +"/login", credenciales).pipe(map(data=>{
+      sessionStorage.setItem('currentUser', JSON.stringify(data));
+      this.currentUserSubject.next(data)
+    }))
+  }
+
+  get UsuarioAutenticado(){
+    return this.currentUserSubject.value;
+  }
+
+  isUserLoggedIn() {
+
+   // let user = sessionStorage.getItem('username')
+      //console.log(!(user === null))
+    //  return !(user === null)
+
+      return !(this.currentUserSubject.value === null);
+  }
+
+  logOut() {
+    sessionStorage.removeItem('currentUser')
+    this.currentUserSubject.next(null);
+  }
+
+
+
+/*// Esto es para basic auth
   authenticate(username:string, password:string) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<IUser>(environment.apiUrlRoot +"/auth",{headers}).pipe(
@@ -42,4 +74,5 @@ export class AuthenticationService {
 
 
   }
+*/
 }
