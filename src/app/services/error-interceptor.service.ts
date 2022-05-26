@@ -18,14 +18,19 @@ export class ErrorInterceptorService implements HttpInterceptor{
             errorMsg = errorMsg + `\nError: ${error.error.message}`;
           }else {
             //Error del lado del server
-            
             errorMsg = errorMsg + `\nError Code: ${error.status}\nMessage: ${error.message}`;
+
+            if(`${error.status}`==="401" || `${error.status}`==="403"){
+              alert("Ha habido un problema con sus credenciales.\nVuelva a intentar iniciar sesion con credeciales válidas")
+            }
+
           }
+
           window.alert(errorMsg);
           return throwError(errorMsg)
 
         })
       )
-    
+
   }
 }

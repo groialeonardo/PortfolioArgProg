@@ -37,10 +37,14 @@ export class IniciarSessionComponent implements OnInit {
     event.preventDefault;
     this.authService.IniciarSesion(this.form.value).subscribe(data=>{
       console.log("Datos de inicio de sesion:" + JSON.stringify(data));
-      if(data)
+      if(sessionStorage.getItem('currentUser') != null)
       {
-        alert(" Se ha iniciado sesión satisfactoriamente")
+        alert(" Se ha iniciado sesión satisfactoriamente");
+        this.onCloseEvent.emit();
+      }else{
+        alert(" Ha habido un error en sus credenciales, por favor vuelva a intentar");
       }
+
       //this.ruta.navigate([])
     })
   }
