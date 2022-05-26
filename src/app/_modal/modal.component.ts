@@ -12,6 +12,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     @Input() id!: string;
     private element: any;
     @Input() bodyColor!:string;
+    @Input() isLogin:boolean=false;
 
 
     constructor(private modalService: ModalService, private el: ElementRef) {

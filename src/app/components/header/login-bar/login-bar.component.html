@@ -1,5 +1,9 @@
 <div class="row ">
 
+  <jw-modal id="loginModal" [isLogin]="true">
+    <app-iniciar-session (onCloseEvent)="closeModal('loginModal')"></app-iniciar-session>
+  </jw-modal>
+  <!--
   <div class="row col-lg-12 login-style" *ngIf="!checkLoggedIn()" >
     <div class="col-lg-6 center">
       Usuario <input type="text" name="username" [(ngModel)]="username" >
@@ -10,12 +14,17 @@
 
   </div>
 
+
   <div class="col-lg-12 text-center login-btn" *ngIf="!checkLoggedIn()">
     <button class="btn btn-outline-light" (click)=checkLogin()>Login</button>
   </div>
+-->
+  <div class="col-lg-12 text-center login-btn" *ngIf="!checkLoggedIn()">
+    <button class="btn btn-outline-light" (click)="openModal('loginModal')">Iniciar Sesión</button>
+  </div>
 
   <div class="col-lg-12 text-center login-btn" *ngIf="checkLoggedIn()">
-    <button class="btn btn-outline-light" (click)=logOut()>Logout</button>
+    <button class="btn btn-outline-light" (click)=logOut()>Cerrar Sesion</button>
   </div>
 
 

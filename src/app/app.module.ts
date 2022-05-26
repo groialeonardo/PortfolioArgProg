@@ -28,6 +28,7 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
 import {AngularFireModule} from '@angular/fire/compat';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ModalModule } from './_modal';
+import { IniciarSessionComponent } from './components/iniciar-session/iniciar-session.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ModalModule } from './_modal';
     EducationItemComponent,
     ProyectosComponent,
     ProjectItemComponent,
-    ProfileComponent
+    ProfileComponent,
+    IniciarSessionComponent
   ],
   imports: [
     BrowserModule,

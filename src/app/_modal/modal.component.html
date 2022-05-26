@@ -1,5 +1,5 @@
-﻿<div class="jw-modal">
-    <div class="jw-modal-body" [style.background-color]="bodyColor">
+﻿<div class="jw-modal" >
+    <div class="jw-modal-body" [style.background-color]="bodyColor" [ngClass]="{forLogin: isLogin }">
         <ng-content></ng-content>
     </div>
 </div>

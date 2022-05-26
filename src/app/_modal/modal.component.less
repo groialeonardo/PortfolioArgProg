@@ -29,19 +29,69 @@ jw-modal {
             margin-right: 40px;
             border-radius: 30px;
         }
+        .forLogin {
+          padding: 1px;
+          background: #fff;
+          /* margin exposes part of the modal background */
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 600px;
+          margin-right: 600px;
+          border-radius: 30px;
+      }
+
+      @media (max-width:1700px) {
+
+        .forLogin{
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 450px;
+          margin-right: 450px;
+        }
+      }
+
+      @media (max-width:1400px) {
+
+        .forLogin{
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 300px;
+          margin-right: 300px;
+        }
+      }
+
+      @media (max-width:1200px) {
+
+        .forLogin{
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-left: 200px;
+          margin-right: 200px;
+        }
+      }
+
+        @media (max-width:1000px) {
+
+          .forLogin{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 100px;
+            margin-right: 100px;
+          }
+        }
         @media (max-width:550px) {
 
-          .jw-modal-body{
+          .jw-modal-body, .forLogin{
             margin-top: 5px;
             margin-bottom: 5px;
             margin-left: 10px;
             margin-right: 10px;
           }
         }
-        
+
         @media (max-width:450px) {
 
-          .jw-modal-body{
+          .jw-modal-body, .forLogin{
             margin-top: 2px;
             margin-bottom: 2px;
             margin-left: 1px;
@@ -51,16 +101,16 @@ jw-modal {
 
         @media (max-width:375px) {
 
-          .jw-modal-body{
+          .jw-modal-body, .forLogin{
             margin-top: 1px;
             margin-bottom: 1px;
             margin-left: 0px;
             margin-right: 0px;
           }
         }
-        
 
-      
+
+
     }
 
     .jw-modal-background {
