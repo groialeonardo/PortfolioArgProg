@@ -10,7 +10,9 @@ div {
   background-color:#19657ea4;
   color: #ffffff;
 }
-
+.bg-transp{
+  background-color: transparent;
+}
 .form-control{
   border:none;
   background-color:transparent;

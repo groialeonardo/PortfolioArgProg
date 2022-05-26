@@ -18,15 +18,50 @@
 
       <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label  for="text">Apellido</label>
-        <input  type="text" placeholder="" [(ngModel)]="persona.apellido" (ngModelChange)="OnPersonaChange()"/>
+        <input  
+          type="text" 
+          placeholder="Ingrese el Apellido" 
+          [(ngModel)]="persona.apellido" 
+          (ngModelChange)="OnPersonaChange()"
+          required maxlength="60"     
+          #apellido="ngModel"
+          />
+          <div *ngIf="apellido.invalid" class="alert bg-transp">
+            <div *ngIf="apellido.errors?.['required']" class="text-warning  bg-transp">
+              El Apellido es requerido
+            </div>
+          </div>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Nombres</label>
-        <input type="text" placeholder="" [(ngModel)]="persona.nombres"/>
+        <input 
+          type="text" 
+          placeholder="Ingrese los Nombres" 
+          [(ngModel)]="persona.nombres"
+          required maxlength="60"     
+          #nombres="ngModel"
+          />
+          <div *ngIf="nombres.invalid" class="alert bg-transp">
+            <div *ngIf="nombres.errors?.['required']" class="text-warning  bg-transp">
+              Los Nombres son requeridos
+            </div>
+          </div>
       </div>
       <div class="persData" *ngIf = "showEdit&&loggedIn">
         <label for="text">Ocupación</label>
-        <input type="text" placeholder="" [(ngModel)]="persona.ocupacion"/>
+        <input 
+          type="text" 
+          placeholder="Ingrese la Ocupación" 
+          [(ngModel)]="persona.ocupacion"
+          required maxlength="60"     
+          #ocupacion="ngModel"
+          />
+          <div *ngIf="ocupacion.invalid" class="alert bg-transp">
+            <div *ngIf="ocupacion.errors?.['required']" class="text-warning  bg-transp">
+              La Ocupación es requerida
+            </div>
+          </div>
+          
       </div>
 
       <h1 *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.apellido}} {{persona.nombres}}</h1>
@@ -39,13 +74,15 @@
       <p *ngIf = "(!showEdit)||(showEdit&&!loggedIn)">{{persona.sobre_mi}}</p>
 
       <textarea
-      name="sobre_mi"
-      id="sobre_mi"
-      [(ngModel)] = persona.sobre_mi
-      rows="13"
-      *ngIf = "showEdit&&loggedIn"
-      > </textarea>
-
+        name="sobre_mi"
+        id="sobre_mi"
+        [(ngModel)] = "persona.sobre_mi"
+        rows="13"
+        *ngIf = "showEdit&&loggedIn"
+        placeholder="Escribe algo acerca de tí"      
+        maxlength="1300"
+      > 
+      </textarea>
     </div>
 
   </div>

@@ -39,7 +39,7 @@ export class SkillsComponent implements OnInit {
   saveSkill(skill:ISkill) {
     this.skillsSevice.addSkill(skill).subscribe((t)=>{
       this.skills.push(t);
-      alert("Se ha añadido una nueva Experiencia");
+      alert("Se ha añadido una nueva Habilidad");
       this.showAddSkill = false;
     })
   }

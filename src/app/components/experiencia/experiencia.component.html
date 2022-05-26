@@ -26,7 +26,6 @@
      <div class="col-12" *ngIf ="checkLoggedIn()">
 
       <app-experiencia-item
-
         (editEvent)= "addExp($event)"
         buttonText="Agregar Experiencia"
         [showEditExp]=true
@@ -44,12 +43,10 @@
   <div class="col-lg-12">
 
     <app-experiencia-item
-
       *ngFor="let exp of exps"
       [exp] = exp
       (deleteEvent)="deleteExp(exp)"
       (editEvent)= "editExp($event)"
-
     >
     </app-experiencia-item>
 

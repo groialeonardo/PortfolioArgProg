@@ -1,7 +1,6 @@
 <div class="row education-item ">
     <div class="d-flex " id="edu-item-inner">
 
-
       <div class="flex-shrink-0">
         <img src="{{education.pathlogo}}" alt="- Logo"  class="img-fluid img-logos"  *ngIf = "imagenes[0]==null">
         <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-logos" *ngIf = "imagenes[0]!=null">
@@ -19,7 +18,6 @@
             <app-editbtn
               (click)= "onToggleEditEducation()"
               *ngIf="showEditBtn"
-
             ></app-editbtn>
 
           </div>
@@ -36,7 +34,6 @@
         <h4>{{education.institucion}}</h4>
         <p> {{education.descripcion}}</p>
 
-
       </div>
     </div>
 
@@ -45,14 +42,25 @@
       <form class="inline" (ngSubmit)="onSubmit()" >
 
         <div class="form-control">
-          <label for="nombreTitulo">Nombre del título</label>
+          <label for="nombreTitulo">Título obtenido</label>
           <input
             type="text"
             name="titulo"
             id="titulo"
             placeholder="Agregar nombre del título"
             [(ngModel)]="education.titulo"
+            required maxlength="60"     
+            #titulo="ngModel"
+            class="form-control"
+            [ngClass]="{'is-invalid': titulo.invalid,
+            'is-valid': !titulo.invalid}"
           />
+          <div *ngIf="titulo.invalid"
+              class="alert">
+            <p *ngIf="titulo.errors?.['required']" class="text-warning">
+              El  título obtenido es requerido
+            </p>
+          </div>
         </div>
 
         <div class="form-control">
@@ -63,7 +71,18 @@
             id="institucion"
             placeholder="Agregar nombre de la Institución"
             [(ngModel)]="education.institucion"
+            required maxlength="100"
+            #institucion="ngModel"
+            class="form-control"
+            [ngClass]="{'is-invalid': institucion.invalid,
+            'is-valid': !institucion.invalid}"
           />
+          <div *ngIf="institucion.invalid"
+            class="alert">
+          <p *ngIf="institucion.errors?.['required']" class="text-warning">
+            El nombre de la Institución es requerido
+          </p>
+        </div>
         </div>
 
         <div class="form-control">
@@ -76,7 +95,8 @@
             placeholder="Ingrese el path correspondiente al logo de la Institución"
             [(ngModel)]="education.pathlogo"
             (change)="onPathLogoChange()"
-
+            #logo="ngModel"
+            class="form-control is-valid"
           />
         </div>
         <div id="fechas">
@@ -108,22 +128,26 @@
 
 
         <div class="form-control">
-          <label for="descripcion">Descripcion</label>
+          <label for="descripcion" class="form-control" [ngClass]="{'is-invalid': descripcion.invalid,
+          'is-valid': !descripcion.invalid}" >Descripcion</label>
           <div class="row">
-
               <textarea
               name="descripcion"
               id="descripcion"
               cols="100"
               rows="10"
               placeholder="Agregar descripcion"
-              [(ngModel)]="education.descripcion">
-
+              [(ngModel)]="education.descripcion"
+              required maxlength="1600"     
+              #descripcion="ngModel" 
+              >
               </textarea>
-
-
+              <div *ngIf="descripcion.invalid" class="alert">
+                <p *ngIf="descripcion.errors?.['required']" class="text-warning">
+                  La descripcion de la educacion es requerida
+                </p> 
+              </div>
           </div>
-
         </div>
 
         <input type="submit" value="Guardar Cambios" class="button-submit" />
