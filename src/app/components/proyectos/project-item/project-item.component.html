@@ -1,63 +1,57 @@
-<div class="row project-item ">
-    <div class="d-flex ">
+  <div class="row project-item ">
+      <div class="d-flex ">
 
-        <div class="flex-grow-1 ms-3">
+          <div class="flex-grow-1 ms-3">
 
-            <div id="proyecto" class="row">
-            <div class="col-9" id="proyResp">
-                <h2 class=" d-inline" style="text-align: center">{{project.titulo}}</h2>
-                <h5 class="d-inline" style="text-align: center"  d-inline><small class="text-muted"><i>{{project.fecha}}</i></small></h5>
-                <div class="row">
-                  <a href={{project.projectLink}}>Link</a>
-                </div>
+              <div id="proyecto" class="row">
+              <div class="col-9" id="proyResp">
+                  <h2 class=" d-inline" style="text-align: center">{{project.titulo}}</h2>
+                  <h5 class="d-inline" style="text-align: center"  d-inline><small class="text-muted"><i>{{project.fecha}}</i></small></h5>
+                  <div class="row">
+                    <a href={{project.projectLink}}>Link</a>
+                  </div>
 
-            </div>
+              </div>
 
-            <div class="col-2" *ngIf ="checkLoggedIn()">
-                <app-editbtn
-                (click)= "onToggleEditProject()"
-                *ngIf="showEditBtn"
-                ></app-editbtn>
+              <div class="col-2" *ngIf ="checkLoggedIn()">
+                  <app-editbtn
+                  (click)= "onToggleEditProject()"
+                  *ngIf="showEditBtn"
+                  ></app-editbtn>
 
-            </div>
+              </div>
 
-            <div class="col-1" *ngIf ="checkLoggedIn()">
-                <app-deletebtn
+              <div class="col-1" *ngIf ="checkLoggedIn()">
+                  <app-deletebtn
 
-                *ngIf="showDelete"
-                (click)= "onDelete(project)"
+                  *ngIf="showDelete"
+                  (click)= "onDelete(project)"
 
-                ></app-deletebtn>
-            </div>
+                  ></app-deletebtn>
+              </div>
 
-            </div>
-            <div class="row flex-shrink-0" id="proyTecImgContainer">
+              </div>
+              <div class="row flex-shrink-0" id="proyTecImgContainer">
 
-                <div class="col-xl-8 col-lg-12">
-                    <h4>Tecnologías Utilizadas</h4>
+                  <div class="col-xl-8 col-lg-12" [ngClass]="{'hideOnMobile': showEditProject&&checkLoggedIn()}">
+                      <h4>Tecnologías Utilizadas</h4>
 
-                    <div class="row skills-container" id="skill-cont-card">
-                      <div class="skills" *ngFor="let tecno of project.tecnologias">
-
-                        <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="">
+                      <div class="row skills-container" id="skill-cont-card">
+                        <div class="skills" *ngFor="let tecno of project.tecnologias">
+                          <img src={{tecno.pathlogo}} class="img-logos" [class.img-fluid]="tecno.imgFluid" [ngStyle]="{'max-height.px': tecno.maxHeight}" alt="">
+                        </div>
                       </div>
+                      <p>  {{project.descripcion}}</p>
+                  </div>
 
-                    </div>
+                  <div class="flex-shrink-0 col-xl-4 col-lg-12" id="proyImgContainer">
+                      <img src={{project.pathimg}}  alt="proyecto"  class="img-fluid img-proy"  *ngIf = "imagenes[0]==null">
+                      <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-proy" *ngIf = "imagenes[0]!=null">
+                  </div>
 
-                    <p>  {{project.descripcion}}</p>
-                </div>
-
-                <div class="flex-shrink-0 col-xl-4 col-lg-12" id="proyImgContainer">
-                    <img src={{project.pathimg}}  alt="proyecto"  class="img-fluid img-proy"  *ngIf = "imagenes[0]==null">
-                    <img src={{imagenes[0]}} alt="- Logo" class="img-fluid img-proy" *ngIf = "imagenes[0]!=null">
-                </div>
-
-            </div>
-
-
-        </div>
-    </div>
-
+              </div>
+          </div>
+      </div>
 
       <div class="addProj" *ngIf ="showEditProject&&checkLoggedIn()">
 
@@ -71,7 +65,7 @@
               id="proyecto"
               placeholder="Agregar nombre de la proyecto"
               [(ngModel)]="project.titulo"
-              required maxlength="100"     
+              required maxlength="100"
               #proyecto="ngModel"
               class="form-control"
               [ngClass]="{'is-invalid': proyecto.invalid,
@@ -94,12 +88,16 @@
               id="anio"
               placeholder="Año"
               [(ngModel)]="project.fecha"
-              required maxlength="60"     
+              required maxlength="60"
               #anio="ngModel"
               class="form-control"
               [ngClass]="{'is-invalid': anio.invalid,
               'is-valid': !anio.invalid}"
             />
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="onActualChange()"  [checked]="actual" >
+              <label class="form-check-label" for="flexSwitchCheckDefault">En desarrollo</label>
+            </div>
             <div *ngIf="anio.invalid"
                 class="alert">
               <p *ngIf="anio.errors?.['required']" class="text-danger">
@@ -119,14 +117,14 @@
             <input type="file" accept=".png, .jpg,.jpeg" (change)="cargarImagen($event)" id="agregarImg" >
             <input
               type="text"
-              maxlength="255"  
+              maxlength="255"
               name="pathimg"
               id="pathimg"
               placeholder="Agregar link de imagen del Proyecto"
               [(ngModel)]="project.pathimg"
               (change)="onPathLogoChange()"
               #img="ngModel"
-              class="form-control is-valid"  
+              class="form-control is-valid"
             />
           </div>
 
@@ -165,7 +163,7 @@
               placeholder="Agregar un Link del Proyecto"
               [(ngModel)]="project.projectLink"
               #link="ngModel"
-              class="form-control is-valid"  
+              class="form-control is-valid"
 
             />
           </div>
@@ -182,14 +180,14 @@
               rows="10"
               placeholder="Agregar descripcion del puesto"
               [(ngModel)]="project.descripcion"
-              required maxlength="1600"     
-              #descripcion="ngModel" 
+              required maxlength="1600"
+              #descripcion="ngModel"
               >
               </textarea>
               <div *ngIf="descripcion.invalid" class="alert">
                 <p *ngIf="descripcion.errors?.['required']" class="text-danger">
                   La descripcion del proyecto es requerida
-                </p> 
+                </p>
               </div>
             </div>
           </div>
@@ -202,4 +200,4 @@
 
       </div>
 
-</div>
+  </div>

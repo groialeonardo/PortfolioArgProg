@@ -120,6 +120,11 @@
     width: 80px;
   }
 
+  #flexSwitchCheckDefault{
+    width: 2em;
+    height: 1em;
+  }
+
   #descripcion{
     display: flex;
     vertical-align: middle;
@@ -222,3 +227,12 @@
     justify-content: center;
     }
   }
+
+  @media (max-width: 768px) {
+
+    .hideOnMobile {
+      display: none;
+    }
+  }
+
+

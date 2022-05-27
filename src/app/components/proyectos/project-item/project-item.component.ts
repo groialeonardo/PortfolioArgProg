@@ -33,6 +33,7 @@ export class ProjectItemComponent implements OnInit {
   @Output() editEvent:EventEmitter<IProject> = new EventEmitter();
   @Output() deleteEvent:EventEmitter<IProject> = new EventEmitter();
 
+  actual:boolean = false;
   showTecno:boolean= true;
   imagenes: any[] = [];
   allTecnologiesFiltred:ITecno[]=[];
@@ -50,6 +51,7 @@ export class ProjectItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshTecnos();
+    if(this.project.fecha==="En desarrollo"){ this.actual = true; }
   }
 
   refreshTecnos(){
@@ -145,6 +147,15 @@ async onSubmit(){
     }
   }
 
+  onActualChange(){
+    this.actual = !this.actual;
+
+    if(this.actual){
+      this.project.fecha="En desarrollo"
+    }else{
+      this.project.fecha=""
+    }
+  }
 
 }
 

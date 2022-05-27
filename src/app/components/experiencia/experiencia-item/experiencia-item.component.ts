@@ -13,6 +13,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class ExperienciaItemComponent implements OnInit {
 
   imagenes: any[] = [];
+  actual:boolean = false;
 
   @Input() exp:IExp = new  Exp();
   @Input() buttonText:string="";
@@ -30,8 +31,14 @@ export class ExperienciaItemComponent implements OnInit {
     private storageService:StorageService,) { }
 
   ngOnInit(): void {
+    if(this.exp.fin==="la fecha"){ this.actual = true; }
   }
+/*
+  ngAfterViewChecked():void {
+    if(this.exp.fin="la fecha"){ this.actual = true; }
 
+  }
+*/
   onDelete(exp:IExp) {
     this.deleteEvent.emit(exp);
 
@@ -58,6 +65,11 @@ export class ExperienciaItemComponent implements OnInit {
         alert("Error en el guardado de imagen");
       }
     }
+
+    if(this.actual){
+      this.exp.fin="la fecha"
+    }
+
     this.editEvent.emit(this.exp)
 
   }
@@ -93,6 +105,16 @@ export class ExperienciaItemComponent implements OnInit {
        });
     } catch (err) {
      console.log(err);
+    }
+  }
+
+  onActualChange(){
+    this.actual = !this.actual;
+
+    if(this.actual){
+      this.exp.fin="la fecha"
+    }else{
+      this.exp.fin=""
     }
   }
 

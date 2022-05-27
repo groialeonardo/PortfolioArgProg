@@ -12,6 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class EducationItemComponent implements OnInit {
 
   imagenes: any[] = [];
+  actual:boolean = false;
 
   @Input() education:IEducation = new Education();
   @Input() buttonText:string="";
@@ -27,7 +28,7 @@ export class EducationItemComponent implements OnInit {
     private storageService:StorageService) { }
 
   ngOnInit(): void {
-
+    if(this.education.fin==="la fecha"){ this.actual = true; }
   }
 
   onDelete(educ:IEducation) {
@@ -99,5 +100,14 @@ export class EducationItemComponent implements OnInit {
     }
   }
 
+  onActualChange(){
+    this.actual = !this.actual;
+
+    if(this.actual){
+      this.education.fin="la fecha"
+    }else{
+      this.education.fin=""
+    }
+  }
 
 }

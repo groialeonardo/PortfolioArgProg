@@ -86,6 +86,11 @@ textarea{
   width: 190px;
 }
 
+#flexSwitchCheckDefault{
+  width: 2em;
+  height: 1em;
+}
+
 #fechas{
   display: flex;
   align-items: left;
@@ -145,3 +150,9 @@ textarea{
   }
 }
 
+@media (max-width: 768px) {
+
+  .hideOnMobile {
+    display: none;
+  }
+}

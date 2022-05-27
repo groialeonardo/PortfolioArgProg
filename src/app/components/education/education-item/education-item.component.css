@@ -83,12 +83,16 @@
 
   .button-submit:hover {
     opacity: 1;
-
   }
 
   #fin, #inicio{
     display: flex;
     width: 190px;
+  }
+
+  #flexSwitchCheckDefault{
+    width: 2em;
+    height: 1em;
   }
 
   #fechas{
