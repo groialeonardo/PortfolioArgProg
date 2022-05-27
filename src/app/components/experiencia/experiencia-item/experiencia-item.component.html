@@ -25,7 +25,8 @@
         <div class="col-1"  *ngIf ="checkLoggedIn()">
           <app-deletebtn
             *ngIf="showDelete"
-            (click)= "onDelete(exp)"
+            [needConfirm]="showEditBtn"
+            (onBbtnClick)= "onDelete(exp)"
           ></app-deletebtn>
         </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 //reveer
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -9,7 +9,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./deletebtn.component.css']
 })
 export class DeletebtnComponent implements OnInit {
-
+  @Input() needConfirm=true;
+  displayStyle = "none";
   @Output() onBbtnClick = new EventEmitter();
 
   constructor(private authService:AuthenticationService) { }
@@ -18,11 +19,33 @@ export class DeletebtnComponent implements OnInit {
   }
 
   onClick(){
-    this.onBbtnClick.emit();
+    if(this.needConfirm){
+      this.openPopup();
+    }else{
+      this.onBbtnClick.emit();
+    }
   }
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";    
+  }
+
+  onConfirm(){
+    this.onBbtnClick.emit();
+    this.closePopup();    
+  }
+
 
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()
+  }
+
+  onEnviar(event:Event){
+    event.preventDefault;
+    this.onBbtnClick.emit();
   }
 
 }

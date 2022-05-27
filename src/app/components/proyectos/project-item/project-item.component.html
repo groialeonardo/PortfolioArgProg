@@ -25,7 +25,8 @@
                   <app-deletebtn
 
                   *ngIf="showDelete"
-                  (click)= "onDelete(project)"
+                  (onBbtnClick)= "onDelete(project)"
+                  [needConfirm]="showEditBtn"
 
                   ></app-deletebtn>
               </div>
