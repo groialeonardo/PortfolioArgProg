@@ -60,6 +60,36 @@ export class ProjectItemComponent implements OnInit {
    // console.log("AllTecnologiesFilterd" + JSON.stringify(this.form.value.allTecnologiesFiltred));
   }
 
+  async onSubmit(){
+
+    if(this.project.titulo.length === 0){
+      alert("Por Favor complete el tìtulo del proyecto");
+      return
+    }
+    if(this.project.fecha.length === 0){
+      alert("Por Favor complete el año del proyecto");
+      return
+    }
+    if(this.project.fecha.length === 0){
+      alert("Por Favor complete el año del proyecto");
+      return
+    }
+    if(this.project.descripcion.length === 0){
+      alert("Por Favor complete la descrición del proyecto");
+      return
+    }
+    if (this.imagenes[0] != null){
+      try {
+        await this.storageImagen(this.imagenes[0],"/portfolio/img/proyectos/");
+      }
+      catch (err) {
+        console.log(err);
+        alert("Error en el guardado de imagen");
+      }
+    }
+      this.editEvent.emit(this.project)
+  }
+
   addTecno(){
 
     console.log(this.form.value.allTecnologiesFiltred);
@@ -78,6 +108,14 @@ export class ProjectItemComponent implements OnInit {
 
   }
 
+  onDeleteTecno(tecno:ITecno) {
+    this.project.tecnologias.forEach((value,index)=>{
+      if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
+    });
+
+  this.refreshTecnos()
+  }
+
   onDelete(proy:IProject) {
     this.deleteEvent.emit(proy);
   }
@@ -86,34 +124,6 @@ export class ProjectItemComponent implements OnInit {
 
     this.showEditProject = !this.showEditProject;
     this.refreshTecnos()
-  }
-
-  onDeleteTecno(tecno:ITecno) {
-      this.project.tecnologias.forEach((value,index)=>{
-        if(value.name==tecno.name) this.project.tecnologias.splice(index,1);
-      });
-
-    this.refreshTecnos()
-  }
-
-async onSubmit(){
-
-  if(this.project.titulo.length === 0){
-    alert("Por Favor complete el tìtulo del proyecto");
-    return
-  }
-
-
-  if (this.imagenes[0] != null){
-    try {
-      await this.storageImagen(this.imagenes[0],"/portfolio/img/proyectos/");
-    }
-    catch (err) {
-      console.log(err);
-      alert("Error en el guardado de imagen");
-    }
-  }
-    this.editEvent.emit(this.project)
   }
 
   checkLoggedIn():boolean{

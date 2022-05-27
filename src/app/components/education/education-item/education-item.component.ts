@@ -39,16 +39,19 @@ export class EducationItemComponent implements OnInit {
 
   async onSubmit(){
 
-    if(this.education.institucion.length === 0){
-      alert("Por Favor complete el nombre de la empresa");
-      return
-    }
-
     if(this.education.titulo.length === 0){
-      alert("Por Favor complete el nombre del puesto");
+      alert("Por Favor complete el nombre del título obtenido");
       return
     }
-
+    if(this.education.institucion.length === 0){
+      alert("Por Favor complete el nombre de la institución");
+      return
+    }
+    if(this.education.descripcion.length === 0){
+      alert("Por Favor complete la descripcion");
+      return
+    }
+    
     if (this.imagenes[0] != null){
       try {
         await this.storageImagen(this.imagenes[0],"/portfolio/img/logos/educacion/");
@@ -58,7 +61,7 @@ export class EducationItemComponent implements OnInit {
         alert("Error en el guardado de imagen");
       }
     }
- //   console.log(this.exp)
+ 
     this.editEvent.emit(this.education)
   }
 

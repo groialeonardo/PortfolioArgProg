@@ -56,6 +56,11 @@ export class ExperienciaItemComponent implements OnInit {
       return
     }
 
+    if(this.exp.descripcion.length === 0){
+      alert("Por Favor complete la descripcion");
+      return
+    }
+
     if (this.imagenes[0] != null){
       try {
         await this.storageImagen(this.imagenes[0],"/portfolio/img/logos/empresa/");

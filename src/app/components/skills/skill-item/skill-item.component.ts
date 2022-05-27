@@ -26,11 +26,12 @@ export class SkillItemComponent implements OnInit {
     private storageService:StorageService) { }
 
   ngOnInit(): void {
+    this.imagenes[0]=null;
   }
 
 async onSubmit(){
 
-    if((this.skill.imageSrc.length === 0)&&(this.imagenes[0]===null)){  //TO DO realizar mejor esta parte
+    if((this.skill.imageSrc === "")&&(this.imagenes[0]===null)){  //TO DO realizar mejor esta parte
       alert("Por Favor elija una habilidad");
       return
     }
