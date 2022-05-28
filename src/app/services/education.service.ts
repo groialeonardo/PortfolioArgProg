@@ -18,15 +18,11 @@ const httpOptions = {
 
 export class EducationService {
 
-  //apiUrl = "http://localhost:8080/educations";
  apiUrl = environment.apiUrlRoot + "/educations";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService  ) { }
 
   getEducations() :  Observable<IEducation[]> {
-
-    /*const educations = of (EDUCATIONS) //Para traer desde archivo monk-task
-    return  educations;*/
 
     return this.crudHttpService.get(this.apiUrl)
   }

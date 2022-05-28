@@ -1,16 +1,8 @@
 import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormArray,
-  FormControl,
-  ValidatorFn
-} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ITecno } from 'src/app/Interfaces/ITecno';
-//import { PROJECTS } from 'src/app/mock-projects';
 import { IProject } from 'src/app/Interfaces/IProject';
 import { Proyecto } from 'src/app/Model/Proyecto';
-import { Tecnologia } from 'src/app/Model/Tecnologia';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -56,8 +48,7 @@ export class ProjectItemComponent implements OnInit {
 
   refreshTecnos(){
     this.allTecnologiesFiltred = this.allTecnologies.filter(item => !this.project.tecnologias.some(other => item.id == other.id));
-    //console.log("AllTecnologies" + JSON.stringify(this.allTecnologies));
-   // console.log("AllTecnologiesFilterd" + JSON.stringify(this.form.value.allTecnologiesFiltred));
+
   }
 
   async onSubmit(){
@@ -127,7 +118,7 @@ export class ProjectItemComponent implements OnInit {
   }
 
   checkLoggedIn():boolean{
-    this.refreshTecnos()  //esto podria estar mejor, es para que no se vacie la lista cuando hacen F5
+    this.refreshTecnos()
     return this.authService.isUserLoggedIn()
   }
   onPathLogoChange(){

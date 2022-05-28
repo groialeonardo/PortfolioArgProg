@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { SkillsService } from 'src/app/services/skills.service';
-
 import { ISkill } from '../../Interfaces/ISkill';
-//import { SKILL } from 'src/app/mock-skills';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -13,8 +9,6 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-
-  //skills:Skill[] = SKILL;
 
   skills:ISkill[] = [];
   canEdit:boolean=false;

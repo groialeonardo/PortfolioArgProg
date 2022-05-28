@@ -18,8 +18,6 @@ const httpOptions = {
 
 export class SkillsService {
 
-  //apiUrl = "http://localhost:8080/skills";
-
   apiUrl = environment.apiUrlRoot + "/skills";
 
   constructor( private crudHttpService:CRUDHttpService  ) { }

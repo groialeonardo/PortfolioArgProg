@@ -22,7 +22,6 @@ import { EducationComponent } from './components/education/education.component';
 import { EducationItemComponent } from './components/education/education-item/education-item.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProjectItemComponent } from './components/proyectos/project-item/project-item.component';
-//import { BasicAuthHtppInterceptorService } from './services/basic-auth-htpp-interceptor-service.service';
 import { JwtInterceptorService } from './services/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import {AngularFireModule} from '@angular/fire/compat';
@@ -82,7 +81,6 @@ import { IniciarSessionComponent } from './components/iniciar-session/iniciar-se
 
   ],
   providers: [
-   // { provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true },
     { provide:HTTP_INTERCEPTORS, useClass:JwtInterceptorService, multi:true },
     { provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptorService, multi:true }
 

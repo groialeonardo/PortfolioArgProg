@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { IPersona } from 'src/app/Interfaces/IPersona';
 import { Persona } from 'src/app/Model/Persona';
 

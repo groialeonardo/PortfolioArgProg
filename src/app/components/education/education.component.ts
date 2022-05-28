@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-//import { Subscription } from 'rxjs';
 import { EducationService } from 'src/app/services/education.service';
-
 import { IEducation } from 'src/app/Interfaces/IEducation';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
 import { ModalService } from 'src/app/_modal';
 
 @Component({
@@ -16,7 +11,6 @@ import { ModalService } from 'src/app/_modal';
 })
 export class EducationComponent implements OnInit {
 
-  //exps:Exp[] = EXPS;
   educations:IEducation[] = [];
   showAddEducation:boolean = false;
 

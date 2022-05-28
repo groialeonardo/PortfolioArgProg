@@ -21,7 +21,6 @@ export class IniciarSessionComponent implements OnInit {
     )
    }
 
-
   ngOnInit(): void {
   }
 

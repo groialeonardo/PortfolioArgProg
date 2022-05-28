@@ -18,20 +18,7 @@ export class LoginBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
- /* //viejo: cpaz hay que borrar
-  checkLogin() {
-    (this.authService.IniciarSesion({email:this.username, password:this.password}).subscribe(
-      data => {
-        //this.router.navigate([''])
-        this.invalidLogin = false
-      },
-      error => {
-        this.invalidLogin = true
-      }
-    )
-    );
-  }
-*/
+
   openModal(id: string) {
     this.modalService.open(id);
   }
@@ -40,21 +27,6 @@ export class LoginBarComponent implements OnInit {
     this.modalService.close(id);
   }
 
-
-/*
-checkLogin() {
-  (this.authService.authenticate(this.username, this.password).subscribe(
-    data => {
-      //this.router.navigate([''])
-      this.invalidLogin = false
-    },
-    error => {
-      this.invalidLogin = true
-    }
-  )
-  );
-}
-*/
   logOut() {
     this.authService.logOut();
   }

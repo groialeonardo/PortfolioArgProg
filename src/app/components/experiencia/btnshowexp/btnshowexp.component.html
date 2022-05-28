@@ -1,9 +1,7 @@
 <button
   class="button"
   [ngStyle]="{ 'background-color': bgcolor , 'color': color, 'border': border }"
-
   (click)="onClick()"
-
   *ngIf="checkLoggedIn()"
 >
  <span>{{text}}</span>

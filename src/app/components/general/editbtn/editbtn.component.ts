@@ -1,5 +1,4 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -19,7 +18,6 @@ export class EditbtnComponent implements OnInit {
   }
 
   onClick(){
-
     this.onBbtnClick.emit();
 
   }

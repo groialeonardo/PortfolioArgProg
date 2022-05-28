@@ -13,10 +13,11 @@ export class AcercaDeComponent implements OnInit {
 
   @Input() persona:IPersona = new Persona();
   @Input() loggedIn:boolean = false;
+  @Input() showEdit:boolean=false;
   @Output() onPersonaChangeEvent:EventEmitter<IPersona> = new EventEmitter()
   @Output() newPhotoimgEvent:EventEmitter<any> = new EventEmitter()
 
-  @Input() showEdit:boolean=false;
+
 
 
   constructor() { }

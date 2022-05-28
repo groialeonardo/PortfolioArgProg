@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { IExp } from '../../../Interfaces/IExp';
 import { Exp } from 'src/app/Model/Exp';
-//import { EXPS } from '../../../mock-exps';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -25,20 +24,13 @@ export class ExperienciaItemComponent implements OnInit {
   @Input () showDelete:boolean = true;
   @Input () showEditBtn:boolean = true;
 
-  //Sub?:Subscription
-
   constructor( private authService: AuthenticationService,
     private storageService:StorageService,) { }
 
   ngOnInit(): void {
     if(this.exp.fin==="la fecha"){ this.actual = true; }
   }
-/*
-  ngAfterViewChecked():void {
-    if(this.exp.fin="la fecha"){ this.actual = true; }
 
-  }
-*/
   onDelete(exp:IExp) {
     this.deleteEvent.emit(exp);
 

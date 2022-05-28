@@ -19,16 +19,12 @@ const httpOptions = {
 
 export class ExperienciaService {
 
-  //apiUrl = "http://localhost:8080/exps";
   apiUrl = environment.apiUrlRoot + "/exps";
 
 
   constructor( private httpClient:HttpClient, private crudHttpService:CRUDHttpService  ) { }
 
   getExps() :  Observable<IExp[]> {
-
-    /*const exp = of (EXPS) //Para traer desde archivo monk-task
-    return  exp;*/
 
     //return this.httpClient.get<Exp[]>(this.apiUrl);
     return this.crudHttpService.get(this.apiUrl)

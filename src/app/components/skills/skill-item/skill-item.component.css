@@ -30,9 +30,8 @@
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
-/* Mouse-over effects */
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1;
 }
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -58,7 +57,6 @@
  }
 
  .margneg{
-   /*position:absolute;*/
    margin-left: -20%;
    padding: 0%;
 

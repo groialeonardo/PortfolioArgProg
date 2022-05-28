@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-
-//reveer
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -25,17 +23,17 @@ export class DeletebtnComponent implements OnInit {
       this.onBbtnClick.emit();
     }
   }
-  
+
   openPopup() {
     this.displayStyle = "block";
   }
   closePopup() {
-    this.displayStyle = "none";    
+    this.displayStyle = "none";
   }
 
   onConfirm(){
     this.onBbtnClick.emit();
-    this.closePopup();    
+    this.closePopup();
   }
 
 

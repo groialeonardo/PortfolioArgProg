@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ISkill } from '../../../Interfaces/ISkill';
 import { Skill } from '../../../Model/Skill';
-//import { SKILL } from 'src/app/mock-skills';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -13,7 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class SkillItemComponent implements OnInit {
 
   imagenes: any[] = [];
-  //@Input() skill:Skill = SKILL[0];
+
   @Input() skill:ISkill = new Skill();
   @Input() buttonText:string="";
 
@@ -31,11 +30,11 @@ export class SkillItemComponent implements OnInit {
 
 async onSubmit(){
 
-    if((this.skill.imageSrc === "")&&(this.imagenes[0]===null)){  //TO DO realizar mejor esta parte
+    if((this.skill.imageSrc === "")&&(this.imagenes[0]===null)){
       alert("Por Favor elija una habilidad");
       return
     }
-    // console.log(this.skill) //TO DO borrar este log
+
     if (this.imagenes[0] != null){
       try {
         await this.storageImagen(this.imagenes[0],"/portfolio/img/logos/skills/");

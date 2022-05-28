@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ProyectoService } from 'src/app/services/proyecto.service';
 import { IProject } from 'src/app/Interfaces/IProject';
-//import { PROJECTS } from 'src/app/mock-projects';
-
 import { TecnologiaService } from 'src/app/services/tecnologia.service';
 import { ITecno } from 'src/app/Interfaces/ITecno';
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
 import { ModalService } from 'src/app/_modal';
 
 @Component({
@@ -18,7 +13,6 @@ import { ModalService } from 'src/app/_modal';
 })
 export class ProyectosComponent implements OnInit {
 
-  //projects:IProject[]=PROJECTS;
   projects:IProject[]=[];
   allTecnologies:ITecno[]=[];
   showAddProject:boolean = false;
@@ -70,12 +64,6 @@ export class ProyectosComponent implements OnInit {
    this.showAddProject=!this.showAddProject;
 
   }
-/*
-  hasRoute(route:string){
-    //return this.router.url === route;
-    return true;
-  }
-*/
 
   checkLoggedIn():boolean{
     return this.authService.isUserLoggedIn()

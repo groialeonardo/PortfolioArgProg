@@ -23,7 +23,7 @@ export class PersonaService {
 
   getPersonas() :  Observable<IPersona[]> {
 
-     return  this.crudHttpService.get(this.apiUrl);;
+     return  this.crudHttpService.get(this.apiUrl);
 
   }
 

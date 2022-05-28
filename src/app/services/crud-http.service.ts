@@ -2,13 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-//const username = sessionStorage.getItem('username')
-//const password = sessionStorage.getItem('password')
 
 const httpOptions = {
   headers : new HttpHeaders ({
     'Content-Type':  'application/json',
-    //'Authorization': 'Basic ' + btoa(username + ':' + password)
   })
 }
 
@@ -21,13 +18,11 @@ export class CRUDHttpService  {
 
   get(apiUrl:string) :  Observable<any[]> {
 
-
     return this.httpClient.get<any[]>(apiUrl);
 
   }
 
   delete(toDelete:any, apiUrl:string) : Observable<any> {
-
 
     const url = `${apiUrl}/${toDelete.id}`;
     return this.httpClient.delete<any>(url,httpOptions)

@@ -16,9 +16,7 @@ const httpOptions = {
 })
 export class TecnologiaService {
 
-  //apiUrl = "http://localhost:5000/tecnologies";
-  apiUrl = environment.apiUrlRoot +"/tecnologies";
-
+   apiUrl = environment.apiUrlRoot +"/tecnologies";
 
   constructor( /*private httpClient:HttpClient,*/ private crudHttpService:CRUDHttpService ) { }
 
