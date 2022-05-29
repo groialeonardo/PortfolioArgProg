@@ -48,10 +48,16 @@ export class ExperienciaItemComponent implements OnInit {
       return
     }
 
+    if(new Date (this.exp.inicio) > new Date (this.exp.fin)){
+      alert("La fecha de inicio debe ser anterior a la fecha de fin");
+      return
+    }
+
     if(this.exp.descripcion.length === 0){
       alert("Por Favor complete la descripcion");
       return
     }
+
 
     if (this.imagenes[0] != null){
       try {

@@ -8,8 +8,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class EditbtnComponent implements OnInit {
 
-  @Input() border:string= "";
+  btnText:string ="Editar";
+  backgroundColor:string ="#19657e";
 
+  @Input() border:string= "";
   @Output() onBbtnClick = new EventEmitter();
 
   constructor(private authService:AuthenticationService) { }
@@ -19,7 +21,13 @@ export class EditbtnComponent implements OnInit {
 
   onClick(){
     this.onBbtnClick.emit();
-
+    if(this.btnText=="Editar"){
+      this.btnText="Cerrar";
+      this.backgroundColor ="#6c757d";
+    }else{
+      this.btnText="Editar";
+      this.backgroundColor ="#19657e";
+    }
   }
 
   checkLoggedIn():boolean{

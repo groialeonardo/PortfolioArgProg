@@ -51,7 +51,14 @@ export class EducationItemComponent implements OnInit {
       alert("Por Favor complete la descripcion");
       return
     }
-    
+
+    if(new Date (this.education.inicio) > new Date (this.education.fin)){
+      alert("La fecha de inicio debe ser anterior a la fecha de fin");
+      return
+    }
+
+
+
     if (this.imagenes[0] != null){
       try {
         await this.storageImagen(this.imagenes[0],"/portfolio/img/logos/educacion/");
@@ -61,7 +68,7 @@ export class EducationItemComponent implements OnInit {
         alert("Error en el guardado de imagen");
       }
     }
- 
+
     this.editEvent.emit(this.education)
   }
 

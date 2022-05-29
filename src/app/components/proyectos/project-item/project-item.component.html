@@ -75,7 +75,7 @@
             <div *ngIf="proyecto.invalid"
                 class="alert">
               <p *ngIf="proyecto.errors?.['required']" class="text-danger">
-                El nombre de la empresa es requerido
+                El nombre del proyecto es requerido
               </p>
             </div>
           </div>
@@ -84,7 +84,7 @@
             <label for="anio">Año</label>
             <input
               type="number"
-              min="1900" max="2022" step="1" maxlength="4"
+              min="1900" [max]="this.actualYear.getFullYear()" step="1" maxlength="4"
               name="anio"
               id="anio"
               placeholder="Año"
@@ -105,7 +105,7 @@
                 El año es requerido
               </p>
               <p *ngIf="anio.errors?.['max']" class="text-danger">
-                El año debe ser menor a 2023
+                El año debe ser menor al año en curso.
               </p>
               <p *ngIf="anio.errors?.['min']" class="text-danger">
                 El año debe ser mayor a 1900

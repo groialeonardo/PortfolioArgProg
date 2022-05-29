@@ -13,8 +13,6 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class ProjectItemComponent implements OnInit {
 
-
-
   @Input() buttonText:string="";
   @Input () showEditProject:boolean = false;
   @Input () showDelete:boolean = true;
@@ -30,6 +28,7 @@ export class ProjectItemComponent implements OnInit {
   imagenes: any[] = [];
   allTecnologiesFiltred:ITecno[]=[];
   form:FormGroup;
+  actualYear:Date= new Date();
 
   constructor( private formBuilder: FormBuilder,
     private authService: AuthenticationService,
@@ -61,8 +60,8 @@ export class ProjectItemComponent implements OnInit {
       alert("Por Favor complete el año del proyecto");
       return
     }
-    if(this.project.fecha.length === 0){
-      alert("Por Favor complete el año del proyecto");
+    if((Number(this.project.fecha) <  1900 )|| (Number(this.project.fecha) > this.actualYear.getFullYear()) ){
+      alert("Por favor indique un año entre 1900 y " +  this.actualYear.getFullYear()) ;
       return
     }
     if(this.project.descripcion.length === 0){

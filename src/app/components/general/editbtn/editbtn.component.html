@@ -1,11 +1,11 @@
 <button
   class="button"
-  [ngStyle]="{'border': border}"
+  [ngStyle]="{'border': border, 'background-color': backgroundColor}"
   *ngIf="checkLoggedIn()"
   (click)="onClick()"
 >
 <img src="../../assets/img/icons/pencil.png" alt="">
-<span  id="editBtn" >Editar</span>
+<span  id="editBtn" >{{btnText}}</span>
 
 </button>
 
