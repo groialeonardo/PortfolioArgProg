@@ -31,9 +31,12 @@ export class ProfileComponent implements OnInit {
 
   refreshPersona(){
     this.personaActual = this.personas.findIndex(object => {
-      return object.mail === "groialeonardo@gmail.com";
+      //return object.mail === "groialeonardo@gmail.com";
+      //De momento utilizo el atributo fecha_nacimiento para buscar la id de la persona en la lista.
+      //A futuro la idea es que pueda haber varios perfiles para elegir y poder crear nuevos.
+      return object.fecha_nacimiento === "10/11/1985";
       });
-      console.log( "Usuario : "+ this.personas[this.personaActual].mail)
+      console.log( "Perfil Actual : "+ this.personas[this.personaActual].apellido + " " + this.personas[this.personaActual].nombres)
   }
 
   ToggleShowEdit(showEdit:boolean){

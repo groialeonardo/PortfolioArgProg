@@ -1,0 +1,42 @@
+<div id="mymenu">
+
+  <nav class="navbar navbar-expand-lg" id="navbar" >
+
+      <div class=""  id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-between" >
+
+          <button class="navbar-toggler navbar-dark" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+                  [attr.aria-expanded]="!navbarCollapsed"
+                  data-toggle="collapse" id="buttonmenuheader" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse" id="navbarNav" *ngIf="!navbarCollapsed || (innerWidth>collapseWitdth)">
+
+            <li class="nav-item active">
+              <a class="nav-link nav_color" href="#mymenu">ACERCA DE MI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav_color" href="#experiencias">EXPERIENCIAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav_color" href="#educacion">EDUCACION</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_color" href="#habilidades">HABILIDADES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_color" href="#proyectos">PROYECTOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_color" href="#footer">CONTACTO</a>
+            </li>
+          </div>
+
+        </ul>
+      </div>
+    </nav>
+
+</div>

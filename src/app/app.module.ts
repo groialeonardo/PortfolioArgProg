@@ -29,6 +29,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ModalModule } from './_modal';
 import { IniciarSessionComponent } from './components/iniciar-session/iniciar-session.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/general/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { IniciarSessionComponent } from './components/iniciar-session/iniciar-se
     ProyectosComponent,
     ProjectItemComponent,
     ProfileComponent,
-    IniciarSessionComponent
+    IniciarSessionComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

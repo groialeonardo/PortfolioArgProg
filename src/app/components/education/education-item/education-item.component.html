@@ -43,7 +43,7 @@
       <form class="inline" (ngSubmit)="onSubmit()" >
 
         <div class="form-control">
-          <label for="nombreTitulo">Título obtenido</label>
+          <label for="nombreTitulo">Título</label>
           <input
             type="text"
             name="titulo"
@@ -59,7 +59,7 @@
           <div *ngIf="titulo.invalid"
               class="alert">
             <p *ngIf="titulo.errors?.['required']" class="text-warning">
-              El  título obtenido es requerido
+              El  título es requerido
             </p>
           </div>
         </div>

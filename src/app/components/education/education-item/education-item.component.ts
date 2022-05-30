@@ -40,7 +40,7 @@ export class EducationItemComponent implements OnInit {
   async onSubmit(){
 
     if(this.education.titulo.length === 0){
-      alert("Por Favor complete el nombre del título obtenido");
+      alert("Por Favor complete título");
       return
     }
     if(this.education.institucion.length === 0){
